@@ -1,0 +1,22 @@
+{
+  "ash": {
+    "name": "Ash",
+    "description": "A rider with eyes like flint."
+  },
+  "vale": {
+    "name": "Ser Vale",
+    "description": "A knight stripped of his honor."
+  },
+  "moth": {
+    "name": "Moth",
+    "description": "A street urchin with quick fingers."
+  },
+  "rook": {
+    "name": "Rook",
+    "description": "A raven that speaks. Or a madman."
+  },
+  "hedge_witch": {
+    "name": "Hedge Witch",
+    "description": "Old magic in a cabin of bones."
+  }
+}
