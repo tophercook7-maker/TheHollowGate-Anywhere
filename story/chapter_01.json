@@ -1,0 +1,26 @@
+{
+  "chapter": 1,
+  "title": "The Wastes",
+  "scenes": [
+    {
+      "id": "intro",
+      "text": "THE HOLLOW GATE\n\nThe King does not look up when you enter. His crown is upside-down on the table.\nThe spymaster was found dead that morning — no wounds, no marks, a scream frozen on his face.\n\n\"Elara was taken last night from her chambers. No body. No ransom. The royal wizard says he felt a door open... somewhere else.\"\n\nHe slides three things across the table:\n\n  1. A signet ring — opens any door in the kingdom\n  2. A pouch of gold\n  3. A sealed letter from the spymaster\n\n\"One condition\": find her. Come back without her, and he won't need to execute you.",
+      "choices": [
+        { "text": "Take the signet ring and ride for the Wastes", "next": "wastes_gate", "action": "add_item,signet_ring" },
+        { "text": "Take the gold and visit the city underworld", "next": "city_gates", "action": "gold,50" },
+        { "text": "Ask the wizard about the sealed letter", "next": "wizard_tower" },
+        { "text": "Seek the castle captain for men", "next": "barracks" }
+      ]
+    },
+    {
+      "id": "wastes_gate",
+      "text": "THE WASTES GATE\n\nThe city wall ends. Beyond it, the Wastes — grey hills and old bones. A storm is rolling in.\nA merchant caravan is huddled by the gate, too afraid to move. A lone rider watches you from a rock.\nYou have the signet ring.",
+      "choices": [
+        { "text": "Show the ring, demand passage and horses", "next": "rider_demand", "action": "trust,-5" },
+        { "text": "Sneak past when the storm hits", "next": "wastes_lost", "condition": "hedgeborn_only" },
+        { "text": "Talk to the rider", "next": "rider_join" },
+        { "text": "Join the caravan and wait for morning", "next": "caravan", "action": "add_item,supplies" }
+      ]
+    }
+  ]
+}

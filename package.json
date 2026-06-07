@@ -1,0 +1,9 @@
+{
+  "name": "the-hollow-gate",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Open live/index.html locally or use Tauri dev'",
+    "build": "echo 'Static assets are already in live/'"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "scenes": [
+    {
+      "id": "ending_fight",
+      "chapter": "THE END",
+      "text": "You won by steel. The kingdom will remember your name.",
+      "choices": []
+    },
+    {
+      "id": "ending_talk",
+      "chapter": "THE END",
+      "text": "You won with words. The hollow gate closes behind you, quieter than before.",
+      "choices": []
+    },
+    {
+      "id": "ending_clever",
+      "chapter": "THE END",
+      "text": "You won with a trick the old stories never predicted.",
+      "choices": []
+    },
+    {
+      "id": "ending_sacrifice",
+      "chapter": "THE END",
+      "text": "You chose the hardest road. Some will remember. Most will never know.",
+      "choices": []
+    }
+  ]
+}
