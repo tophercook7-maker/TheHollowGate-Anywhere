@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "identifier": "com.thehollowgate",
   "build": {
-    "frontendDist": "../live"
+    "frontendDist": ["../index.html", "../companions.json", "../routes.json", "../story"]
   },
   "app": {
     "windows": [
@@ -30,8 +30,9 @@
       "icons/icon.icns",
       "icons/icon.ico"
     ],
-    "android": {
-      "debugApplicationIdSuffix": ".debug"
+    "macOS": {
+      "hardenedRuntime": true,
+      "minimumSystemVersion": "12.0"
     }
   }
 }

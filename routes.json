@@ -1,0 +1,16 @@
+{
+  "Castellan": {
+    "trust": 55,
+    "fear": 5,
+    "gold": 20,
+    "pack": ["sword","castle_talisman"],
+    "description": "Born in the castle. You know halls and guards."
+  },
+  "Hedgeborn": {
+    "trust": 45,
+    "fear": 15,
+    "gold": 5,
+    "pack": ["knife","poultice","village_map"],
+    "description": "Raised in the villages. You know dirt roads and secrets."
+  }
+}
