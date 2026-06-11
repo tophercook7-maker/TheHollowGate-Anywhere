@@ -243,6 +243,10 @@ function choose(ch){
     showEnding("ending_sacrifice");
     return;
   }
+  if(GATED_SCENES.has(next) && !isPaid()){
+    showPaywall(next);
+    return;
+  }
   if(String(next).startsWith("ending")){
     showEnding(next);
     return;
@@ -250,6 +254,51 @@ function choose(ch){
   state.here = next;
   saveGame();
   showScene();
+}
+
+const PAY_URL = "https://buy.stripe.com/5kQ4gs7DAeizgkl6d83cc0c";
+const PAY_KEY = "hollow_gate_paid_v1";
+const GATED_SCENES = new Set(["witch_path", "wizard_tower", "city_gates", "hollow_gate"]);
+
+function isPaid(){
+  try { return localStorage.getItem(PAY_KEY) === "true"; } catch(_) { return false; }
+}
+function markPaid(){
+  try { localStorage.setItem(PAY_KEY, "true"); } catch(_) {}
+}
+
+function showPaywall(pendingNext){
+  document.getElementById("chapter").textContent = "·  CONTINUE THE JOURNEY  ·";
+  document.getElementById("hud").innerHTML = "";
+  document.getElementById("story").textContent =
+    "You have come a third of the way.\n\nThe road bends from here — into the witch's wood, the wizard's tower, the lost city. Two more chapters of road. The Hollow Gate at the end.\n\nIf you would like to keep walking, this is where the road costs something.\n\n$1.99, once. The story unlocks forever on this machine. Every future update too.";
+  const box = document.getElementById("choices");
+  box.innerHTML = "";
+
+  const pay = document.createElement("a");
+  pay.href = PAY_URL;
+  pay.target = "_blank";
+  pay.rel = "noopener noreferrer";
+  pay.className = "primary";
+  pay.style.cssText = "display:block; text-decoration:none;";
+  pay.textContent = "Pay $1.99 →  (opens your browser)";
+  box.appendChild(pay);
+
+  const unlock = document.createElement("button");
+  unlock.className = "primary";
+  unlock.textContent = "I've paid — unlock the rest";
+  unlock.onclick = () => { markPaid(); state.here = pendingNext; saveGame(); showScene(); };
+  box.appendChild(unlock);
+
+  const back = document.createElement("button");
+  back.textContent = "Not yet — go back";
+  back.onclick = () => showScene();
+  box.appendChild(back);
+
+  const fallback = document.createElement("div");
+  fallback.style.cssText = "color:#5c564a; font-size:.72rem; margin-top:.6rem; word-break:break-all; text-align:center;";
+  fallback.textContent = "If the button didn't open a browser: " + PAY_URL;
+  box.appendChild(fallback);
 }
 
 const RESCUED_INFO = {
