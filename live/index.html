@@ -259,8 +259,10 @@ function choose(ch){
 const PAY_URL = "https://buy.stripe.com/5kQ4gs7DAeizgkl6d83cc0c";
 const PAY_KEY = "hollow_gate_paid_v1";
 const GATED_SCENES = new Set(["witch_path", "wizard_tower", "city_gates", "hollow_gate"]);
+const MAS_FREE_BUILD = false; /* flipped to true by build-mas.sh when MAS_FREE=1 */
 
 function isPaid(){
+  if(MAS_FREE_BUILD) return true;
   try { return localStorage.getItem(PAY_KEY) === "true"; } catch(_) { return false; }
 }
 function markPaid(){

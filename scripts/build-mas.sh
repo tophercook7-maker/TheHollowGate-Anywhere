@@ -14,6 +14,10 @@
 #   TEAM_ID="NFS22LSQRC"
 #   APP_SIGN_IDENTITY="Apple Distribution: Christopher Cook (NFS22LSQRC)"
 #   PKG_SIGN_IDENTITY="3rd Party Mac Developer Installer: Christopher Cook (NFS22LSQRC)"
+#
+#   MAS_FREE=1   Strip the Stripe paywall from the build (required for App
+#                Store submission — external payment links are rejected).
+#                Restores live/index.html on exit even if the build fails.
 
 set -euo pipefail
 
@@ -37,10 +41,36 @@ STAGE="/tmp/hollowgate-mas"
 rm -rf "$STAGE"
 mkdir -p "$STAGE"
 
+# MAS_FREE=1 strips the Stripe paywall so the app can ship as a paid-upfront
+# App Store title (Apple's App Review rejects external payment links).
+# We flip a const in live/index.html before build and restore it after.
+FRONTEND_HTML="$REPO_ROOT/live/index.html"
+FRONTEND_BACKUP="$STAGE/index.html.backup"
+restore_frontend(){
+  if [[ -f "$FRONTEND_BACKUP" ]]; then
+    cp "$FRONTEND_BACKUP" "$FRONTEND_HTML"
+    echo "==> Restored live/index.html (paywall flag back to false)"
+  fi
+}
+
+if [[ "${MAS_FREE:-0}" == "1" ]]; then
+  echo "==> MAS_FREE=1 — temporarily disabling paywall for this build"
+  cp "$FRONTEND_HTML" "$FRONTEND_BACKUP"
+  trap restore_frontend EXIT
+  # Flip the build-time const from false -> true. Targets the exact marker line.
+  sed -i '' 's|const MAS_FREE_BUILD = false;|const MAS_FREE_BUILD = true;|' "$FRONTEND_HTML"
+  if ! grep -q "const MAS_FREE_BUILD = true;" "$FRONTEND_HTML"; then
+    echo "ERROR: could not flip MAS_FREE_BUILD flag in $FRONTEND_HTML" >&2
+    exit 1
+  fi
+fi
+
 echo "==> Building unsigned .app via Tauri (will be re-signed below)..."
 # Override the Developer-ID signingIdentity from tauri.conf.json so Tauri produces
 # an unsigned bundle we can re-sign with the Apple Distribution identity.
-( cd "$REPO_ROOT" && npx tauri build --bundles app --config '{"bundle":{"macOS":{"signingIdentity":null,"entitlements":null}}}' )
+# Force a clean build so the macro that embeds frontend assets re-reads them.
+( cd "$REPO_ROOT/src-tauri" && cargo clean -p app 2>/dev/null || cargo clean >/dev/null )
+( cd "$REPO_ROOT" && npx tauri build --bundles app --config '{"bundle":{"macOS":{"signingIdentity":null,"entitlements":null}}}' || true )
 
 SRC_APP="$REPO_ROOT/src-tauri/target/release/bundle/macos/$APP_NAME.app"
 APP="$STAGE/$APP_NAME.app"
@@ -81,14 +111,23 @@ echo "==> Verifying signature..."
 codesign --verify --deep --strict --verbose=2 "$APP"
 codesign -d --entitlements :- "$APP" | head -40
 
-PKG="$STAGE/HollowGate-mas.pkg"
+if [[ "${MAS_FREE:-0}" == "1" ]]; then
+  PKG="$STAGE/HollowGate-mas-paid-upfront.pkg"
+else
+  PKG="$STAGE/HollowGate-mas.pkg"
+fi
 echo "==> Building signed installer .pkg..."
 productbuild --component "$APP" /Applications \
   --sign "$PKG_SIGN_IDENTITY" \
   "$PKG"
 
 echo
-echo "Done. Upload to App Store Connect:"
+if [[ "${MAS_FREE:-0}" == "1" ]]; then
+  echo "Done. Paywall-free build (set price in App Store Connect's Pricing tab)."
+else
+  echo "Done. WARNING: this build contains the Stripe paywall."
+  echo "  Apple will reject it on review. Re-run with MAS_FREE=1 for the App Store."
+fi
 echo "  $PKG"
 echo
 echo "Upload options:"
