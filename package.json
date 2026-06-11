@@ -5,5 +5,8 @@
   "scripts": {
     "dev": "echo 'Open live/index.html locally or use Tauri dev'",
     "build": "echo 'Static assets are already in live/'"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.2"
   }
 }
