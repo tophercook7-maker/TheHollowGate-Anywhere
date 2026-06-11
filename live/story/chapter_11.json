@@ -1,0 +1,169 @@
+{
+  "scenes": [
+    {
+      "id": "quiet_street_1",
+      "chapter": "CHAPTER V.5 \u00b7 THE QUIET STREET",
+      "text": "Behind the abandoned theatre, the city goes strange and quiet.\nThe lamps are still lit here. The shutters are still painted. A cat sleeps on a windowsill like nothing has happened, because here \u2014 for now \u2014 nothing has.\nA boy of seven or eight sits on the curb across from a bookshop, swinging his legs. He looks up at you and his eyes are the wrong eyes. Too still. Too \u2014 listening.\n\"Hello,\" he says, polite. \"Are you the one walking to the Gate? He said someone might be along. He said to be kind. He said you have a sad face.\"\nHe smiles. The smile is his. The listening behind it isn't.\n\"My name is Pip,\" he adds. \"I think it's Pip. It's harder to remember some days.\"",
+      "choices": [
+        {
+          "text": "Crouch. Talk to him like a child.",
+          "next": "quiet_street_pip"
+        },
+        {
+          "text": "Go into the bookshop first.",
+          "next": "quiet_street_bookseller"
+        },
+        {
+          "text": "Back away. He is not safe.",
+          "next": "quiet_street_retreat",
+          "do": [
+            "fear:+5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quiet_street_pip",
+      "chapter": "CHAPTER V.5 \u00b7 THE QUIET STREET",
+      "text": "You crouch. The cobbles are cold through your knees.\n\"Pip,\" you say. \"How long has it been hard to remember your name?\"\nHe thinks. He thinks too long. \"Since the man with the kind voice started visiting. In dreams. He tells me stories. He says I'm clever. Nobody calls me clever, miss \u2014 sir.\" His face flickers. \"It's nice. Is it bad?\"\nYou take his hands. They are very small and very cold and very alive.\n\"It's bad, Pip.\"\n\"Oh.\" He thinks about this. \"Will you make him stop?\"\nThe listening behind his eyes goes sharp at that. Something doesn't like the question.",
+      "choices": [
+        {
+          "text": "Use the wardstone on him.",
+          "next": "quiet_street_warded",
+          "require": "wardstone",
+          "do": [
+            "rem_item:wardstone",
+            "flag:saved_pip",
+            "trust:+8",
+            "journal:I used the wardstone on a boy named Pip. The Keeper's listening went out of him like a held breath. He cried. So did I, a little."
+          ]
+        },
+        {
+          "text": "Promise. \"Yes. I'll make him stop.\"",
+          "next": "quiet_street_promise",
+          "do": [
+            "trust:+5",
+            "journal:I promised a child I'd save him. I have promised too many people too many things. I will keep this one or die trying."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quiet_street_warded",
+      "chapter": "CHAPTER V.5 \u00b7 THE QUIET STREET",
+      "text": "You press the wardstone to his forehead. It heats and then it cools.\nPip blinks. His eyes \u2014 his real, blurry, ordinary-child eyes \u2014 come back into them. He looks at you like he's never seen you before and is delighted anyway.\n\"Oh,\" he says. \"My head's quiet.\"\nHe starts to cry \u2014 the easy, full crying of a child who has been holding something heavy for a long time without knowing it was heavy.\nA woman runs out of the bakery across the way. \"Pip \u2014 oh, Pip, baby \u2014\" She gathers him up. She looks at you over his hair, and you don't know what your face is doing but hers softens.\n\"Thank you,\" she mouths. She doesn't know for what. She knows it's something.",
+      "choices": [
+        {
+          "text": "Walk on. The bookshop next.",
+          "next": "quiet_street_bookseller",
+          "do": [
+            "fear:-5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quiet_street_promise",
+      "chapter": "CHAPTER V.5 \u00b7 THE QUIET STREET",
+      "text": "You promise. Pip nods solemnly, as if witnessing a contract.\n\"Okay,\" he says. He stands, dusts his pants, and walks away down the lane like a small person on an errand.\nThe listening doesn't leave him. It goes with him.\nYou feel a great weight settle, the kind that doesn't lift until you have done a thing. The bookshop door is just there.",
+      "choices": [
+        {
+          "text": "Into the bookshop.",
+          "next": "quiet_street_bookseller",
+          "do": [
+            "fear:+3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quiet_street_retreat",
+      "chapter": "CHAPTER V.5 \u00b7 THE QUIET STREET",
+      "text": "You walk fast and you do not look back and the curb noises follow you for a block \u2014 small swinging feet, a child's hum \u2014 until you turn a corner and the street is just a street again.\nYou stop. You lean against a wall. Your hands are shaking.\nYou tell yourself you couldn't have helped. You tell yourself it isn't your job. You tell yourself a lot of things.\nNone of them feel true.",
+      "choices": [
+        {
+          "text": "Go back. Try again.",
+          "next": "quiet_street_1"
+        },
+        {
+          "text": "Press on to the bookshop.",
+          "next": "quiet_street_bookseller",
+          "do": [
+            "fear:+5",
+            "journal:I left a boy on a curb. I will see him in dreams forever, I think."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quiet_street_bookseller",
+      "chapter": "CHAPTER V.5 \u00b7 THE QUIET STREET",
+      "text": "The bookshop smells the way bookshops always smell \u2014 old paper, dust, a little smoke. The bell over the door is so soft you almost don't hear it.\nThe bookseller is a woman with one milky eye and one sharp one. She doesn't look up.\n\"You want the back room,\" she says. \"Everyone who walks like you does.\"\nShe leads you past shelves that go up further than the building should allow. The back room is smaller than it should be. There is one chair. One book on a stand. The book is open.\n\"He had a name,\" she says, \"before he was the Keeper. Names are doors. If you say the right one in the right place, the door doesn't have to be on his side.\"",
+      "choices": [
+        {
+          "text": "\"Tell me the name.\"",
+          "next": "quiet_street_name"
+        },
+        {
+          "text": "\"What does it cost?\"",
+          "next": "quiet_street_cost"
+        },
+        {
+          "text": "Ask if she has anything else for you.",
+          "next": "side_bookseller_return",
+          "require": "flag:knows_keeper_name"
+        }
+      ]
+    },
+    {
+      "id": "quiet_street_cost",
+      "chapter": "CHAPTER V.5 \u00b7 THE QUIET STREET",
+      "text": "She smiles, finally. It is not a friendly smile but it is not cruel.\n\"A memory,\" she says. \"Not a big one. Something small. A meal you liked. A face from a holiday. The first word someone you loved said wrong. Anything. The book takes what it likes.\"\nShe taps the open page. \"Names like his are heavy. The book has to be paid.\"\nYou could lie. You could try. You suspect the book would know.",
+      "choices": [
+        {
+          "text": "Pay. Give a small memory.",
+          "next": "quiet_street_name",
+          "do": [
+            "fear:+3",
+            "journal:I gave the book a memory of my mother humming in the kitchen. I cannot get it back. I remember that she hummed; I cannot remember the song. I traded it for a name."
+          ]
+        },
+        {
+          "text": "Refuse. Walk out.",
+          "next": "quiet_street_leave",
+          "do": [
+            "fear:+2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quiet_street_name",
+      "chapter": "CHAPTER V.5 \u00b7 THE QUIET STREET",
+      "text": "She turns the book. The page is blank \u2014 and then it isn't. A word writes itself in your handwriting, which is impossible, which is happening.\nIt is not a long name. It is the wrong shape for a mouth. You read it once. You feel it settle into the back of your tongue like a tooth.\n\"Say it at the Gate,\" she says. \"Not before. Not after. Once. Say it once. He has to hear it from someone who knew him when. The book is making you that person, briefly.\"\nShe closes the book. She looks tired now, like she's done a lifting.\n\"Go,\" she says. \"And \u2014 if you live \u2014 come back and tell me how it went. I like to know.\"",
+      "choices": [
+        {
+          "text": "Go.",
+          "next": "city_spymaster_after",
+          "do": [
+            "add_item:keeper_lore",
+            "flag:knows_keeper_name",
+            "trust:+5",
+            "journal:I carry the Keeper's old name on the back of my tongue. It tastes like cold iron and an apology."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quiet_street_leave",
+      "chapter": "CHAPTER V.5 \u00b7 THE QUIET STREET",
+      "text": "You walk out. The bell over the door is even quieter going the other way.\nThe street is just a street. The cat on the windowsill opens one eye and closes it.\nYou will think about that name you didn't buy for a long time. Probably forever. Probably as long as the rest of forever lasts.",
+      "choices": [
+        {
+          "text": "Back to the spymaster's.",
+          "next": "city_spymaster_after"
+        }
+      ]
+    }
+  ]
+}

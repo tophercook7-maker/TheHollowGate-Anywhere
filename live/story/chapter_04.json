@@ -3,7 +3,7 @@
     {
       "id": "hollow_gate",
       "chapter": "CHAPTER IV \u00b7 THE HOLLOW GATE",
-      "text": "The stone is cold. The symbol glows when you touch it.\nThe wall doesn\u2019t open \u2014 it breathes.\nYou step through, and the world ends.\nDarkness. Not night-dark. Something older. Something that eats light.\nAhead, a girl\u2019s voice: a lullaby your mother used to hum. Elara. Close.\nSomething else is with her.",
+      "text": "The stone is cold. The symbol glows when you touch it.\nThe wall doesn\u2019t open \u2014 it breathes.\nYou step through, and the world ends.\nDarkness. Not night-dark. Something older. Something that eats light.\nAhead, a girl\u2019s voice: a lullaby your mother used to hum. {missing_name}. Close.\nSomething else is with her.",
       "choices": [
         {
           "text": "Follow the singing.",
@@ -20,6 +20,15 @@
           "text": "Light a torch.",
           "next": "finale_blind",
           "require": "poultice"
+        },
+        {
+          "text": "Make camp first. One night before.",
+          "next": "threshold_1"
+        },
+        {
+          "text": "Before you step through, someone you love speaks behind you.",
+          "next": "deep_second_offer_1",
+          "require": "rel:vale:50"
         }
       ]
     }

@@ -1,0 +1,436 @@
+{
+  "scenes": [
+    {
+      "id": "witch_wood_threshold",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "The road ends at a wall of birches. They are the color of old bone and they have been carved \u2014 every trunk, waist-high, a single sigil that you do not know. The wind here smells like a kitchen: rosemary, blood, woodsmoke.\n\nAsh, if he rode this far with you, will not cross. He says the horses won't either. He says it like a man stating the weather.\n\nA crow drops a tooth at your boot. Human. Adult. Clean at the root.",
+      "choices": [
+        {
+          "text": "Step between the birches.",
+          "next": "witch_wood_inner"
+        },
+        {
+          "text": "Walk the tree line, looking for a way around.",
+          "next": "witch_wood_hanged"
+        },
+        {
+          "text": "Pick up the tooth.",
+          "next": "witch_wood_tooth",
+          "do": [
+            "fear:+5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_wood_tooth",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "The tooth is warm. That is the part you will think about, later, when you cannot sleep.\n\nYou pocket it because leaving it felt worse. The crow watches you do it and makes a small, satisfied sound, like a woman clearing her throat.\n\n\"Good,\" it says, in a voice that is almost a voice. \"She likes guests who bring something.\"\n\nThen it is just a crow again, and it is gone.",
+      "choices": [
+        {
+          "text": "Step between the birches.",
+          "next": "witch_wood_inner",
+          "do": [
+            "add_item:warm_tooth",
+            "flag:crow_spoke"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_wood_hanged",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "You walk the edge for an hour and the edge does not end. The sun moves wrong. When you look back, your own bootprints are pointed the other way.\n\nA man hangs from a low branch by a rope of braided grass. His feet are inches off the moss. He is not dead. He opens one eye when your shadow falls on him.\n\n\"Don't,\" he says, calm. \"Cut me down and she'll know. Walk past and I keep counting. I'm at four thousand and eleven.\"",
+      "choices": [
+        {
+          "text": "\"Counting what?\"",
+          "next": "witch_wood_hanged_talk"
+        },
+        {
+          "text": "Cut him down anyway.",
+          "next": "witch_wood_hanged_cut",
+          "require": "knife"
+        },
+        {
+          "text": "Cut him down anyway.",
+          "next": "witch_wood_hanged_cut",
+          "require": "sword"
+        },
+        {
+          "text": "Walk past.",
+          "next": "witch_wood_inner",
+          "do": [
+            "fear:+5",
+            "journal:Left a man hanging in the witch's wood. He was counting."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_wood_hanged_talk",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "\"Breaths,\" he says. \"Hers. She breathes once a day. When she breathes ten thousand times I'm done.\"\n\nHis tongue is gray. His eyes are clear.\n\n\"I came looking for my sister. The Gate took her. The witch said she'd tell me where, for a price. I said yes too fast.\" He almost smiles. \"Tell her no, the first three times. Three. She respects three.\"\n\nA crow lands on his shoulder and he does not flinch.",
+      "choices": [
+        {
+          "text": "Walk on, into the wood.",
+          "next": "witch_wood_inner",
+          "do": [
+            "flag:hanged_warning",
+            "trust:+5"
+          ]
+        },
+        {
+          "text": "Cut him down.",
+          "next": "witch_wood_hanged_cut",
+          "require": "knife"
+        },
+        {
+          "text": "Cut him down.",
+          "next": "witch_wood_hanged_cut",
+          "require": "sword"
+        }
+      ]
+    },
+    {
+      "id": "witch_wood_hanged_cut",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "The grass-rope parts easy as wet paper. He drops, folds, lies still. For a long second you think you have killed a corpse.\n\nThen he breathes. Once. Loud. And the wood breathes with him.\n\nEvery birch around you exhales at the same time and the wind that comes off them is hot and smells of a woman's hair. Somewhere not far, something laughs \u2014 not cruelly. Pleased.\n\nThe man gets to his feet and runs. He does not look back. The crows go with him.",
+      "choices": [
+        {
+          "text": "Follow the laugh.",
+          "next": "witch_grove",
+          "do": [
+            "flag:cut_hanged",
+            "fear:+10"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_wood_inner",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "Inside, the wood is quieter than a chapel. Moss eats the sound of your feet. The light is the color of weak tea.\n\nYou pass a deer in a clearing. It stops eating and looks at you. On its head, instead of antlers, is a circle of black iron, beaten thin, set with one red stone. A crown. Old work. Kingly work.\n\nIt chews. It watches. It does not run.",
+      "choices": [
+        {
+          "text": "Approach slowly.",
+          "next": "witch_wood_deer"
+        },
+        {
+          "text": "Bow, and walk wide.",
+          "next": "witch_wood_path",
+          "do": [
+            "trust:+5",
+            "flag:bowed_deer"
+          ]
+        },
+        {
+          "text": "Try to take the crown.",
+          "next": "witch_wood_deer_attack",
+          "require": "sword"
+        },
+        {
+          "text": "Try to take the crown.",
+          "next": "witch_wood_deer_attack",
+          "require": "knife"
+        },
+        {
+          "text": "Wolves with too-clear eyes step out of the green.",
+          "next": "deep_wolves_1"
+        }
+      ]
+    },
+    {
+      "id": "witch_wood_deer",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "You come close enough to see the deer's eye is brown and wet and human-sad. The crown is welded to the bone. There is a brand on its flank. Three lines and a circle \u2014 {other_name}'s seal.\n\nYou understand, all at once, what you are looking at.\n\nIt makes a sound. A small one. It might be a name. It might be your name.\n\nThen it walks past you, slow, polite, and is gone into the trees.",
+      "choices": [
+        {
+          "text": "Sit down in the moss for a moment.",
+          "next": "witch_wood_path",
+          "do": [
+            "fear:+10",
+            "journal:I think I just saw {other_name}. He had hooves."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_wood_deer_attack",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "You swing. The deer does not move. The blade goes into its neck like into a sack of wet leaves and the deer looks at you, patient, and does not bleed.\n\nIt says, very clearly, in a man's voice: \"{other_sibling_cap}. You're early.\"\n\nYou drop the weapon. You are sick into the moss for a long time. The deer is gone when you look up. The crown is on the ground at your feet. It is too small for any human head.",
+      "choices": [
+        {
+          "text": "Leave it. Walk on.",
+          "next": "witch_wood_path",
+          "do": [
+            "fear:+20",
+            "hp:-2",
+            "trust:-10",
+            "flag:struck_stag",
+            "journal:I cut him. He spoke. I left the crown."
+          ]
+        },
+        {
+          "text": "Take the crown.",
+          "next": "witch_wood_path",
+          "do": [
+            "fear:+20",
+            "hp:-2",
+            "add_item:iron_crown",
+            "flag:took_crown",
+            "journal:I took the crown off the thing that used to be a {other_short}."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_wood_path",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "The path goes on. Once, you cross a clearing where a leaf falls upward, slow, into a branch that catches it like a hand. A bird flies backwards through it. Time, here, has been hurt.\n\nYou keep walking because to stand still feels like being eaten.\n\nAfter a while there is woodsmoke, real woodsmoke, and the smell of something stewing that has bones in it. A small house. Crooked. Lit warm.",
+      "choices": [
+        {
+          "text": "Knock.",
+          "next": "witch_grove"
+        },
+        {
+          "text": "Watch the house from the trees first.",
+          "next": "witch_grove_watch"
+        },
+        {
+          "text": "Something is moving in the brush \u2014 low, fast, in a pack.",
+          "next": "deep_wolves_1"
+        }
+      ]
+    },
+    {
+      "id": "witch_grove_watch",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "You crouch for a long while. The house breathes smoke. A woman moves past the window \u2014 tall, dark-haired, sleeves rolled, forearms streaked to the elbow in something that is not quite blood.\n\nShe is humming. The song is one your mother knew.\n\nShe stops humming. She turns her face directly to the tree you are behind. She smiles. She has a kind smile.\n\n\"Come in,\" she calls, soft. \"The stew's on. I've set a bowl.\"",
+      "choices": [
+        {
+          "text": "Go in.",
+          "next": "witch_grove",
+          "do": [
+            "flag:witch_saw_you"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_grove",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "The Hedge Witch is younger than the stories. Maybe thirty. Maybe three hundred. Her kitchen smells like every kitchen you have ever loved and one you have not.\n\nShe sets a bowl in front of you. Stew. Real stew. \"Eat. You're walking on empty and I won't talk to a fainting woman.\" Or man. Whichever you are, she sees you exactly.\n\nShe sits. She waits. She does not eat.\n\n\"You want to know about the Gate,\" she says. \"And the thing that lives behind it. And whether your {other_short} and your {missing_short} are meat yet.\"",
+      "choices": [
+        {
+          "text": "\"Yes. Tell me.\"",
+          "next": "witch_bargain"
+        },
+        {
+          "text": "Eat first. Say nothing.",
+          "next": "witch_eat",
+          "do": [
+            "hp:+2"
+          ]
+        },
+        {
+          "text": "\"I'm not buying. I came to ask.\"",
+          "next": "witch_refuse_first"
+        },
+        {
+          "text": "Sleep at the edge of the wood. Dream.",
+          "next": "dream_road_1"
+        },
+        {
+          "text": "Ask the witch about her mother in a jar.",
+          "next": "side_witch_jar_1",
+          "require": "companion:hedge_witch"
+        }
+      ]
+    },
+    {
+      "id": "witch_eat",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "You eat. It is the best meal you have had in a month. There is bread. There is butter the color of a daisy. When you are done she takes the bowl and washes it herself.\n\n\"Good,\" she says. \"Now you owe me one small thing. A meal eaten is a meal owed. That is not magic. That is manners.\"\n\nShe smiles. It is still a kind smile. That is the part that frightens you.",
+      "choices": [
+        {
+          "text": "\"What's the price?\"",
+          "next": "witch_bargain"
+        },
+        {
+          "text": "\"I owe you nothing. Speak plain or I leave.\"",
+          "next": "witch_refuse_first",
+          "do": [
+            "trust:-5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_refuse_first",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "She tilts her head. \"No,\" she says. \"All right.\"\n\nShe does not press. She refills her own cup. She watches you the way a farmer watches a sky.\n\n\"Ask again,\" she says, \"if you mean it. Three times is the number that counts in this house.\"",
+      "choices": [
+        {
+          "text": "\"Tell me about the Keeper.\" (second refusal of her bargain)",
+          "next": "witch_refuse_second",
+          "do": [
+            "flag:refused_once"
+          ]
+        },
+        {
+          "text": "Take her bargain after all.",
+          "next": "witch_bargain"
+        },
+        {
+          "text": "Leave the house.",
+          "next": "witch_leave_empty",
+          "do": [
+            "trust:-5",
+            "hp:-1",
+            "journal:Walked out of the witch's house with nothing. The wood took a price anyway."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_refuse_second",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "\"The Keeper is older than the Gate. The Gate is just a door someone built to keep it in.\" She turns her cup. \"It does not want your {missing_short}. It wants the line. Blood that has sat on the chair. It is making itself a new one. A small one. With a crown that fits.\"\n\nYou think of the deer.\n\n\"That,\" she says, watching your face, \"is the second answer. The third costs.\"",
+      "choices": [
+        {
+          "text": "Refuse her again. Push for the third.",
+          "next": "witch_refuse_third",
+          "do": [
+            "flag:refused_twice",
+            "trust:-5"
+          ]
+        },
+        {
+          "text": "Take the bargain.",
+          "next": "witch_bargain"
+        },
+        {
+          "text": "Leave with what you have.",
+          "next": "witch_leave_road",
+          "do": [
+            "journal:The Keeper wants the royal line. Not {missing_title}. The line."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_refuse_third",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "She laughs, low. \"Three. Good. The hanged man taught you well, then.\"\n\nShe reaches across the table and her hand is over yours before you can pull back. Her palm is warm and dry and small. She does not take anything. She just looks at you, level.\n\n\"Free, then. The Keeper has a name. Names matter to old things. I will not say it aloud in this house. But I will write it.\" She does. On the inside of your wrist, in something that is not ink. \"Speak it at the Gate. Once. It will hesitate. A hesitation is sometimes a door.\"",
+      "choices": [
+        {
+          "text": "\"Why give it to me free?\"",
+          "next": "witch_companion_offer",
+          "do": [
+            "flag:has_keeper_name",
+            "add_item:wardstone",
+            "journal:She wrote a name on my wrist. I cannot read it. I will know when to say it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_bargain",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "\"Good,\" she says. \"Plain talk. I'll give you sight \u2014 a draught. Two swallows. With it you read what is written in dark ink, you see what walks behind a man, you understand the Keeper's library if you get that far. Without it, you'll die a fool in a tower.\"\n\nShe sets a small green bottle between you.\n\n\"The price is this. You drink, and a piece of what you see goes into me. Not your soul. Your edges. You'll be a little less sure of yourself afterwards. People will trust you a little less. You'll trust yourself a little less.\"",
+      "choices": [
+        {
+          "text": "Drink. Take the bottle.",
+          "next": "witch_companion_offer",
+          "do": [
+            "add_item:seeing_draught",
+            "trust:-5",
+            "flag:took_bargain",
+            "journal:Drank with the witch. Took the green bottle. Something of me is hers now."
+          ]
+        },
+        {
+          "text": "Push back. (Refuse again.)",
+          "next": "witch_refuse_second",
+          "do": [
+            "flag:refused_once"
+          ]
+        },
+        {
+          "text": "Refuse. Walk out wounded.",
+          "next": "witch_leave_road",
+          "do": [
+            "hp:-1",
+            "trust:-5",
+            "journal:Refused the witch. The wood took a tooth on the way out."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_companion_offer",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "She walks you to the door. Outside, the sun is the right color again. The wood feels thinner.\n\n\"I could come,\" she says, not looking at you. \"Part of the way. I am tired of this house. The Gate is the last interesting thing left and I would like to see how it ends.\"\n\nShe waits. She does not push.",
+      "choices": [
+        {
+          "text": "\"Come, then.\"",
+          "next": "witch_leave_road",
+          "do": [
+            "companion:hedge_witch",
+            "flag:hedge_witch_joined",
+            "rel:hedge_witch:+5",
+            "journal:The Hedge Witch is walking with me. I am not sure that is good news."
+          ]
+        },
+        {
+          "text": "\"No. Stay here. I'll do this alone.\"",
+          "next": "witch_leave_road",
+          "do": [
+            "trust:+5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_leave_empty",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "You walk out of the house and into the wood and the wood is not the same wood. The light is gray. Your mouth tastes of metal. Somewhere, a thread you could have pulled is being burned, and you can almost smell it.\n\nBy nightfall you are back on the king's road, footsore, no wiser. The wind has the city in it now \u2014 woodsmoke, old fish, fear.",
+      "choices": [
+        {
+          "text": "On, toward the wizard's tower.",
+          "next": "wizard_tower"
+        },
+        {
+          "text": "On, toward the city.",
+          "next": "city_gates"
+        }
+      ]
+    },
+    {
+      "id": "witch_leave_road",
+      "chapter": "CHAPTER III \u00b7 THE WITCH'S WOOD",
+      "text": "The trees thin. The road comes back to meet you like a dog that thought you were lost.\n\nAhead, the country opens. To the west, a thin black needle against a yellow sky \u2014 the wizard's tower. To the south, low and smudged, smoke that does not move like cookfire smoke. The city is burning, slow, somewhere in its belly.\n\nYou have a choice to make, and the wood does not care which.",
+      "choices": [
+        {
+          "text": "West. The tower.",
+          "next": "wizard_tower",
+          "do": [
+            "flag:left_witchwood"
+          ]
+        },
+        {
+          "text": "South. The city.",
+          "next": "city_gates",
+          "do": [
+            "flag:left_witchwood"
+          ]
+        },
+        {
+          "text": "Help Moth find her crows' tower.",
+          "next": "side_moth_roost_1",
+          "require": "companion:moth"
+        }
+      ]
+    }
+  ]
+}

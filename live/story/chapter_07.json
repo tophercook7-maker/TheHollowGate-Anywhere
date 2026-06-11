@@ -1,0 +1,374 @@
+{
+  "scenes": [
+    {
+      "id": "tower_approach",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "Up close the tower is uglier than the stories. Black stone, but rough \u2014 like something pushed up out of the ground in a hurry and never finished. No windows on the bottom three floors. The door is iron and the iron is warm to the touch.\n\nThe wizard's voice comes through it before you have knocked.\n\n\"You took your time. Wipe your boots. And whatever you brought from the wood, leave it on the step or it dies on the threshold.\"",
+      "choices": [
+        {
+          "text": "Leave the seeing_draught on the step. Enter.",
+          "next": "tower_foyer",
+          "require": "seeing_draught",
+          "do": [
+            "rem_item:seeing_draught",
+            "trust:-5",
+            "journal:Left the witch's gift on a wizard's stoop. Felt like burning money."
+          ]
+        },
+        {
+          "text": "Enter with everything you carry.",
+          "next": "tower_foyer",
+          "do": [
+            "flag:defied_wizard"
+          ]
+        },
+        {
+          "text": "Walk around the tower first.",
+          "next": "tower_menagerie_outside"
+        }
+      ]
+    },
+    {
+      "id": "tower_menagerie_outside",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "Around the back: a low shed, barred. The smell hits you first \u2014 wet feathers and something sour. Through a slat you see a cage. Inside the cage, a man. He is wearing what was once a knight's surcoat. The blue is almost gone.\n\nHe looks up when you breathe. Lean. Bearded. A scar from cheekbone to jaw that you remember setting, or watching set.\n\n\"Get away from the door,\" Ser Vale says, calm as a man at prayer. \"He'll smell you. Front door. Make him let you in. Then we talk.\"",
+      "choices": [
+        {
+          "text": "Nod once. Go to the front door.",
+          "next": "tower_foyer",
+          "do": [
+            "flag:saw_vale_caged",
+            "journal:Vale is in a cage behind the tower. Alive. Thin."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tower_foyer",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "Inside is warmer than it should be. The foyer is a round room with three doors and a stair going up. The doors are labeled in chalk in a tidy hand: MENAGERIE. LIBRARY. UP.\n\nA boy of about twelve is sweeping. He does not look at you. He has no eyes \u2014 just smooth skin where eyes should be. He sweeps very well.\n\n\"He's in the solar,\" the boy says. \"He says start wherever you like. He says don't take anything from the menagerie. He says the library will not let you read what you came to read. He thinks you are stupid.\"",
+      "choices": [
+        {
+          "text": "Menagerie.",
+          "next": "tower_menagerie"
+        },
+        {
+          "text": "Library.",
+          "next": "tower_library"
+        },
+        {
+          "text": "Straight up to the solar.",
+          "next": "tower_solar"
+        },
+        {
+          "text": "Sit with the sweeping boy.",
+          "next": "apprentice_1",
+          "require": "trust:40"
+        },
+        {
+          "text": "There's a door in the menagerie wall you didn't see before.",
+          "next": "deep_basement_1",
+          "require": "trust:50"
+        },
+        {
+          "text": "Visit the thing in the cage that sings in a child's voice.",
+          "next": "deep_basement_cage_followup",
+          "require": "flag:menagerie_promise"
+        }
+      ]
+    },
+    {
+      "id": "tower_menagerie",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "The menagerie is one long room, lit by jars. In the jars are things that pulse. Down the center, cages. A hare with a child's hands. A magpie that screams the alphabet. A thing in a glass tube that is mostly liquid and watches you with one tired eye.\n\nAt the end, a larger cage. Inside: a man, exactly your size. Naked. Hairless. He has your face. He stands up when you come close. He puts his hand to the bars in a friendly way.\n\n\"Brother,\" the homunculus says. \"Let me out and I'll let you in.\"",
+      "choices": [
+        {
+          "text": "Open the cage. Fight it.",
+          "next": "tower_homunculus_fight",
+          "require": "sword"
+        },
+        {
+          "text": "Open the cage. Fight it.",
+          "next": "tower_homunculus_fight",
+          "require": "knife"
+        },
+        {
+          "text": "Open the cage. Fight it.",
+          "next": "tower_homunculus_fight",
+          "require": "shadow_blade"
+        },
+        {
+          "text": "Talk to it instead.",
+          "next": "tower_homunculus_talk"
+        },
+        {
+          "text": "Back away. Leave it caged.",
+          "next": "tower_foyer",
+          "do": [
+            "fear:+5",
+            "journal:Saw a thing in a cage with my face. Walked away. Will dream about it."
+          ]
+        },
+        {
+          "text": "After the basement, walk back past the singing cage.",
+          "next": "deep_basement_followup",
+          "require": "flag:knows_keeper_origin"
+        }
+      ]
+    },
+    {
+      "id": "tower_homunculus_fight",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "It comes out fast and it knows everything you know. It fights the way you fight. Your favorite feints land on nothing.\n\nIt cuts you twice before you understand: it cannot fake being tired. You make it run. You make it lift. You wait. When its arm drops the second time you put your blade through its throat.\n\nIt sits down to die with a thoughtful look. It says, in your voice: \"Tell him I was almost ready.\" Then nothing.\n\nIn the bottom of its cage, set into the stone like a tooth: a small gray stone, warm. A wardstone.",
+      "choices": [
+        {
+          "text": "Take the wardstone. Go back to the foyer.",
+          "next": "tower_foyer",
+          "do": [
+            "add_item:wardstone",
+            "hp:-3",
+            "trust:+5",
+            "flag:killed_homunculus",
+            "journal:Killed a thing with my face. Took the stone out of its cage. The wizard will know."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tower_homunculus_talk",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "You stay on your side of the bars. You ask it what it is. It thinks about that the way you would.\n\n\"A draft,\" it says, at last. \"He pours me when he wants to see what you'd do. I have died in this cage forty-one times. I am tired.\"\n\nIt slides something between the bars with one finger. The small gray stone from the floor of its cage.\n\n\"Take it. The wizard wants it back. Make him pay for it. And \u2014 listen \u2014 when you fight the Keeper, don't fight like you. It learned you from him. Fight like someone else.\"",
+      "choices": [
+        {
+          "text": "Take the stone. Leave it alive.",
+          "next": "tower_foyer",
+          "do": [
+            "add_item:wardstone",
+            "trust:+5",
+            "flag:spared_homunculus",
+            "journal:Did not kill the thing with my face. It told me how to fight the Keeper. I do not know if I believe it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tower_library",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "The library is taller than the tower has any right to be. Shelves up into dark. Ladders that move when you don't watch them.\n\nOne book is laid open on a lectern. The page is blank. You can feel it is not blank. The boy in the foyer said you would not be able to read what you came to read.\n\nWithout the witch's sight, the words stay hidden. With it, they would surface like fish.",
+      "choices": [
+        {
+          "text": "Drink the seeing draught. Read.",
+          "next": "tower_library_read",
+          "require": "seeing_draught",
+          "do": [
+            "rem_item:seeing_draught",
+            "trust:-3"
+          ]
+        },
+        {
+          "text": "Try to read without it.",
+          "next": "tower_library_fail"
+        },
+        {
+          "text": "Take a different book instead.",
+          "next": "tower_library_steal"
+        }
+      ]
+    },
+    {
+      "id": "tower_library_read",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "The draught is bitter and goes cold in your chest. The page floods with ink, all at once, as if it had only been holding its breath.\n\nIt is a map. Not of country. Of under-country. Tunnels under the city, under the wastes, under the Hollow Gate itself \u2014 a back way in. Drawn in a careful hand by a man who signed himself C. The C is curled the way {other_title} used to curl his.\n\nBeneath the map, in the same hand: \"If you read this, I am already in the dark. Come quiet. The Keeper hears prayer.\"",
+      "choices": [
+        {
+          "text": "Tear out the page. Pocket it.",
+          "next": "tower_library_after",
+          "do": [
+            "add_item:tunnel_map",
+            "flag:read_cassian_map",
+            "journal:{other_name} drew a tunnel map. He knew he wasn't coming back. He left a door for whoever came next."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tower_library_fail",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "The page stays blank. You stare until your eyes ache. Once, for a flicker, you see the curl of an initial \u2014 C \u2014 and then nothing.\n\nThe ladder behind you moves and you turn and there is nothing there. The library is patient. You are not. After a while you give up.",
+      "choices": [
+        {
+          "text": "Try another book.",
+          "next": "tower_library_steal"
+        },
+        {
+          "text": "Leave the library.",
+          "next": "tower_foyer",
+          "do": [
+            "fear:+5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tower_library_steal",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "You pull a slim black book at random. The spine reads, in faded gilt: ON THE HABITS OF OLD THINGS.\n\nYou open it. The first line is: \"They do not eat. They keep. To keep a thing is to make it less. Princesses, in particular, are kept badly.\"\n\nYou close it. You take it.",
+      "choices": [
+        {
+          "text": "Pocket the book. Leave.",
+          "next": "tower_library_after",
+          "do": [
+            "add_item:keeper_lore",
+            "journal:Stole a book from the wizard. The Keeper does not eat. It keeps."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tower_library_after",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "The ladders are still. The lamps are dim. The blind boy is in the doorway. He has been there how long, you cannot say.\n\n\"He's waiting,\" the boy says. \"Up. He's not angry. He's almost never angry. He's worse than angry. He's interested.\"",
+      "choices": [
+        {
+          "text": "Up.",
+          "next": "tower_solar"
+        }
+      ]
+    },
+    {
+      "id": "tower_solar",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "The solar is small and warm. A fire. Two chairs. A wizard who is not old. He is your age. He has a tired face and good hands and a cup of tea he does not offer you.\n\n\"Sit,\" he says. \"You've cost me a homunculus, possibly a book, definitely an afternoon. We will discuss what you owe. Then we will discuss what I owe you. Then you will leave through the cellar with what you came for, or you will not leave at all. I am not bargaining. I am explaining.\"",
+      "choices": [
+        {
+          "text": "\"Free Ser Vale. That's the price.\"",
+          "next": "tower_negotiate_vale",
+          "require": "flag:saw_vale_caged"
+        },
+        {
+          "text": "\"I want the tunnel map. And safe passage.\"",
+          "next": "tower_negotiate_map"
+        },
+        {
+          "text": "\"I want a way to hurt the Keeper.\"",
+          "next": "tower_negotiate_blade"
+        },
+        {
+          "text": "Draw your weapon.",
+          "next": "tower_solar_fight",
+          "require": "sword"
+        }
+      ]
+    },
+    {
+      "id": "tower_negotiate_vale",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "The wizard looks at you a long time. He sets down his cup.\n\n\"The knight is useful to me. He is also breaking. He prays at night. He prays to a woman. I find prayer noisy.\" He sighs. \"Take him. He owes me one favor, payable later. He will not like that part. Tell him I will not ask for it on the wrong side of the Gate, because I am not a monster.\"\n\nHe writes something on a piece of bark and hands it to you. \"For the cage. The boy will show you down.\"",
+      "choices": [
+        {
+          "text": "Take it. Go to the cellar.",
+          "next": "tower_free_vale",
+          "do": [
+            "flag:wizard_owed_favor",
+            "journal:Wizard gave Vale up easy. That worries me more than if he'd refused."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tower_free_vale",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "Down in the cellar, the cage clicks open at the bark's touch. Vale stands slowly. He puts his hand on your shoulder, brief, hard.\n\n\"I knew it would be you,\" he says. He doesn't say which you. He doesn't need to.\n\nHe finds his sword on a peg. He finds his cloak. He drinks a whole bucket of water without stopping. Then he is ready.\n\n\"Wherever you're going,\" he says, \"I am behind your left shoulder. Don't argue. Don't thank me. Walk.\"",
+      "choices": [
+        {
+          "text": "Walk.",
+          "next": "tower_leave",
+          "do": [
+            "companion:vale",
+            "rel:vale:+5",
+            "flag:vale_joined",
+            "add_item:tunnel_map",
+            "journal:Vale is with me. He is thinner than I remember. He is also angrier."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tower_negotiate_map",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "He almost smiles. \"The map. Yes. The {other_short} drew it. He left it with me because he did not trust his own people. He was right not to.\"\n\nHe slides a folded square across the table.\n\n\"Safe passage I cannot promise. The Gate doesn't honor my seal. But take the wardstone if you took it, and the map, and go. The price is this: when you stand at the Gate, do not say my name. The Keeper and I have an arrangement. Spoil it and I die. Then no one in this country reads anything dangerous again.\"",
+      "choices": [
+        {
+          "text": "\"Agreed.\"",
+          "next": "tower_leave",
+          "do": [
+            "add_item:tunnel_map",
+            "flag:wizard_pact",
+            "journal:Agreed not to name the wizard at the Gate. He is afraid. Wizards being afraid is new."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tower_negotiate_blade",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "He sets down his cup very carefully.\n\n\"Yes. All right.\" He stands. He goes to a chest. He comes back with a knife that is the color of a moonless night and that does not catch the firelight. He sets it on the table between you. It is colder than the room.\n\n\"Shadow blade. Cuts what cannot be cut. It will cost you something to carry. Bad dreams. Worse company. You will be a little less welcome in any room you enter. Take it or do not.\"",
+      "choices": [
+        {
+          "text": "Take it.",
+          "next": "tower_leave",
+          "do": [
+            "add_item:shadow_blade",
+            "trust:-5",
+            "fear:+5",
+            "journal:Took the black knife. The wizard would not touch it after he set it down."
+          ]
+        },
+        {
+          "text": "Refuse. Leave with nothing but your life.",
+          "next": "tower_leave",
+          "do": [
+            "trust:+5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tower_solar_fight",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "You draw. He sighs like a teacher.\n\nHe lifts one hand. Your sword arm goes heavy as a sack of wet sand and your knees fold and the firelight grows very small.\n\nWhen you can move again, you are on the road, half a mile from the tower, in the dark, with a bloody nose and your weapon still sheathed.\n\nOn your chest, pinned with a thorn: a note. \"Don't come back. \u2014 M.\" Beneath it, folded: a tunnel map.",
+      "choices": [
+        {
+          "text": "Get up. Walk on.",
+          "next": "tower_leave",
+          "do": [
+            "add_item:tunnel_map",
+            "trust:-10",
+            "hp:-3",
+            "flag:wizard_humbled",
+            "journal:Drew on a wizard. Woke up on the road. Got the map anyway. Pride costs."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tower_leave",
+      "chapter": "CHAPTER IV \u00b7 THE WIZARD'S TOWER",
+      "text": "The tower's shadow is long on the road behind you. The blind boy stands in the doorway and lifts one small hand in something like a wave.\n\nThe wind is from the south now. The city smoke is closer. There are bells, faint, the wrong bells for this hour.\n\nYou point yourself at it.",
+      "choices": [
+        {
+          "text": "On, to the city.",
+          "next": "city_gates",
+          "do": [
+            "flag:left_tower"
+          ]
+        },
+        {
+          "text": "Back to the barracks first.",
+          "next": "barracks",
+          "require": "castellan"
+        }
+      ]
+    }
+  ]
+}

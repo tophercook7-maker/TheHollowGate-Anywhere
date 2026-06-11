@@ -1,0 +1,192 @@
+{
+  "scenes": [
+    {
+      "id": "dream_royal_1",
+      "chapter": "CAMP \u00b7 DREAMS OF THE GATE",
+      "text": "You close your eyes by the camp fire and the camp fire goes away.\nYou are in a small stone room. Just a room. No window. One door. A pallet on the floor with someone curled on it, knees up, face hidden.\n\"Who's there,\" {missing_pron} says, not lifting {missing_poss} head. \"Please don't be it again. Please.\"\nYou know the voice. You have never heard it. Both, at once.\n\"It's not it,\" you say. \"It's \u2014 I'm \u2014 I think you might be {missing_name}.\"\n{missing_poss_cap} head comes up so fast you flinch. {missing_poss_cap} face is thinner than the portraits. {missing_poss_cap} eyes find yours like you're the first warm thing in a year.\n\"Oh,\" {missing_pron} breathes. \"Oh, you're not it. You're \u2014 you're somebody.\"",
+      "choices": [
+        {
+          "text": "Sit on the floor near {missing_obj}.",
+          "next": "dream_royal_1_end",
+          "do": [
+            "flag:dream_royal_1",
+            "trust:+5",
+            "journal:I dreamed of {missing_short}. {missing_pron_cap} was so small in the dark. I sat. {missing_pron_cap} watched me like I might unmake."
+          ]
+        },
+        {
+          "text": "Promise: \"I'm coming for you.\"",
+          "next": "dream_royal_1_end",
+          "do": [
+            "flag:dream_royal_1",
+            "trust:+4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dream_royal_1_end",
+      "chapter": "CAMP \u00b7 DREAMS OF THE GATE",
+      "text": "\"Don't tell me your name,\" {missing_pron} says suddenly. \"Not yet. It listens. If you give me your name it'll have it too.\"\n\"Then what do I call you?\"\n\"Anything. Anything but {missing_short}. Make something up. Make it small.\"\nYou pick a name \u2014 a foolish one, the first that comes \u2014 and {missing_pron} laughs, a small startled real laugh, and you realize you have never heard a {missing_short} laugh and that you would like to hear it again.\nThe walls thin. The dream is going.\n\"Come back,\" {missing_pron} says, fast. \"Sleep again. Come back.\"\nThen the fire, and your own breath, and the dark.",
+      "choices": [
+        {
+          "text": "Wake. Sit up. Stare at the embers.",
+          "next": "camp_rest",
+          "do": [
+            "journal:I gave {missing_short} a nickname. {missing_pron_cap} laughed. I am undone."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dream_royal_2",
+      "chapter": "CAMP \u00b7 DREAMS OF THE GATE",
+      "text": "Sleep finds you faster this time, like a door that's been left ajar.\n{missing_pron_cap} is sitting up on the pallet when you arrive. There's a \u2014 a stub of candle now, somehow. {missing_pron_cap} has made the room a fraction kinder by force of will.\n\"You came back,\" {missing_pron} says, and the relief in it ages you a year.\n\"You asked.\"\n{missing_pron_cap} pats the floor next to {missing_obj}. You sit. {missing_poss_cap} shoulder is warm against yours, which is unfair, in a dream.\n\"Tell me a thing,\" {missing_pron} says. \"A small thing. About out there. I forget what air tastes like.\"\nSo you tell {missing_obj} about the dog at the caravan. About Juno's stone. About the way the foothills smell of pine.\n{missing_pron_cap} closes {missing_poss} eyes and listens like it's a meal.",
+      "choices": [
+        {
+          "text": "Ask {missing_obj} what {missing_pron} is afraid of.",
+          "next": "dream_royal_2_fear"
+        },
+        {
+          "text": "Just sit with {missing_obj}. Quiet.",
+          "next": "dream_royal_2_quiet"
+        }
+      ]
+    },
+    {
+      "id": "dream_royal_2_fear",
+      "chapter": "CAMP \u00b7 DREAMS OF THE GATE",
+      "text": "{missing_pron_cap} is quiet a long time.\n\"Not dying,\" {missing_pron} says. \"I thought it'd be that. It isn't. I'm afraid of forgetting. It's so patient. It tells me stories about myself that are almost right. Just \u2014 one detail wrong, every time. And every time I correct it I wonder if I'm the wrong one.\"\n{missing_pron_cap} looks at you.\n\"If I \u2014 if when you find me I don't sound like me. Don't trust me right away. Make me prove it. Ask me something only I'd know.\"\n\"What would only you know?\"\n{missing_pron_cap} thinks. Then, small and stubborn: \"Ask me what I was reading the night they took me. I'll remember. Even if it's the last thing I remember. I'll remember.\"",
+      "choices": [
+        {
+          "text": "\"I promise.\"",
+          "next": "dream_royal_2_end",
+          "do": [
+            "flag:dream_royal_2",
+            "trust:+5",
+            "journal:If {missing_pron} comes back wrong, I ask: what were you reading? {missing_pron_cap} will know. {missing_pron_cap} will know."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dream_royal_2_quiet",
+      "chapter": "CAMP \u00b7 DREAMS OF THE GATE",
+      "text": "You don't say anything. {missing_pron_cap} doesn't either.\nThe quiet is the kind people only manage when they have already agreed to be safe with each other.\nAfter a long time, {missing_pron} says, \"I don't even know what you look like. Out there. Not in here. In here you're sort of \u2014 soft around the edges. Like firelight.\"\n\"You're soft around the edges too.\"\n\"Liar,\" {missing_pron} says, smiling. \"I haven't slept properly in months. I look like a ghost.\"\n\"Then you're a soft ghost.\"\n{missing_pron_cap} laughs the small laugh again, and you realize: you would walk through walls for this laugh. You will. You have to. The Gate is a wall.",
+      "choices": [
+        {
+          "text": "Lean your head against {missing_poss}.",
+          "next": "dream_royal_2_end",
+          "do": [
+            "flag:dream_royal_2",
+            "trust:+6",
+            "fear:-4",
+            "journal:I leaned my head against {missing_short}. I have known {missing_obj} two nights. I have known {missing_obj} my whole life."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dream_royal_2_end",
+      "chapter": "CAMP \u00b7 DREAMS OF THE GATE",
+      "text": "The candle gutters. The dream begins to fade \u2014 not pulled this time, just tired.\n\"Sleep here again,\" {missing_pron} murmurs. \"Tomorrow. The night after. As many as you can.\"\n\"I will.\"\n\"I'll be here. I \u2014 I don't have anywhere else.\"\nThe joke is tiny and broken and you don't laugh and {missing_pron} doesn't expect you to.\nThen the fire, and the bedroll, and your face wet for no reason you can name.",
+      "choices": [
+        {
+          "text": "Wake. Stoke the embers.",
+          "next": "camp_rest"
+        }
+      ]
+    },
+    {
+      "id": "dream_royal_3",
+      "chapter": "CAMP \u00b7 DREAMS OF THE GATE",
+      "text": "Tonight the dream is different.\nThe room is gone. You are in a garden you don't remember \u2014 sunlight, hedges, a stone bench. {missing_pron_cap} is on the bench in summer clothes, sleeves rolled, hair loose. Younger. Maybe twelve.\n{missing_pron_cap} looks up and smiles like you're expected.\n\"You don't remember,\" {missing_pron} says. \"I thought maybe you wouldn't. We were small. But I do.\"\n\"Remember what?\"\n\"You came to the palace once. A \u2014 a delegation. From your village. From your house. I don't know which you are, on the outside. I just know it was you. You sat in the kitchen. You ate three pears. You told me you were going to be a \u2014 \" {missing_pron_cap} laughs. \" \u2014 a great person, you said. And I believed you. I have believed you for ten years.\"",
+      "choices": [
+        {
+          "text": "\"I don't remember the pears.\"",
+          "next": "dream_royal_3_pears"
+        },
+        {
+          "text": "\"I remember you.\" (Lie a little. Make {missing_obj} smile.)",
+          "next": "dream_royal_3_remember"
+        }
+      ]
+    },
+    {
+      "id": "dream_royal_3_pears",
+      "chapter": "CAMP \u00b7 DREAMS OF THE GATE",
+      "text": "{missing_pron_cap} laughs \u2014 not hurt, more like delighted. \"Of course you don't. I was the one staring. You were the one eating.\"\n{missing_pron_cap} slides over on the bench. You sit. The sun is warm. It hasn't been warm in your life for weeks.\n\"I told my \u2014 {other_sibling} about you, after,\" {missing_pron} says, quieter. \"For years. {other_pron_cap} teased me about it. Said I'd married you in my head. I \u2014 well. I sort of had.\"\n{missing_pron_cap} won't look at you now.\n\"I'm sorry,\" {missing_pron} says. \"That's a lot to put on a person who only came for pears.\"",
+      "choices": [
+        {
+          "text": "Take {missing_poss} hand.",
+          "next": "dream_royal_3_end",
+          "do": [
+            "flag:dream_royal_3",
+            "trust:+6",
+            "journal:{missing_pron_cap} has loved me since {missing_pron} was twelve. I don't know what to do with that. I want to do everything with it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dream_royal_3_remember",
+      "chapter": "CAMP \u00b7 DREAMS OF THE GATE",
+      "text": "\"I remember you,\" you say, and you don't, but you wish you did, and the wishing comes out as warmth and {missing_pron} hears it anyway.\n{missing_pron_cap} closes {missing_poss} eyes.\n\"You're lying,\" {missing_pron} says, smiling. \"It's a very nice lie. Thank you.\"\n{missing_pron_cap} opens {missing_poss} eyes and they are bright.\n\"I will not hold it against you,\" {missing_pron} says. \"You can love me starting now if you want to. We don't all get to start at twelve.\"",
+      "choices": [
+        {
+          "text": "\"Starting now, then.\"",
+          "next": "dream_royal_3_end",
+          "do": [
+            "flag:dream_royal_3",
+            "trust:+7",
+            "fear:-3",
+            "journal:I told {missing_short} I'd love {missing_obj} starting now. I meant it. I am terrified of how much I meant it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dream_royal_3_end",
+      "chapter": "CAMP \u00b7 DREAMS OF THE GATE",
+      "text": "The garden softens at the edges.\n\"You can't stay long tonight,\" {missing_pron} says, regret thick in {missing_poss} voice. \"It's \u2014 it's listening at the door of my room. I have to wake up and pretend to sleep.\"\n\"Tomorrow night.\"\n\"Tomorrow night,\" {missing_pron} agrees. And then, with a small, fierce courage: \"Walker. I am very glad you are coming.\"\nThe garden lets go of you gently. You wake with your hand half-curled toward something that isn't there.",
+      "choices": [
+        {
+          "text": "Wake. Tend the fire.",
+          "next": "camp_rest"
+        }
+      ]
+    },
+    {
+      "id": "dream_royal_4",
+      "chapter": "CAMP \u00b7 DREAMS OF THE GATE",
+      "text": "Tonight the room is back, but it has a window. A small, high one. There are stars in it.\n{missing_pron_cap} is standing under it, in a shirt too thin for the cold {missing_pron} no longer feels.\n\"It's getting closer,\" {missing_pron} says without turning. \"It says \u2014 it says it's almost time. It says I'm being good.\" {missing_pron_cap} laughs without humor. \"I have not been being good. I have been being you. Thinking about you. It thinks the thinking is for it. Idiot thing.\"\n{missing_pron_cap} turns. {missing_poss_cap} eyes are wet.\n\"If you don't make it,\" {missing_pron} says. \"If the Gate keeps you. I want you to know \u2014 I had this. I had nights with you. It cannot take that. I had this.\"",
+      "choices": [
+        {
+          "text": "Cross the room. Hold {missing_obj}.",
+          "next": "dream_royal_4_kiss"
+        },
+        {
+          "text": "\"You'll have more. I swear it.\"",
+          "next": "dream_royal_4_kiss"
+        }
+      ]
+    },
+    {
+      "id": "dream_royal_4_kiss",
+      "chapter": "CAMP \u00b7 DREAMS OF THE GATE",
+      "text": "You cross the small dream-room. {missing_pron_cap} comes into your arms like you're a door {missing_pron}'s been leaning on for a year.\nYou hold {missing_obj}. {missing_pron_cap} is shaking. So are you, a little.\n{missing_pron_cap} tips {missing_poss} face up. Asks the question without asking it.\nYou kiss {missing_obj}. It is soft and brief and not at all dreamlike \u2014 it tastes like a real thing, salt and a held breath and the small startled sound {missing_pron} makes against your mouth.\nWhen you pull apart {missing_pron} is half-laughing and half-crying.\n\"Come and get me,\" {missing_pron} whispers. \"Come and get me. Come and get me.\"\nThe dream lets you go. You wake with your hand on your mouth.",
+      "choices": [
+        {
+          "text": "Lie back. Don't sleep again.",
+          "next": "camp_rest",
+          "do": [
+            "flag:loved_royal",
+            "trust:+8",
+            "fear:-5",
+            "journal:I kissed {missing_short} in a dream. {missing_pron_cap} kissed me back. I am no longer doing this for a kingdom. I am doing this for {missing_obj}."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -65,6 +65,14 @@
         {
           "text": "Leave without buying.",
           "next": "hollow_gate"
+        },
+        {
+          "text": "Step up to the line of carved birches.",
+          "next": "witch_wood_threshold"
+        },
+        {
+          "text": "Sleep on the road. Dream.",
+          "next": "dream_road_1"
         }
       ]
     },
@@ -76,6 +84,10 @@
         {
           "text": "Continue into the Wastes.",
           "next": "rider_join"
+        },
+        {
+          "text": "Settle in for the long road.",
+          "next": "caravan_day_one"
         }
       ]
     },
@@ -90,6 +102,15 @@
           "do": [
             "fear:10"
           ]
+        },
+        {
+          "text": "Stop at the wayhouse over the rise.",
+          "next": "side_inn_arrival"
+        },
+        {
+          "text": "Check your pack for what the wraith left behind.",
+          "next": "deep_wraith_followup",
+          "require": "flag:wraith_follows"
         }
       ]
     }

@@ -1,0 +1,348 @@
+{
+  "scenes": [
+    {
+      "id": "caravan_day_one",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "The caravan moves at the pace of a tired ox, which is to say: barely. Three wagons, eleven souls, one dog that has decided you are its problem now. The dust gets into everything \u2014 your hair, your teeth, the spaces between your thoughts.\nA girl no older than twelve walks beside your wagon. She has a tin cup at her belt and eyes that have learned not to ask twice. \"I sell stories,\" she says, matter-of-fact. \"One cup of water, one story. I know good ones.\"\nBehind her, an old woman is humming a song you almost remember from somewhere \u2014 maybe your mother, maybe a dream. The dog leans against your leg.\nThe sun is a slow knife. You have a long road ahead, and the road has things to say.",
+      "choices": [
+        {
+          "text": "Buy a story from the girl.",
+          "next": "caravan_story_girl",
+          "do": [
+            "trust:+2"
+          ]
+        },
+        {
+          "text": "Sit with the humming woman.",
+          "next": "caravan_humming_woman"
+        },
+        {
+          "text": "Watch the horizon. Keep your water.",
+          "next": "caravan_horizon"
+        }
+      ]
+    },
+    {
+      "id": "caravan_story_girl",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "You tip a swallow of water into her cup. She drinks it like a prayer \u2014 slow, eyes closed \u2014 and then she sits cross-legged on the wagon boards and tells you about a boy who fell in love with a door.\n\"He loved it so much he forgot what was on the other side,\" she says. \"That's the trick of doors. They make you forget there's a room.\"\nShe looks at you sidelong. \"You're going to one, aren't you. A door. I can tell. People going to doors walk funny.\"\nYou don't answer. She nods like you did.\n\"My cousin went,\" she adds, quieter. \"Last spring. Hasn't come back. If you see a boy with a chipped front tooth out there \u2014 his name is Pell \u2014 tell him Juno is still saving him a seat at supper.\"\nThe dust goes on forever. So does her small, stubborn face.",
+      "choices": [
+        {
+          "text": "Promise to look for Pell.",
+          "next": "caravan_promise_pell",
+          "do": [
+            "journal:A girl named Juno asked me to find her cousin Pell. Chipped tooth. Still saving him a seat.",
+            "trust:+3"
+          ]
+        },
+        {
+          "text": "Tell her the truth \u2014 most don't come back.",
+          "next": "caravan_hard_truth",
+          "do": [
+            "fear:+3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caravan_promise_pell",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "\"I'll look,\" you say, and you mean it in the way you mean things when you're tired enough to be honest.\nJuno doesn't smile. She just nods once, like she's adding your name to a small list she keeps. Then she gets up and goes to sell another story two wagons down.\nThe dog sighs and puts its chin on your boot. Somewhere ahead, the road bends around a ridge of black rock that looks, in this light, like a sleeping animal.\nYou wonder if Pell ever sat where you're sitting. If he watched the same ridge and thought the same thing.\nThe wagon creaks on.",
+      "choices": [
+        {
+          "text": "Doze a while.",
+          "next": "caravan_night_one"
+        },
+        {
+          "text": "Walk up to the lead wagon.",
+          "next": "caravan_lead_wagon"
+        }
+      ]
+    },
+    {
+      "id": "caravan_hard_truth",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "\"Most don't come back, Juno.\"\nShe looks at you a long time. Not hurt. Older than that. \"I know,\" she says. \"I'm not stupid. I just need somebody to keep looking anyway.\"\nShe takes her cup and goes. The dog stays. The dog, apparently, has standards and has chosen you despite your mouth.\nYou sit with what you said. It was true. It was also unnecessary. There is a difference, you are learning, between the truth and a thing that needed saying.",
+      "choices": [
+        {
+          "text": "Catch up and apologize.",
+          "next": "caravan_apology",
+          "do": [
+            "trust:+2"
+          ]
+        },
+        {
+          "text": "Let it go. Watch the road.",
+          "next": "caravan_night_one",
+          "do": [
+            "fear:+2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caravan_apology",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "You catch her at the back of the third wagon. She doesn't look up.\n\"I'll still look for him,\" you say. \"I shouldn't have said it like that.\"\nShe shrugs the shrug of a child who has been disappointed by adults professionally. Then, after a moment: \"Okay.\"\nThat's it. That's the whole forgiveness. You take it and feel obscurely lighter.\nThe dog, watching this whole exchange, thumps its tail once in approval.",
+      "choices": [
+        {
+          "text": "Doze a while.",
+          "next": "caravan_night_one",
+          "do": [
+            "journal:Juno forgave me, more or less. I owe her a boy with a chipped tooth."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caravan_humming_woman",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "The old woman makes room for you on her bench without looking up. Her humming is a thread you can almost follow.\n\"My mother used to \u2014\" you start.\n\"Yes,\" she says. \"Lots of mothers did. It's an old song. Older than the kingdom.\" She pats your knee like she's known you all your life. \"It's about a girl who goes looking for her brother and finds something else instead. The song doesn't say what.\"\nShe hums another bar. Your eyes prickle without permission.\n\"You're looking for someone,\" she says. Not a question.\n\"Yes.\"\n\"Then I'll sing for you tonight,\" she says, and goes back to humming. The road softens at the edges.",
+      "choices": [
+        {
+          "text": "Stay beside her until dusk.",
+          "next": "caravan_night_one",
+          "do": [
+            "trust:+3",
+            "fear:-3",
+            "journal:An old woman sang my mother's song. I didn't know I still knew the words."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caravan_horizon",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "You keep your water. You watch the horizon.\nIt does what horizons do \u2014 it pretends not to move while moving. By midafternoon the heat warps it into shapes: a tower, a horse, a person waving. Your eyes invent and your eyes uninvent.\nA man on the second wagon, a trader with rope-burn scars on his hands, slides down to walk beside you. \"First time crossing?\"\n\"Yes.\"\n\"The trick,\" he says, \"is to pick one thing on the horizon and decide it's real. Even if it isn't. Gives your eyes somewhere to live.\" He grins, missing a tooth. \"Mine's a woman in a blue dress. She's been waiting for me for nine crossings.\"\nYou pick something on the horizon. You don't tell him what.",
+      "choices": [
+        {
+          "text": "Pick {missing_name}.",
+          "next": "caravan_night_one",
+          "do": [
+            "journal:I picked {missing_short} on the horizon. {missing_pron_cap} is the thing I have decided is real.",
+            "trust:+2"
+          ]
+        },
+        {
+          "text": "Pick home.",
+          "next": "caravan_night_one",
+          "do": [
+            "fear:-2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caravan_lead_wagon",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "The lead wagon is driven by a wiry woman named Tobish who has, you learn in the first minute, opinions about everything and patience for almost none of it.\n\"You're the one going to the Gate,\" she says, not asking. \"Don't bother lying, child. You all have the same walk.\" She spits over the side. \"I'll get you to the foothills. After that you're on your own and the wastes are honest \u2014 they kill quick.\"\nShe eyes your pack. \"You short on supplies?\"\nThe honest answer would cost you pride. The dishonest answer would cost you food.",
+      "choices": [
+        {
+          "text": "Admit it. Ask for supplies.",
+          "next": "caravan_tobish_gift",
+          "do": [
+            "add_item:supplies",
+            "trust:+3"
+          ]
+        },
+        {
+          "text": "Lie. You're fine.",
+          "next": "caravan_night_one",
+          "do": [
+            "fear:+3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caravan_tobish_gift",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "Tobish snorts and tosses you a wrapped bundle without looking. \"Don't make a thing of it. I won't have it said I let a fool starve on my wagon.\"\nIt's dried meat, hard biscuit, a twist of salt. More than you expected. You start to thank her and she waves you off like a fly.\n\"My brother went to the Gate,\" she says, eyes on the road. \"Years ago now. Came back wrong, then didn't come back at all. So.\" She shrugs. \"So I keep the wagon going. People still need to get places.\"\nShe doesn't look at you again. You climb down from the lead wagon with the bundle in your arms, and a hot, complicated feeling in your chest.",
+      "choices": [
+        {
+          "text": "Find a place to sleep.",
+          "next": "caravan_night_one",
+          "do": [
+            "journal:Tobish lost a brother to the Gate. She still drives the wagon. I think that's a kind of courage I don't have a name for."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caravan_night_one",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "Night drops fast in the wastes. One moment everything is amber and the next the sky is purple and the stars are showing off.\nThey light a fire low and shielded \u2014 a habit, the trader explains, from years when bandits read smoke like a menu. Someone passes a flask. Someone tells a story about a goat. The humming woman sings, and her voice is small and steady and exactly the shape of the ache under your ribs.\nAcross the fire, a boy of maybe fifteen is staring at you. Not unfriendly. Just staring. He has the look of someone working up to something.\nThe stars get sharper. The fire crackles. The boy opens his mouth, closes it, opens it again.",
+      "choices": [
+        {
+          "text": "Beckon him over.",
+          "next": "caravan_boy_talk"
+        },
+        {
+          "text": "Pretend not to notice. Sleep.",
+          "next": "caravan_day_two"
+        }
+      ]
+    },
+    {
+      "id": "caravan_boy_talk",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "He comes around the fire too fast and sits too close and immediately looks like he regrets both. \"You're going to the Gate.\"\n\"Everyone keeps saying that.\"\n\"Because it's true.\" He picks at a hole in his sleeve. \"My sister works in the kitchens. At the palace. She \u2014 she said the {missing_short_cap} was kind. To everyone. To the scullery girls and the boys who sweep. She said {missing_pron} learned all their names.\"\nHe looks up at you, and his eyes are wet, and very young.\n\"If you find {missing_obj}. Tell {missing_obj} someone in the wastes still remembers {missing_poss} name. Tell {missing_obj} my sister's name was Pell \u2014 no, sorry \u2014 my sister's name is Mira. Tell {missing_obj} Mira said thank you.\"\nThe fire pops. The humming woman sings on.",
+      "choices": [
+        {
+          "text": "Promise. Mean it.",
+          "next": "caravan_day_two",
+          "do": [
+            "journal:Mira, scullery girl. Said thank you. I am to deliver this to {missing_short}.",
+            "trust:+4",
+            "fear:-2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caravan_day_two",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "Day two is wind.\nThe wind starts gentle, the way bad things often do. By midmorning it's a wall. The wagons stop. The dog whines. The trader curses with impressive vocabulary, and Tobish is already shouting orders \u2014 tarps down, faces wrapped, hold the horses, hold each other, the sand is coming.\nIt comes.\nIt is brown and red and the sound of a million tiny teeth. You can't see the wagon two paces away. You can't see your own hand. Someone screams and is cut short \u2014 not hurt, just swallowed by sound.\nA hand grabs yours. Small. Cold. Juno.\n\"Don't let go,\" she shouts into the gale. \"Promise.\"",
+      "choices": [
+        {
+          "text": "Promise. Don't let go.",
+          "next": "caravan_storm_through",
+          "do": [
+            "trust:+3"
+          ]
+        },
+        {
+          "text": "Pull her under your cloak.",
+          "next": "caravan_storm_through",
+          "do": [
+            "trust:+3",
+            "fear:-2",
+            "journal:I held Juno through the storm. She didn't cry. I almost did."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caravan_storm_through",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "The storm lasts an hour. It lasts a year. You can't tell.\nWhen it stops, the world is reshaped. New dunes. Old tracks erased. The horizon is a stranger.\nOne wagon is on its side. The horses are alive, mostly. The humming woman is alive, mostly. The trader has a gash on his forehead that he is treating with what looks like wine and what is definitely cursing.\nJuno is still holding your hand. She lets go like it embarrasses her.\n\"You kept your promise,\" she says. Like she'd been keeping score.\nTobish takes one look at the dunes and her mouth goes flat. \"We've lost the road,\" she says. \"We'll find it. Probably.\"",
+      "choices": [
+        {
+          "text": "Help right the wagon.",
+          "next": "caravan_night_two",
+          "do": [
+            "hp:-1",
+            "trust:+3"
+          ]
+        },
+        {
+          "text": "Tend the trader's wound with poultice.",
+          "next": "caravan_night_two",
+          "require": "poultice",
+          "do": [
+            "rem_item:poultice",
+            "trust:+5",
+            "journal:I patched the trader. He insists on paying me back in stories I won't live long enough to hear."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caravan_night_two",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "The second night is quieter, the way nights are after disasters \u2014 everyone too tired to perform.\nYou sit a little apart from the fire because your skin feels too small. The stars are absurd out here, a spilled bowl of them, more sky than dark.\nFootsteps. Tobish, with two cups. She hands you one without speaking. It's the cheap, hot kind of liquor that tastes like a small fire and a kind grandmother.\n\"You did all right today,\" she says, and that's the whole of her speech, and she sits beside you and drinks, and the silence is companionable. After a while she says, \"What's {missing_poss} name?\" and you realize she means the one you're going for, and you say it, and she nods like she's filing it away with her brother's.",
+      "choices": [
+        {
+          "text": "Ask her if she dreams of him.",
+          "next": "caravan_tobish_brother",
+          "do": [
+            "trust:+3"
+          ]
+        },
+        {
+          "text": "Just drink. Watch the sky.",
+          "next": "caravan_day_three",
+          "do": [
+            "fear:-3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caravan_tobish_brother",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "She is quiet a long time.\n\"Every night,\" she says finally. \"He's always a boy in the dreams. Never the man he became. I think the dreams know something I don't.\"\nShe drinks. The stars don't move and also do.\n\"If you find your {missing_short}, child \u2014 and I think you might, you have the look \u2014 don't ask {missing_obj} what happened in there. Not at first. Just feed {missing_obj}. Let {missing_obj} sleep. Sit beside {missing_obj}. The questions will keep.\"\nShe stands, knees popping. \"And don't be a hero. Heroes die. Be stubborn. Stubborn comes home.\"",
+      "choices": [
+        {
+          "text": "Thank her. Sleep.",
+          "next": "caravan_day_three",
+          "do": [
+            "journal:Tobish said: don't be a hero, be stubborn. I'm going to try.",
+            "trust:+3",
+            "fear:-2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caravan_day_three",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "Day three. You can smell the foothills before you see them \u2014 cold stone, thin pine, something almost like rain.\nMidmorning, the trader comes to you, and he won't meet your eyes.\n\"Listen,\" he says, soft. \"I took something from your pack. Last night. Just \u2014 a coin. Just one. My boy back in the city, he's \u2014 listen, I'm telling you because I put it back. Couldn't sleep. I'm an idiot. I'm sorry.\"\nHe holds out his hand. A single copper, warm from his pocket.\nIt is a betrayal small enough to be forgivable. It is also a betrayal.",
+      "choices": [
+        {
+          "text": "Take it. Forgive him.",
+          "next": "caravan_foothills",
+          "do": [
+            "gold:+1",
+            "trust:+4",
+            "journal:He stole a coin and gave it back. I am keeping that, and him."
+          ]
+        },
+        {
+          "text": "Tell him to keep it. Send it to his boy.",
+          "next": "caravan_foothills",
+          "do": [
+            "trust:+5",
+            "fear:-3"
+          ]
+        },
+        {
+          "text": "Be cold. Take it. Walk away.",
+          "next": "caravan_foothills",
+          "do": [
+            "gold:+1",
+            "fear:+3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "caravan_foothills",
+      "chapter": "CHAPTER II.5 \u00b7 THE CARAVAN",
+      "text": "By dusk on the third day the wagons stop at the lip of the foothills. Tobish swings down and starts unhitching like she's done it a thousand times because she has.\n\"This is me,\" she says. \"You go up. We go around. May we meet again on a less ugly road.\"\nJuno presses something into your hand \u2014 a flat river stone, smooth, painted with a small, careful J. \"For luck,\" she mutters, and walks off before you can answer.\nThe humming woman waves. The trader salutes. The dog watches you go, and you have to not look back or you will not leave.\nAhead: the road bends up into stone. Somewhere up there, a rider waits, or doesn't. A hill to search. A tower. A Gate.",
+      "choices": [
+        {
+          "text": "Take the road up to the rider.",
+          "next": "rider_join",
+          "do": [
+            "add_item:supplies",
+            "journal:I have Juno's stone in my pocket. It weighs more than a stone should.",
+            "trust:+3"
+          ]
+        },
+        {
+          "text": "Cut sideways toward the hills.",
+          "next": "hill_search",
+          "do": [
+            "add_item:supplies",
+            "trust:+2"
+          ]
+        },
+        {
+          "text": "Detour to the wayhouse for stew.",
+          "next": "side_inn_arrival"
+        }
+      ]
+    }
+  ]
+}

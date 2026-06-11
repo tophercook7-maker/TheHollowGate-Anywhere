@@ -59,9 +59,36 @@
 const COMPANION_NAMES = {"ash": "Ash", "vale": "Ser Vale", "moth": "Moth", "rook": "Rook", "hedge_witch": "Hedge Witch"};
 const ITEM_LABELS = {"castle_talisman": "Castle Talisman", "poultice": "Poultice", "rook_note": "Rook Note", "seeing_draught": "Seeing Draught", "shadow_blade": "Shadow Blade", "signet_ring": "Signet Ring", "supplies": "Supplies", "sword": "Sword", "tunnel_map": "Tunnel Map", "village_map": "Village Map", "warding_draught": "Warding Draught", "wardstone": "Wardstone"};
 
-let state = { route: null, trust: 50, fear: 0, gold: 0, pack: [], companions: [], flags: {}, here: "menu", sceneCount: 0 };
+const SAVE_KEY = "hollow_gate_save_v2";
+const DEFAULT_MAX_HP = 10;
+
+let state = newState();
 let routes = {};
 let scenes = {};
+
+function newState(){
+  return {
+    route: null, charKey: null, charName: null, gender: null,
+    hp: DEFAULT_MAX_HP, max_hp: DEFAULT_MAX_HP,
+    trust: 50, fear: 0, gold: 0,
+    pack: [], companions: [], relationships: {}, journal: [],
+    flags: {}, here: "gender", sceneCount: 0,
+  };
+}
+
+function saveGame(){
+  if(state.here === "gender" || state.here === "select") return;
+  try { localStorage.setItem(SAVE_KEY, JSON.stringify(state)); } catch(_) {}
+}
+function loadGame(){
+  try {
+    const raw = localStorage.getItem(SAVE_KEY);
+    if(!raw) return null;
+    const s = JSON.parse(raw);
+    return s && s.charName ? s : null;
+  } catch(_) { return null; }
+}
+function clearSave(){ try { localStorage.removeItem(SAVE_KEY); } catch(_) {} }
 
 function slugifyName(n){
   return n.toLowerCase().replace(/[^a-z0-9]+/g, "_");
@@ -76,8 +103,10 @@ function toast(msg){
 
 async function fetchJSON(path){
   const res = await fetch(path, {cache: "no-store"});
-  if(!res.ok) throw new Error(`Failed: ${path} (${res.status})`);
-  return res.json();
+  if(!res.ok) throw new Error(`HTTP ${res.status} fetching ${path}`);
+  const text = await res.text();
+  try { return JSON.parse(text); }
+  catch(e){ throw new Error(`Parse error in ${path}: ${e.message} | head: ${text.slice(0,80)}`); }
 }
 
 async function loadData(){
@@ -94,41 +123,68 @@ async function loadData(){
   }
 }
 
+function parseEffect(raw){
+  const i = raw.indexOf(":");
+  if(i < 0) return [raw, "", ""];
+  const k = raw.slice(0, i);
+  const rest = raw.slice(i+1);
+  if(k === "rel"){
+    const j = rest.indexOf(":");
+    if(j > 0) return [k, rest.slice(0, j), rest.slice(j+1)];
+  }
+  return [k, rest, ""];
+}
+
 function applyDo(doList){
   if(!doList) return;
   for(const raw of doList){
     if(!raw) continue;
-    const [k,v] = raw.split(":");
+    const [k, a, b] = parseEffect(raw);
     if(k === "add_item"){
-      if(state.pack.length < 8 && !state.pack.includes(v)) state.pack.push(v);
+      if(state.pack.length < 8 && !state.pack.includes(a)) state.pack.push(a);
     } else if(k === "rem_item"){
-      state.pack = state.pack.filter(x => x !== v);
+      state.pack = state.pack.filter(x => x !== a);
     } else if(k === "gold"){
-      state.gold += Number(v);
+      state.gold = Math.max(0, state.gold + Number(a));
     } else if(k === "trust"){
-      state.trust = Math.max(0, Math.min(100, state.trust + Number(v)));
+      state.trust = Math.max(0, Math.min(100, state.trust + Number(a)));
     } else if(k === "fear"){
-      state.fear = Math.max(0, Math.min(100, state.fear + Number(v)));
+      state.fear = Math.max(0, Math.min(100, state.fear + Number(a)));
+    } else if(k === "hp"){
+      state.hp = Math.max(0, Math.min(state.max_hp, state.hp + Number(a)));
+    } else if(k === "max_hp"){
+      state.max_hp = Math.max(1, state.max_hp + Number(a));
+      state.hp = Math.min(state.hp, state.max_hp);
     } else if(k === "companion"){
-      if(!state.companions.includes(v)) state.companions.push(v);
+      if(!state.companions.includes(a)) state.companions.push(a);
+      if(!(a in state.relationships)) state.relationships[a] = 10;
+    } else if(k === "rel"){
+      const cur = state.relationships[a] || 0;
+      state.relationships[a] = Math.max(0, Math.min(100, cur + Number(b)));
     } else if(k === "flag"){
-      state.flags[v] = true;
+      state.flags[a] = true;
+    } else if(k === "journal"){
+      state.journal.push(a);
+      if(state.journal.length > 12) state.journal = state.journal.slice(-12);
     }
   }
 }
 
 function visible(req){
   if(!req) return true;
-  if(req === "castle_talisman" || req === "village_map" || req === "signet_ring" || req === "poultice" || req === "shadow_blade" || req === "wardstone"){
-    return state.pack.includes(req);
+  if(req.startsWith("companion:")) return state.companions.includes(req.split(":")[1]);
+  if(req.startsWith("gold:"))      return state.gold  >= Number(req.split(":")[1]);
+  if(req.startsWith("trust:"))     return state.trust >= Number(req.split(":")[1]);
+  if(req.startsWith("fear:"))      return state.fear  >= Number(req.split(":")[1]);
+  if(req.startsWith("hp:"))        return state.hp    >= Number(req.split(":")[1]);
+  if(req.startsWith("flag:"))      return !!state.flags[req.split(":")[1]];
+  if(req.startsWith("route:"))     return state.route === req.split(":")[1];
+  if(req.startsWith("rel:")){
+    const [,who,n] = req.split(":");
+    return (state.relationships[who] || 0) >= Number(n);
   }
-  if(req.startsWith("companion:")){
-    return state.companions.includes(req.split(":")[1]);
-  }
-  if(req.startsWith("gold:")) return state.gold >= Number(req.split(":")[1]);
-  if(req.startsWith("trust:")) return state.trust >= Number(req.split(":")[1]);
-  if(req.startsWith("flag:")) return !!state.flags[req.split(":")[1]];
-  return true;
+  if(state.route && req.toLowerCase() === state.route.toLowerCase()) return true;
+  return (state.pack || []).includes(req);
 }
 
 function showScene(){
@@ -141,7 +197,7 @@ function showScene(){
     return;
   }
   document.getElementById("chapter").textContent = sc.chapter || "";
-  document.getElementById("story").textContent = sc.text || "";
+  document.getElementById("story").textContent = fillSceneText(sc.text || "");
   let packLabel = (state.pack || []).map(it => (ITEM_LABELS[it] || it.replace(/_/g, " "))).join(", ");
 
   let partyParts = [];
@@ -149,10 +205,16 @@ function showScene(){
     partyParts.push(COMPANION_NAMES[c] || c);
   }
 
+  const relBits = state.companions
+    .filter(c => (state.relationships[c] || 0) > 0)
+    .map(c => `${COMPANION_NAMES[c]||c} ${state.relationships[c]||0}`)
+    .join(", ");
+  const journalTail = (state.journal || []).slice(-2).join(" · ");
   document.getElementById("hud").innerHTML = `
-    <div>Trust: <b>${state.trust}</b> &nbsp; Fear: <b>${state.fear}</b> &nbsp; Gold: <b>${state.gold}</b></div>
+    <div>HP: <b>${state.hp}/${state.max_hp}</b> &nbsp; Trust: <b>${state.trust}</b> &nbsp; Fear: <b>${state.fear}</b> &nbsp; Gold: <b>${state.gold}</b></div>
     <div>Pack: <b>${packLabel || "—"}</b></div>
-    ${partyParts.length ? `<div>Party: <b>${partyParts.join(", ")}</b></div>` : ""}
+    ${partyParts.length ? `<div>Party: <b>${partyParts.join(", ")}</b>${relBits ? ` &nbsp; <span style="color:#8c8576">(${relBits})</span>` : ""}</div>` : ""}
+    ${journalTail ? `<div style="color:#8c8576">Journal: ${journalTail}</div>` : ""}
   `;
 
   const avail = [];
@@ -172,83 +234,215 @@ function showScene(){
     box.appendChild(b);
   }
   state.sceneCount++;
-  if(state.sceneCount >= 5){
-    let ch = Math.floor(state.sceneCount / 5) + 1;
-    const names = ["","I","II","III","IV","V","VI"];
-    if(names[ch]) document.getElementById("chapter").textContent = "CHAPTER " + names[ch];
-  }
 }
 
 function choose(ch){
   applyDo(ch.do);
   const next = ch.next;
+  if(state.hp <= 0 && !String(next).startsWith("ending")){
+    showEnding("ending_sacrifice");
+    return;
+  }
   if(String(next).startsWith("ending")){
     showEnding(next);
     return;
   }
   state.here = next;
+  saveGame();
   showScene();
 }
 
+const RESCUED_INFO = {
+  rescued_elara:   {name:"Elara",           pronoun:"she", possessive:"her"},
+  rescued_cassian: {name:"Prince Cassian",  pronoun:"he",  possessive:"his"},
+  rescued_vale:    {name:"Ser Vale",        pronoun:"he",  possessive:"his"},
+  rescued_moth:    {name:"Moth",            pronoun:"she", possessive:"her"},
+  rescued_rook:    {name:"Rook",            pronoun:"he",  possessive:"his"},
+  rescued_hedge:   {name:"the Hedge Witch", pronoun:"she", possessive:"her"},
+};
+
+function getRescued(){
+  for(const flag of Object.keys(RESCUED_INFO)){
+    if(state.flags && state.flags[flag]) return RESCUED_INFO[flag];
+  }
+  return null;
+}
+
+const ENDING_TEMPLATES = {
+  ending_fight:
+"You won by steel.\nThe Keeper falls — a heap of old cloth and older bone. The dark in this place fades to ordinary night.\n\n{name} stands over the body, blinking, alive. {pronoun_cap} kneels by you while you're still breathing hard, and says nothing for a long minute.\nOn the long road home, {pronoun} rides three paces from your saddle. By the time you see the castle gate, {possessive} hand is on your back, and you have stopped pretending you don't notice.",
+  ending_talk:
+"You won with words.\nThe Keeper, ancient and weary, lets {name} go without a fight. You ride home together under a sky that has not been kind to either of you.\n\nThree nights into the journey, by the campfire, {pronoun} confesses {pronoun} doesn't want to go back to {possessive} old life. {Pronoun_cap} wants to ride out again. With you.\nYou don't argue. You stoke the fire and pass {possessive} the wineskin.",
+  ending_clever:
+"You won with a trick the old stories never predicted.\nThe Keeper is still in there, somewhere, scratching at the door of the place you locked it.\n\n{name} laughs all the way out of the dark. Laughs again on the long ride home. Laughs the night {pronoun} kisses you, when the campfire is dying and you both should be asleep.\nThe kingdom thinks you're a hero. {Pronoun_cap} knows you're better than that.",
+  ending_sacrifice:
+"You chose the hardest road.\nYou stayed in the dark so {name} could leave. {Pronoun_cap} fought you for it. {Pronoun_cap} lost.\n\nYou can hear {possessive} voice for a long time, even after the gate closes. Years later, somewhere far from here, {pronoun} will spend the rest of {possessive} life looking for you.\nThat, too, is a kind of love. The hardest kind.",
+};
+
+function fillTemplate(tmpl, r){
+  if(!r) return tmpl.replace(/\{[a-z_]+\}/gi, "").replace(/\s+\n/g, "\n");
+  const cap = s => s[0].toUpperCase() + s.slice(1);
+  return tmpl
+    .replaceAll("{name}",            r.name)
+    .replaceAll("{pronoun}",         r.pronoun)
+    .replaceAll("{pronoun_cap}",     cap(r.pronoun))
+    .replaceAll("{possessive}",      r.possessive)
+    .replaceAll("{possessive_cap}",  cap(r.possessive));
+}
+
 function showEnding(id){
-  const msgs = {
-    ending_fight: "You won by steel. The kingdom will remember your name.",
-    ending_talk: "You won with words. The hollow gate closes behind you, quieter than before.",
-    ending_clever: "You won with a trick the old stories never predicted.",
-    ending_sacrifice: "You chose the hardest road. Some will remember. Most will never know."
-  };
+  clearSave();
+  const r = getRescued();
+  const base = fillTemplate(ENDING_TEMPLATES[id] || "The story ends here... for now.", r);
   document.getElementById("chapter").textContent = "THE END";
-  const base = msgs[id] || "The story ends here... for now.";
-  document.getElementById("story").textContent = base + "\n\nTrust: " + state.trust +
-    "   Fear: " + state.fear + "   Gold: " + state.gold +
-    "   Pack: " + (state.pack.map(it => DISPLAY_CATS[it] || it).join(", ") || "none") +
-    "   Party: " + (state.companions.map(c => companionLabel(c, true)).join(", ") || "none");
+  const packStr = (state.pack || []).map(it => ITEM_LABELS[it] || it.replace(/_/g," ")).join(", ") || "none";
+  const partyStr = (state.companions || []).map(c => COMPANION_NAMES[c] || c).join(", ") || "none";
+  const who = state.charName ? `\n\n— ${state.charName} —` : "";
+  document.getElementById("story").textContent =
+    base + who +
+    `\n\nTrust ${state.trust}   Fear ${state.fear}   Gold ${state.gold}` +
+    `\nPack: ${packStr}` +
+    `\nParty: ${partyStr}`;
   document.getElementById("hud").innerHTML = "";
   const box = document.getElementById("choices");
   box.innerHTML = "<button class='primary' onclick='resetToMenu()'>Play again</button>";
 }
 
-function pickRoute(route){
-  const r = routes[route];
-  state = {
-    route,
+// Women first — display order is array order.
+const CHARACTERS = [
+  {key:"lyra",   name:"Lyra Cassine",     gender:"f", route:"Castellan",
+   blurb:"castle-born; sword, signet, and her father's enemies"},
+  {key:"wren",   name:"Wren Hollowfield", gender:"f", route:"Hedgeborn",
+   blurb:"of the marsh and the back roads; poultice, knife, patience"},
+  {key:"aldric", name:"Aldric Sterling",  gender:"m", route:"Castellan",
+   blurb:"castle-born; sword, signet, and a name to lose"},
+  {key:"kael",   name:"Kael Briarpath",   gender:"m", route:"Hedgeborn",
+   blurb:"of the marsh and the back roads; knife and quiet ways"},
+];
+
+function pickCharacter(charKey){
+  const ch = CHARACTERS.find(x => x.key === charKey);
+  const r = routes[ch.route];
+  state = Object.assign(newState(), {
+    route: ch.route,
+    charKey: ch.key,
+    charName: ch.name,
+    gender: ch.gender,
     trust: Number(r.trust) || 50,
     fear: Number(r.fear) || 0,
     gold: Number(r.gold) || 0,
     pack: (r.pack || []).slice(),
-    companions: [],
-    flags: {},
+    flags: { ["gender_" + ch.gender]: true },
     here: "intro",
-    sceneCount: 0
-  };
-  toast("You are the " + route + ".");
+  });
+  toast(`You ride as ${ch.name}.`);
+  saveGame();
   showScene();
 }
 
-function showMenu(){
-  let title = "THE HOLLOW GATE\n\nThe King's daughter is gone. The kingdom bleeds silence.\n\nWho are you?\n";
-  let lines = [];
-  for (const [key, info] of Object.entries(routes)){
-    lines.push(`${key} — ${info.description || ""}`);
-    lines.push(`  Starts with: ${(info.pack || []).join(", ")}${typeof info.gold !== 'undefined' ? `, ${info.gold} gold` : ''}`);
-  }
-  document.getElementById("story").textContent = title + lines.join("\n");
+function continueSavedGame(){
+  const s = loadGame();
+  if(!s) return;
+  state = Object.assign(newState(), s);
+  if(scenes[state.here]) showScene();
+  else { state.here = "intro"; showScene(); }
+}
+
+const MISSING_INFO = {
+  f: {name:"Prince Cassian",  short:"prince",   short_cap:"Prince",   title:"the King's son",      title_cap:"The King's son",      child:"son",      pronoun:"he",  pron_cap:"He",  poss:"his", poss_cap:"His",  obj:"him"},
+  m: {name:"Princess Elara",  short:"princess", short_cap:"Princess", title:"the King's daughter", title_cap:"The King's daughter", child:"daughter", pronoun:"she", pron_cap:"She", poss:"her", poss_cap:"Her",  obj:"her"},
+};
+const OTHER_INFO = {
+  f: {name:"Princess Elara",  short:"princess", short_cap:"Princess", title:"the princess", initial:"E", sibling:"sister",  sibling_cap:"Sister",  pronoun:"she", pron_cap:"She", poss:"her", poss_cap:"Her", obj:"her"},
+  m: {name:"Prince Cassian",  short:"prince",   short_cap:"Prince",   title:"the prince",   initial:"C", sibling:"brother", sibling_cap:"Brother", pronoun:"he",  pron_cap:"He",  poss:"his", poss_cap:"His", obj:"him"},
+};
+
+function fillSceneText(text){
+  if(!text) return "";
+  const m = MISSING_INFO[state.gender];
+  const o = OTHER_INFO[state.gender];
+  if(!m) return text;
+  return text
+    .replaceAll("{missing_name}",      m.name)
+    .replaceAll("{missing_short}",     m.short)
+    .replaceAll("{missing_short_cap}", m.short_cap)
+    .replaceAll("{missing_title}",     m.title)
+    .replaceAll("{missing_title_cap}", m.title_cap)
+    .replaceAll("{missing_child}",     m.child)
+    .replaceAll("{missing_pron}",      m.pronoun)
+    .replaceAll("{missing_pron_cap}",  m.pron_cap)
+    .replaceAll("{missing_poss}",      m.poss)
+    .replaceAll("{missing_poss_cap}",  m.poss_cap)
+    .replaceAll("{missing_obj}",       m.obj)
+    .replaceAll("{other_name}",        o.name)
+    .replaceAll("{other_short}",       o.short)
+    .replaceAll("{other_short_cap}",   o.short_cap)
+    .replaceAll("{other_title}",       o.title)
+    .replaceAll("{other_initial}",     o.initial)
+    .replaceAll("{other_sibling}",     o.sibling)
+    .replaceAll("{other_sibling_cap}", o.sibling_cap)
+    .replaceAll("{other_pron}",        o.pronoun)
+    .replaceAll("{other_pron_cap}",    o.pron_cap)
+    .replaceAll("{other_poss}",        o.poss)
+    .replaceAll("{other_poss_cap}",    o.poss_cap)
+    .replaceAll("{other_obj}",         o.obj);
+}
+
+function showGenderPick(){
   document.getElementById("chapter").textContent = "";
   document.getElementById("hud").innerHTML = "";
+  document.getElementById("story").textContent =
+    "THE HOLLOW GATE\n\nThe kingdom bleeds silence. A royal child has been taken through a door that shouldn't open.\n\nAre you a woman or a man of the realm?";
   const box = document.getElementById("choices");
   box.innerHTML = "";
-  for (const key of Object.keys(routes)){
+  const saved = loadGame();
+  if(saved && saved.charName){
+    const cont = document.createElement("button");
+    cont.className = "primary";
+    cont.textContent = `Continue — ${saved.charName} (${saved.here || "in progress"})`;
+    cont.onclick = continueSavedGame;
+    box.appendChild(cont);
+  }
+  const opts = [
+    {key:"f", label:"New game — a woman of the realm"},
+    {key:"m", label:"New game — a man of the realm"},
+  ];
+  for(const o of opts){
     const b = document.createElement("button");
     b.className = "primary";
-    b.textContent = key;
-    b.onclick = () => pickRoute(key);
+    b.textContent = o.label;
+    b.onclick = () => { clearSave(); state.gender = o.key; showCharacterPick(); };
     box.appendChild(b);
   }
-  state.here = "menu";
+  state.here = "gender";
+}
+
+function showCharacterPick(){
+  document.getElementById("chapter").textContent = "";
+  document.getElementById("hud").innerHTML = "";
+  const wordY = state.gender === "f" ? "woman" : "man";
+  const m = MISSING_INFO[state.gender];
+  document.getElementById("story").textContent =
+    `THE HOLLOW GATE\n\n${m.title.replace(/^the /, "The ")} is gone — taken through the Hollow Gate. The kingdom bleeds silence.\n\nA ${wordY} of the realm answers the King's call. Who are you?`;
+  const box = document.getElementById("choices");
+  box.innerHTML = "";
+  for(const ch of CHARACTERS.filter(c => c.gender === state.gender)){
+    const b = document.createElement("button");
+    b.className = "primary";
+    b.textContent = `${ch.name} — ${ch.blurb}`;
+    b.onclick = () => pickCharacter(ch.key);
+    box.appendChild(b);
+  }
+  const back = document.createElement("button");
+  back.textContent = "← Back";
+  back.onclick = () => showGenderPick();
+  box.appendChild(back);
+  state.here = "select";
 }
 
 function resetToMenu(){
-  showMenu();
+  state = newState();
+  showGenderPick();
 }
 
 async function init() {
@@ -260,7 +454,7 @@ async function init() {
     console.error(err);
     return;
   }
-  resetToMenu();
+  showGenderPick();
 }
 init();
 </script>

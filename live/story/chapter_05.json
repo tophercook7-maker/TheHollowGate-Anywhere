@@ -1,28 +1,174 @@
 {
   "scenes": [
     {
+      "id": "finale_start",
+      "chapter": "CHAPTER V \u00b7 THE HOLLOW GATE",
+      "text": "You stop where the darkness thickens.\nThe singing has stopped. Something old is listening.\n\nAhead, three shapes resolve out of the dark.\nThe lost ones. The Keeper has taken more than one.\nWho do you reach for first?",
+      "choices": [
+        {
+          "text": "{missing_name} \u2014 the one the kingdom was looking for.",
+          "next": "finale_method",
+          "require": "flag:gender_m",
+          "do": [
+            "flag:rescued_elara"
+          ]
+        },
+        {
+          "text": "Moth \u2014 your companion, who shouldn't be here at all.",
+          "next": "finale_method",
+          "require": "flag:gender_m",
+          "do": [
+            "flag:rescued_moth"
+          ]
+        },
+        {
+          "text": "The Hedge Witch \u2014 chained in willow root, smiling at you.",
+          "next": "finale_method",
+          "require": "flag:gender_m",
+          "do": [
+            "flag:rescued_hedge"
+          ]
+        },
+        {
+          "text": "{other_name} \u2014 the King's son, who rode out and never came back.",
+          "next": "finale_method",
+          "require": "flag:gender_f",
+          "do": [
+            "flag:rescued_cassian"
+          ]
+        },
+        {
+          "text": "Ser Vale \u2014 knight of the castle, on his knees in the dark.",
+          "next": "finale_method",
+          "require": "flag:gender_f",
+          "do": [
+            "flag:rescued_vale"
+          ]
+        },
+        {
+          "text": "Rook \u2014 the road-mystery, bound at the wrists, not afraid.",
+          "next": "finale_method",
+          "require": "flag:gender_f",
+          "do": [
+            "flag:rescued_rook"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finale_blind",
+      "chapter": "CHAPTER V \u00b7 THE HOLLOW GATE",
+      "text": "The torch flares. The dark eats half the light and spits the rest back.\nThe Keeper sees you now. The lost ones see you too \u2014 three faces turned in the gloom, blinking.\n\nThere is no time to be careful. You have to choose.",
+      "choices": [
+        {
+          "text": "Run for {missing_name}. Take her hand and don't stop.",
+          "next": "ending_clever",
+          "require": "flag:gender_m",
+          "do": [
+            "flag:rescued_elara"
+          ]
+        },
+        {
+          "text": "Run for {other_name}. Drag him into the light with you.",
+          "next": "ending_clever",
+          "require": "flag:gender_f",
+          "do": [
+            "flag:rescued_cassian"
+          ]
+        },
+        {
+          "text": "Stand. Fight the Keeper here, in the open.",
+          "next": "finale_method",
+          "do": [
+            "flag:rescued_elara",
+            "flag:rescued_cassian"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finale_method",
+      "chapter": "CHAPTER V \u00b7 THE HOLLOW GATE",
+      "text": "The Keeper turns. Old and slow and hungry. It has been here a very long time, and it does not like that you have come.\nYou know who you came for. The question is how you leave.",
+      "choices": [
+        {
+          "text": "Steel. Cut the Keeper down where it stands.",
+          "next": "ending_fight",
+          "require": "sword"
+        },
+        {
+          "text": "Steel. Cut with the shadow blade \u2014 the dark won't see itself.",
+          "next": "ending_fight",
+          "require": "shadow_blade"
+        },
+        {
+          "text": "Words. The Keeper is old. Old things can be bargained with.",
+          "next": "ending_talk",
+          "require": "trust:50"
+        },
+        {
+          "text": "Trickery. The tunnel map shows a way the Keeper never learned.",
+          "next": "ending_clever",
+          "require": "tunnel_map"
+        },
+        {
+          "text": "Trickery. The signet is older than the Keeper. Show it.",
+          "next": "ending_clever",
+          "require": "signet_ring"
+        },
+        {
+          "text": "Yourself. Stay. Let the others go.",
+          "next": "ending_sacrifice"
+        },
+        {
+          "text": "Before stepping through, take inventory of self.",
+          "next": "deep_finale_method_extra"
+        }
+      ]
+    },
+    {
       "id": "ending_fight",
       "chapter": "THE END",
-      "text": "You won by steel. The kingdom will remember your name.",
-      "choices": []
+      "text": "",
+      "choices": [
+        {
+          "text": "Walk on. (What came after.)",
+          "next": "epilogue_fight"
+        }
+      ]
     },
     {
       "id": "ending_talk",
       "chapter": "THE END",
-      "text": "You won with words. The hollow gate closes behind you, quieter than before.",
-      "choices": []
+      "text": "",
+      "choices": [
+        {
+          "text": "Walk on. (What came after.)",
+          "next": "epilogue_talk"
+        }
+      ]
     },
     {
       "id": "ending_clever",
       "chapter": "THE END",
-      "text": "You won with a trick the old stories never predicted.",
-      "choices": []
+      "text": "",
+      "choices": [
+        {
+          "text": "Walk on. (What came after.)",
+          "next": "epilogue_clever"
+        }
+      ]
     },
     {
       "id": "ending_sacrifice",
       "chapter": "THE END",
-      "text": "You chose the hardest road. Some will remember. Most will never know.",
-      "choices": []
+      "text": "",
+      "choices": [
+        {
+          "text": "Walk on. (What came after.)",
+          "next": "epilogue_sacrifice"
+        }
+      ]
     }
   ]
 }

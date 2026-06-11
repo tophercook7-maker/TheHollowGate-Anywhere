@@ -1,0 +1,229 @@
+{
+  "scenes": [
+    {
+      "id": "threshold_1",
+      "chapter": "CHAPTER VI \u00b7 THE THRESHOLD",
+      "text": "The Gate is a mile off. You can feel it the way you feel an oncoming storm \u2014 a weight on the inside of the skull, a low note under hearing.\nYou make camp here, against everyone's good sense. The ground is soft enough. There is a stream. The horses are tired. So are you.\nThe fire goes up. Someone \u2014 Ash, maybe; one of yours \u2014 puts a hand on your shoulder and squeezes once. \"Sit,\" they say. \"Eat. We have one night.\"\nThe company gathers, smaller than you remember it. The faces you have collected. You look at each one and try not to count.\nOne night. You have one night.",
+      "choices": [
+        {
+          "text": "Sit with the companions. Listen.",
+          "next": "threshold_companions"
+        },
+        {
+          "text": "Take a vigil walk alone.",
+          "next": "threshold_vigil"
+        },
+        {
+          "text": "Write a letter home.",
+          "next": "threshold_letter_1"
+        },
+        {
+          "text": "A minstrel waits on a rock. Hear them out.",
+          "next": "side_minstrel_3",
+          "require": "flag:minstrel_v3"
+        },
+        {
+          "text": "Stop on the last rise. Look back at the kingdom.",
+          "next": "deep_threshold_extra"
+        }
+      ]
+    },
+    {
+      "id": "threshold_companions",
+      "chapter": "CHAPTER VI \u00b7 THE THRESHOLD",
+      "text": "They are bad at this. So are you.\nAsh tries first. \"So. Tomorrow. We're \u2014 we are doing it. The thing.\" Ash, who has never been bad at words, is bad at words.\nMoth, who is small and strange, says, \"There's a crow who follows us. I asked. He said the air on the other side of the Gate tastes like winter. I thought you should know.\"\nSer Vale clears his throat. \"I would like to say, before tomorrow \u2014 \" He stops. He cannot finish. He nods like that was enough.\nRook just looks at you. The look is enough.\nThe hedge witch, if she is here, picks at the fire and says nothing and her not-saying is a kind of prayer.\nYou love them. It is awful. You love them.",
+      "choices": [
+        {
+          "text": "Tell them, plainly, that you love them.",
+          "next": "threshold_love_them",
+          "do": [
+            "trust:+6",
+            "fear:-4"
+          ]
+        },
+        {
+          "text": "Make a stupid joke instead.",
+          "next": "threshold_joke",
+          "do": [
+            "trust:+4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "threshold_love_them",
+      "chapter": "CHAPTER VI \u00b7 THE THRESHOLD",
+      "text": "You say it. Out loud. To the fire and the faces around it.\n\"I love you. All of you. I didn't know I was going to. I did anyway.\"\nMoth puts her small hand over her mouth. Ash looks at the sky very hard. Ser Vale says, \"Yes,\" quietly, like a vow. Rook reaches across and squeezes your wrist without speaking.\nThe hedge witch, if she's here, says, \"That is what you bring through the Gate. That is the only thing you can take in with you. Carry it carefully.\"\nThe fire makes a small sound. None of you speak for a while. None of you need to.",
+      "choices": [
+        {
+          "text": "Stand. Walk a little, alone.",
+          "next": "threshold_vigil",
+          "do": [
+            "journal:I told my friends I loved them. The world didn't end. I'm trying to remember that for tomorrow."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "threshold_joke",
+      "chapter": "CHAPTER VI \u00b7 THE THRESHOLD",
+      "text": "\"So if we die tomorrow,\" you say, \"who gets my boots.\"\nThere is a beat. Then Moth says, \"They're too big,\" and Ash says, \"They're ugly,\" and Ser Vale says, very seriously, \"I would like the left one,\" and the laugh that goes through the camp is too loud and too brittle and exactly right.\nIt is how your people say I love you. You let them say it.\nRook, after, leans close. \"I'm having the right one,\" he murmurs. \"It's been agreed.\"\nYou laugh wet. The fire pops. The Gate hums in the back of your skull.",
+      "choices": [
+        {
+          "text": "Walk a little, alone.",
+          "next": "threshold_vigil"
+        }
+      ]
+    },
+    {
+      "id": "threshold_vigil",
+      "chapter": "CHAPTER VI \u00b7 THE THRESHOLD",
+      "text": "You walk to the edge of the firelight and a little past. The Gate is visible from here \u2014 a black slot in the world, the wrong color of dark.\nYou stand. You don't pray, exactly. You don't know how. You just stand.\nFootsteps behind you. You don't have to look to know which.\nSer Vale, or Moth, or Rook, or the witch. Or all of them in turn \u2014 they take shifts, you realize, without arranging it; they will not let you be alone tonight, and they will not crowd you.\nWhen it is Vale he says, \"You don't have to be brave for us.\"\nWhen it is Moth she says, \"The crow says hello again.\"\nWhen it is Rook he doesn't say anything. He just stands at your shoulder and breathes in time with you.",
+      "choices": [
+        {
+          "text": "Walk back to the fire.",
+          "next": "threshold_stranger",
+          "do": [
+            "trust:+4",
+            "fear:-3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "threshold_letter_1",
+      "chapter": "CHAPTER VI \u00b7 THE THRESHOLD",
+      "text": "You find a scrap of parchment. You sharpen the stub of a pencil with your knife. You stare at the blank for a long time, the way the blank stares back.\nWho do you write to.\nYou could write to your mother, who may or may not still draw breath. To a friend you abandoned in the city. To a teacher who was kind. To the dog from the caravan. To no one. To {missing_name}, who you have only kissed in a dream.\nThe pencil hovers.",
+      "choices": [
+        {
+          "text": "Write to your mother.",
+          "next": "threshold_letter_mother"
+        },
+        {
+          "text": "Write to {missing_name}.",
+          "next": "threshold_letter_royal"
+        },
+        {
+          "text": "Write to whoever finds it.",
+          "next": "threshold_letter_finder"
+        }
+      ]
+    },
+    {
+      "id": "threshold_letter_mother",
+      "chapter": "CHAPTER VI \u00b7 THE THRESHOLD",
+      "text": "Mama, you write, and you have to stop.\nYou start again. Mama. I did not become what you wanted. I did not stay. I am sorry for the leaving more than the rest. I want you to know \u2014 the road was hard and I was not alone on it. There were people who looked at me and saw the version of me I would like to be. I tried to be that one. I tried.\nIf I do not come back: I was not afraid at the end. That is a lie, but I want you to have it. Lies are easier to keep than people.\nI loved you. Crooked, with my whole chest.\nYour child.\nYou fold it. You put it in the oiled packet at the bottom of your pack, where the rain won't find it.",
+      "choices": [
+        {
+          "text": "Sit a while longer.",
+          "next": "threshold_stranger",
+          "do": [
+            "trust:+5",
+            "fear:-4",
+            "journal:I wrote my mother a letter I will probably never deliver. The writing of it was the delivery."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "threshold_letter_royal",
+      "chapter": "CHAPTER VI \u00b7 THE THRESHOLD",
+      "text": "You write: I have only known you in dreams. I do not know if you will read this in the world, or if you will know my handwriting, or what your voice will sound like when it isn't soft with sleep.\nYou stop. You start again.\nI am coming. If I am late, I am sorry. If I am late forever, I am sorrier. I want to read whatever you were reading the night they took you. I want to read it with you. I want to drink tea in a kitchen with you and bore everyone we know. I want a very ordinary life, beside you. That is a strange thing to want from someone I have not met. I am not sorry I want it. I am only sorry if I do not get to give it to you.\nYou fold it. You will press it into {missing_poss} hand if you find {missing_obj}. If you do not \u2014 well. The Gate can have it.",
+      "choices": [
+        {
+          "text": "Stand. Breathe.",
+          "next": "threshold_stranger",
+          "do": [
+            "add_item:elara_letter",
+            "trust:+6",
+            "fear:-3",
+            "journal:I wrote {missing_short} a letter. I am carrying it into the Gate. If I come out, {missing_pron} will read it. If I don't \u2014 well."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "threshold_letter_finder",
+      "chapter": "CHAPTER VI \u00b7 THE THRESHOLD",
+      "text": "If you are reading this, you write, then I am very probably dead, and I would like you to know a few things.\nI was a person. I had a dog at a caravan that decided I was its problem. I had a friend named Juno who gave me a painted stone. I had a love I knew only in dreams. I had a company of people I would have walked off the world for and they walked off the world with me.\nI did not save everyone I wanted to. I tried. I tried hard. I want that on the record.\nDo something small and ordinary today. Eat bread. Touch a person you love. Do not waste it.\n\u2014 A walker at the Gate.\nYou fold it. You weight it with Juno's stone. You leave it on a flat rock at the edge of camp.",
+      "choices": [
+        {
+          "text": "Walk back to the fire.",
+          "next": "threshold_stranger",
+          "do": [
+            "trust:+5",
+            "journal:I left a letter on a stone for whoever finds it. I do not need them to find me. I need them to find the letter."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "threshold_stranger",
+      "chapter": "CHAPTER VI \u00b7 THE THRESHOLD",
+      "text": "You are about to lie down when the watch calls quietly: someone coming.\nFrom the direction of the Gate. Stumbling.\nA woman. Older than you. Hair like burnt paper. Eyes \u2014 eyes that do not focus right.\nShe walks straight to your fire and sits without asking and stares into it.\n\"I came out,\" she says, in the voice of someone surprised by her own mouth. \"I don't know how. It let me. It \u2014 it sang and the singing was a door for a moment. I think it wanted me to tell you something.\"\nShe looks up at you. Her eyes find yours. They are someone's eyes again, briefly.\n\"It is afraid of you,\" she says. \"That's all. I came all this way to tell you that. It is afraid of you.\"",
+      "choices": [
+        {
+          "text": "Wrap her in a blanket. Feed her.",
+          "next": "threshold_stranger_care",
+          "do": [
+            "trust:+5"
+          ]
+        },
+        {
+          "text": "\"Tell me what it looks like.\"",
+          "next": "threshold_stranger_describe",
+          "do": [
+            "fear:+3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "threshold_stranger_care",
+      "chapter": "CHAPTER VI \u00b7 THE THRESHOLD",
+      "text": "You put your own blanket around her. Moth ladles soup. The woman eats with both hands, hunched over the bowl, like she has forgotten how to be watched.\nAfter, she sleeps. Just \u2014 sleeps. Out, like a snuffed candle.\nYou will not get her story. You will not learn her name. In the morning she will be gone, or she won't \u2014 but the soup mattered. The blanket mattered. You did not have to know who she was to be kind to her.\nThis, you understand suddenly, is what you have been training for, in all the smallness. Not the sword. Not the spell. The blanket.",
+      "choices": [
+        {
+          "text": "Lie down. Try to sleep.",
+          "next": "threshold_dawn",
+          "do": [
+            "trust:+5",
+            "fear:-4",
+            "journal:A woman walked out of the Gate. We fed her. We did not ask. I think this is the answer to a question I did not know I was asking."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "threshold_stranger_describe",
+      "chapter": "CHAPTER VI \u00b7 THE THRESHOLD",
+      "text": "She thinks. The thinking hurts her face.\n\"It is not a shape,\" she says. \"It is a \u2014 a being-watched. It is what's behind you when you wake up in the dark and you cannot turn your head. It has voices because it has eaten voices. It has a face only when it thinks you want one.\"\nShe shudders.\n\"It will offer you something. Whatever you most want. It will be very, very kind. The trick \u2014 the trick is \u2014 \" She trails off. The words leave her. She looks at you, helpless. \"I had it. I had what to tell you. It took it back. I'm sorry. I'm sorry.\"\nShe weeps. You hold her hand. You do not let go until she sleeps.",
+      "choices": [
+        {
+          "text": "Lie down.",
+          "next": "threshold_dawn",
+          "do": [
+            "fear:+3",
+            "journal:She forgot what she came to tell me. The Keeper took it. It is, as advertised, afraid of me. It also has very long arms."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "threshold_dawn",
+      "chapter": "CHAPTER VI \u00b7 THE THRESHOLD",
+      "text": "You don't really sleep.\nYou doze. You wake. You doze. The sky goes from black to that pre-dawn color that is not really a color at all \u2014 bruise, paper, breath.\nThe Gate is visible now without standing. The world has tilted toward it overnight.\nThe company stirs. Moth puts the kettle on. Ash sharpens a knife that doesn't need sharpening. Ser Vale braids his hair back like a man going to a formal occasion. Rook stretches his bound wrists, and the cord, and the bruise around the cord.\nYou stand up. Your knees work. You are surprised that your knees work.\nIt is the day.",
+      "choices": [
+        {
+          "text": "Walk to the Gate.",
+          "next": "hollow_gate",
+          "do": [
+            "flag:walked_threshold",
+            "trust:+5",
+            "journal:I slept badly. The Gate is a mile of nothing. My company is behind me. I am, today, going to do the thing."
+          ]
+        }
+      ]
+    }
+  ]
+}

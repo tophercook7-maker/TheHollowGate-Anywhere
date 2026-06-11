@@ -1,0 +1,1245 @@
+{
+  "scenes": [
+    {
+      "id": "deep_wraith_road_1",
+      "chapter": "WAVE 4 \u00b7 THE WRAITH ON THE ROAD",
+      "text": "The wastes go gray before they go dark. You feel it first as a wrongness at the edge of vision \u2014 a thin shape that moves when you do, that stops when you stop.\n\nAsh sees it too. Their hand drifts to a knife and stays there. \"It's been with us since the river,\" they murmur. \"It hasn't tried anything.\"\n\nSer Vale spits. \"Not yet.\"\n\nThe figure is the color of old smoke. It has no face \u2014 only the suggestion of one, the way a stain on a wall suggests a face if you stare long enough. It does not gain on you. It does not fall behind. When you slow, it slows. When you laugh nervously, you hear it laugh half a heartbeat later, in your own voice.\n\nMoth has gone the gray-green of someone about to be sick.\n\nThe sun is bleeding out behind the western hills. You will have to make camp soon, and the thing will be at your fire.\n\nWhat do you do before nightfall?",
+      "choices": [
+        {
+          "text": "Set the watch and prepare for a fight.",
+          "next": "deep_wraith_road_2"
+        },
+        {
+          "text": "Walk faster \u2014 try to outlast it until dawn.",
+          "next": "deep_wraith_road_3"
+        },
+        {
+          "text": "Speak to it now, in daylight, while it's weak.",
+          "next": "deep_wraith_road_4"
+        }
+      ]
+    },
+    {
+      "id": "deep_wraith_road_2",
+      "chapter": "WAVE 4 \u00b7 THE WRAITH ON THE ROAD",
+      "text": "You pick the camp yourself: a low cup of land with a single dead tree, where nothing can come at you from above. Ser Vale grunts approval. Ash builds the fire too tall. Moth will not sit with their back to the dark.\n\nYou eat in silence. The thing is past the firelight, just past, where the light gives up and the wastes begin.\n\nThen \u2014 your own voice from the dark: \"Ash. Hand me the waterskin.\"\n\nAsh freezes with the waterskin halfway out. They are staring at you. You have not spoken.\n\nAnother voice now, from a slightly different place. Ser Vale's, perfect, perfect: \"On your left, lad.\"\n\nVale draws steel without looking. \"It's learning us,\" they say flatly. \"It'll be inside our heads by morning.\"\n\nYou can see it now at the edge of the light. Not a shape. A pulled thread of person. It is waiting for you to choose.",
+      "choices": [
+        {
+          "text": "Steel. End it now. (sword/shadow_blade)",
+          "next": "deep_wraith_road_steel",
+          "require": "sword"
+        },
+        {
+          "text": "Steel \u2014 the shadow blade is hungrier.",
+          "next": "deep_wraith_road_steel",
+          "require": "shadow_blade"
+        },
+        {
+          "text": "Light. Crack a warding draught into the fire.",
+          "next": "deep_wraith_road_light",
+          "require": "warding_draught"
+        },
+        {
+          "text": "Speak its true name.",
+          "next": "deep_wraith_road_name",
+          "require": "flag:knows_keeper_name"
+        },
+        {
+          "text": "You have none of these. Hold the line and pray.",
+          "next": "deep_wraith_road_fail"
+        }
+      ]
+    },
+    {
+      "id": "deep_wraith_road_3",
+      "chapter": "WAVE 4 \u00b7 THE WRAITH ON THE ROAD",
+      "text": "You push the company past dusk. Moth stumbles. Ash carries half their pack without a word. Vale's jaw is a closed door.\n\nThe thing keeps pace easily. It is not tired. It does not breathe.\n\nWhen the moon comes up it is already at your shoulder, an arm's length out into the dark, walking with you. It says, in your own voice, \"I'm tired.\"\n\nIt says, \"Make camp.\"\n\nIt is trying to give you orders in your own mouth.\n\nYou stop because your legs will not carry you another step. The fire is small and mean. The thing sits down across it from you, in the shape of a person who does not quite remember how knees fold.\n\nIt has all night.",
+      "choices": [
+        {
+          "text": "Steel. (sword/shadow_blade)",
+          "next": "deep_wraith_road_steel",
+          "require": "sword"
+        },
+        {
+          "text": "Steel \u2014 shadow blade.",
+          "next": "deep_wraith_road_steel",
+          "require": "shadow_blade"
+        },
+        {
+          "text": "Warding draught into the flames.",
+          "next": "deep_wraith_road_light",
+          "require": "warding_draught"
+        },
+        {
+          "text": "Name it.",
+          "next": "deep_wraith_road_name",
+          "require": "flag:knows_keeper_name"
+        },
+        {
+          "text": "Endure until dawn.",
+          "next": "deep_wraith_road_fail"
+        }
+      ]
+    },
+    {
+      "id": "deep_wraith_road_4",
+      "chapter": "WAVE 4 \u00b7 THE WRAITH ON THE ROAD",
+      "text": "You walk off the road toward it. Ash hisses your name. Vale catches your sleeve. You shake them both off.\n\nIn the gray light it is less than you thought and more. It has the silhouette of a thin man in a long coat. It has no face. It is not afraid of you. It tilts what would be a head.\n\n\"Why are you following us?\" you ask.\n\nIt answers, in your voice: \"Why are you following us?\"\n\nYou try again. \"What do you want?\"\n\nIt waits, then says: \"What do you want?\"\n\nIt is not mocking. It is studying. It is taking you apart syllable by syllable to wear later.\n\nYou step back. It does not follow. Not yet. But the sun is going, and the thing has more of you now than it had this morning.",
+      "choices": [
+        {
+          "text": "Back to camp. Draw steel. (sword)",
+          "next": "deep_wraith_road_steel",
+          "require": "sword"
+        },
+        {
+          "text": "Back to camp. Shadow blade.",
+          "next": "deep_wraith_road_steel",
+          "require": "shadow_blade"
+        },
+        {
+          "text": "Back to camp. Burn it with light. (warding_draught)",
+          "next": "deep_wraith_road_light",
+          "require": "warding_draught"
+        },
+        {
+          "text": "Speak its true name now, while you have its attention.",
+          "next": "deep_wraith_road_name",
+          "require": "flag:knows_keeper_name"
+        },
+        {
+          "text": "Walk back. Hope.",
+          "next": "deep_wraith_road_fail"
+        }
+      ]
+    },
+    {
+      "id": "deep_wraith_road_steel",
+      "chapter": "WAVE 4 \u00b7 THE WRAITH ON THE ROAD",
+      "text": "You go for it before it goes for you. That is the only edge.\n\nThe wraith does not bleed. It tears. Your first cut opens it like wet paper and inside is more dark, and the dark grabs back. Cold hands close on your forearm. Your blade goes wrong in your grip. Ash shouts something \u2014 a real word, your name, not yours-borrowed \u2014 and you remember which body is yours.\n\nYou drive the steel through where its mouth should be. It comes apart in a sound like a held breath let out.\n\nWhat is left on the ground is a stain that smells faintly of someone you used to know.\n\nVale claps you once, hard, on the shoulder. Ash exhales the whole night out. Moth is crying quietly and trying not to. Even Ser Vale looks at you differently now \u2014 like a thing they have decided to follow on purpose.\n\nYou bleed. But you bleed warm.\n\nWhat do you write in the journal?",
+      "choices": [
+        {
+          "text": "\"Killed a thing that wore my voice. I am still here.\"",
+          "next": "wastes_ride",
+          "do": [
+            "hp:-3",
+            "trust:+5",
+            "journal:Killed the wraith on the road. It wore my voice."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_wraith_road_light",
+      "chapter": "WAVE 4 \u00b7 THE WRAITH ON THE ROAD",
+      "text": "You uncork the warding draught and tip the whole thing into the fire.\n\nThe flames go white. Not yellow-white. The white of a struck bell. The white of the inside of a wound.\n\nThe wraith screams in a chorus of your voices \u2014 yours, Ash's, Vale's, Moth's, three others you don't recognize and one, oh god, one is {missing_short}'s \u2014 and it folds inward like a piece of paper held to a candle.\n\nThen it is gone.\n\nThe fire returns to honest yellow. Moth is sitting very still. Ash is staring at you. Vale, very quietly, says: \"That was {missing_short}'s voice. At the end. You heard it.\"\n\nYou heard it.\n\nThe draught is gone. But so is the thing.\n\nDid the Keeper take a piece of {missing_short_cap} too, and use it as bait?",
+      "choices": [
+        {
+          "text": "Write it down before you forget the sound.",
+          "next": "wastes_ride",
+          "do": [
+            "rem_item:warding_draught",
+            "trust:+3",
+            "journal:Burned the wraith with light. It screamed in {missing_short}'s voice."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_wraith_road_name",
+      "chapter": "WAVE 4 \u00b7 THE WRAITH ON THE ROAD",
+      "text": "You know what made this thing. You learned it in a tower, or in a book, or from a half-drowned mouth in a basement, and the knowing sits in you like a cold stone.\n\nYou say the Keeper's true name into the dark.\n\nThe wraith goes very still. The wastes go very still. Even the wind, which has been a steady knife since the river, stops.\n\nThe thing bows.\n\nIt is the worst thing you have ever seen, that bow \u2014 the way a half-made person folds when they remember they used to be someone. Then it turns and walks away from your fire, back toward the dark it was sent from, with the slow patient step of a servant dismissed.\n\nVale crosses themself with a hand that does not usually do that.\n\nAsh whispers: \"What did you say?\"\n\nYou don't tell them. Not yet.",
+      "choices": [
+        {
+          "text": "Bank the fire. Sleep if you can.",
+          "next": "wastes_ride",
+          "do": [
+            "trust:+8",
+            "journal:Spoke the Keeper's name. The wraith bowed and left."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_wraith_road_fail",
+      "chapter": "WAVE 4 \u00b7 THE WRAITH ON THE ROAD",
+      "text": "You have nothing for it. No steel that bites, no light that burns, no name that binds. You have a fire and four bodies and a long night.\n\nThe wraith comes into the firelight at the small hour. It does not attack. It sits. It speaks in your voice and Ash's voice and Vale's voice and once, terribly, in {missing_short}'s voice, saying come find me.\n\nYou do not sleep. None of you sleep. By dawn your hands shake. Moth has bitten their lip bloody trying not to answer it.\n\nWhen the sun finally cracks the horizon the thing slides backward into the long shadow of the dead tree and waits there, patient as a debt.\n\nIt is coming with you another day.\n\nYou are smaller this morning. All of you.",
+      "choices": [
+        {
+          "text": "March. Try to stay alive long enough to learn its name.",
+          "next": "wastes_ride",
+          "do": [
+            "hp:-5",
+            "fear:+15",
+            "flag:wraith_follows",
+            "journal:Survived the wraith. It is still with us."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_wolves_1",
+      "chapter": "WAVE 4 \u00b7 THE WOLF PACK",
+      "text": "You hear them before you see them.\n\nNot a howl. Wolves on a hunt do not howl. They speak to each other in low coughs, in the soft chuff of breath, in the click of claws on root.\n\nThe hedge witch's wood swallows sound. You don't know how many there are until they are already in a half-circle in front of you, low to the ground, ears flat. Six. Seven. Their eyes are wrong.\n\nThey are too clear. The yellow is too clean. A wolf's eye should have weather in it. These look at you the way a clerk looks at a column of numbers.\n\nThe biggest one \u2014 gray as old iron \u2014 sits down on its haunches and waits, polite as a duelist. This is a test. The witch has sent them.\n\nAsh's knuckles are white on their knife. Vale, very softly: \"Don't run. Whatever you do, don't run.\"\n\nWhat do you do?",
+      "choices": [
+        {
+          "text": "Draw and fight. (sword)",
+          "next": "deep_wolves_fight",
+          "require": "sword"
+        },
+        {
+          "text": "Draw the knife and fight close.",
+          "next": "deep_wolves_fight_knife",
+          "require": "knife"
+        },
+        {
+          "text": "Break uphill. Outpace them. (hp:5)",
+          "next": "deep_wolves_run",
+          "require": "hp:5"
+        },
+        {
+          "text": "Let the Hedge Witch speak.",
+          "next": "deep_wolves_hedge",
+          "require": "companion:hedge_witch"
+        },
+        {
+          "text": "Offer the warm tooth.",
+          "next": "deep_wolves_tooth",
+          "require": "warm_tooth"
+        },
+        {
+          "text": "You have nothing. Stand. Take what comes.",
+          "next": "deep_wolves_naked"
+        }
+      ]
+    },
+    {
+      "id": "deep_wolves_fight",
+      "chapter": "WAVE 4 \u00b7 THE WOLF PACK",
+      "text": "The big one comes for your throat first because that is how a captain leads.\n\nYou meet it with the edge. The shock of impact runs up your arm into your teeth. It is heavier than a wolf should be. It is on you and then it is off you because Vale has hammered the pommel of their sword into its skull from the side.\n\nThe rest break. Two for Vale, one for Ash, one for you. Moth has a stick and is doing what they can.\n\nYou kill the one in front of you. It dies looking at you with that too-clean eye, and at the very last moment something LEAVES the eye, and what looks back at you for one breath before it goes still is the old, weather-bitten yellow of an actual animal that was not asking for this.\n\nThe witch was riding them. You broke a leash, not a soul.\n\nYou are bleeding. So is everyone. But you stand together at the end of it, and that has begun to mean something.",
+      "choices": [
+        {
+          "text": "Bind wounds. Move on.",
+          "next": "witch_wood_inner",
+          "do": [
+            "hp:-4",
+            "trust:+5",
+            "journal:Killed the witch's wolves. Something else looked out at the end."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_wolves_fight_knife",
+      "chapter": "WAVE 4 \u00b7 THE WOLF PACK",
+      "text": "A knife is an honest weapon at close range and a stupid one at any other. You know this. You go in anyway because going in is the only choice that doesn't end with your hamstring opened from behind.\n\nYou get under the first wolf's jaw and put the blade up into the soft. Hot. So hot. The second one takes your off arm and shakes \u2014 you feel the meat give before the bone holds \u2014 and Ash is screaming and stabbing and there is a sound like wet cloth tearing.\n\nThe pack breaks because Vale has waded into them with a long sword and a face like a closing gate.\n\nYou sit down in the leaves. Your arm is not working. Moth ties it off and you say thank you and you do not pass out, which feels like a victory.\n\nThat was too close. That was barely a fight.",
+      "choices": [
+        {
+          "text": "Drink, breathe, keep going.",
+          "next": "witch_wood_inner",
+          "do": [
+            "hp:-6",
+            "trust:+5",
+            "journal:Knife-fought the wolves. Almost lost the arm."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_wolves_run",
+      "chapter": "WAVE 4 \u00b7 THE WOLF PACK",
+      "text": "You go uphill because uphill is the one thing a wolf hates more than fire. Their hips give out before yours do, if you can keep your lungs.\n\nYou keep your lungs. Barely.\n\nYou go up a slope that turns to scree, that turns to bare rock, that turns to a thin ledge under an overhang where four humans can wedge in and a wolf cannot follow without going single file into a knife.\n\nThey gather below. They look up at you. The big gray one sits down again and watches you with that clerk's patience. After a long time it stands and walks away, and the others follow, and the wood goes quiet.\n\nYou shake. All of you shake. Moth is laughing in the high broken way that comes after fear.\n\nYou did not lose blood. You lost something else. There is a cold thing in your chest now that knows it can be hunted.",
+      "choices": [
+        {
+          "text": "Climb down. Press on.",
+          "next": "witch_wood_path",
+          "do": [
+            "fear:+10",
+            "journal:Outran the wolves. The big one let us go on purpose."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_wolves_hedge",
+      "chapter": "WAVE 4 \u00b7 THE WOLF PACK",
+      "text": "The Hedge Witch steps forward without hurry. She has been quiet all morning. Now she is not.\n\nShe speaks a word that sounds like a stone dropped into a deep well. She does not raise her voice.\n\nThe big gray wolf flattens its ears. It looks at her. She looks at it. Something passes between them \u2014 a long bitter argument carried out without speaking, the way old friends fight.\n\nThe gray wolf lowers its head. The wrongness goes out of its eyes. It becomes, very simply, a tired old animal with a scar across its muzzle.\n\nThe pack turns and goes.\n\nThe Hedge Witch sits down hard in the leaves and puts her face in her hands. \"She was my teacher,\" she says, muffled. \"She taught me that word. Now I've used it against her.\"\n\nNo one knows what to say. Ash sits beside her and does not say it.",
+      "choices": [
+        {
+          "text": "Wait with her until she can walk.",
+          "next": "witch_wood_inner",
+          "do": [
+            "rel:hedge_witch:+10",
+            "trust:+5",
+            "journal:The Hedge Witch turned the wolves with her teacher's word."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_wolves_tooth",
+      "chapter": "WAVE 4 \u00b7 THE WOLF PACK",
+      "text": "You take the warm tooth out of your pocket. It is warm. It has always been warm, even on cold mornings, even in the river. It is warm now in a different way \u2014 eager.\n\nYou hold it out on your open palm.\n\nThe big gray wolf rises and pads forward, careful as a priest. It noses the tooth. It looks up at you, and for an instant you understand something you do not have the words for \u2014 a long debt, a kept promise, a name traded for a name.\n\nIt takes the tooth in its teeth, gentle as a parent. The pack rises behind it.\n\nThey turn and pass you on either side, brushing your legs as they go, and they vanish into the green dark of the wood without a sound.\n\nMoth says, very small: \"What did you just give them?\"\n\nYou don't know. But your pocket is colder now, and so is your heart, a little.",
+      "choices": [
+        {
+          "text": "Walk on while you still can.",
+          "next": "witch_wood_inner",
+          "do": [
+            "rem_item:warm_tooth",
+            "trust:+3",
+            "flag:wolves_owe",
+            "journal:Gave the warm tooth to the wolves. They let us pass."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_wolves_naked",
+      "chapter": "WAVE 4 \u00b7 THE WOLF PACK",
+      "text": "You have nothing in your hands. You stand anyway because Vale said don't run and Vale knows wolves.\n\nThe big gray one circles. It is taking your measure. It is finding you wanting.\n\nIt comes for Moth first because Moth is the smallest. You throw yourself between because that is the only sentence your body knows in this language. Teeth find your shoulder. You hit the ground hard. Vale is over you with steel and the pack is on Vale and Ash is screaming a name.\n\nIt ends because it has to end. Two wolves dead. Vale bleeding from a thigh that will scar. You from a shoulder that will ache in winter forever.\n\nYou kept Moth alive. They will not let go of your sleeve for the rest of the day.\n\nThe big gray wolf is gone. You did not beat it. It chose to leave.",
+      "choices": [
+        {
+          "text": "Limp on. Together.",
+          "next": "witch_wood_inner",
+          "do": [
+            "hp:-6",
+            "trust:+8",
+            "rel:moth:+10",
+            "journal:Took wolf-teeth for Moth. Worth it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_basement_1",
+      "chapter": "WAVE 4 \u00b7 THE TOWER BASEMENT",
+      "text": "The wizard has been called away again \u2014 by whom, he didn't say. The tower is quiet in the way old houses are quiet when they know you are alone.\n\nIn the menagerie, behind the cage of the thing that sings in a child's voice, you find a door you missed before. It is small, wooden, no taller than your sternum. It is warm to the touch.\n\nYou crack it. Behind it, a stair, very steep, going down into a wet smell \u2014 old water, salt, and something else. Iron, maybe. Or the smell a person makes when they have been frightened for a long time.\n\nAsh, behind you: \"He didn't show us this on the tour.\"\n\nVale: \"He didn't, did he.\"\n\nThe stair turns once. There is a faint blue light at the bottom. It is the wrong blue. The blue of a vein under thin skin.\n\nDo you go down?",
+      "choices": [
+        {
+          "text": "Go down. (require: trust:50)",
+          "next": "deep_basement_2",
+          "require": "trust:50"
+        },
+        {
+          "text": "Shut the door. Not yet.",
+          "next": "tower_foyer"
+        }
+      ]
+    },
+    {
+      "id": "deep_basement_2",
+      "chapter": "WAVE 4 \u00b7 THE TOWER BASEMENT",
+      "text": "The stair is twenty-six steps and you count every one. Vale comes after you. Ash stays at the top to whistle if the wizard comes home. Moth, white-lipped, comes too \u2014 they will not let you go down alone.\n\nAt the bottom is a round room. Stone walls sweating water. In the center of the floor, a circle. Not drawn. Scratched. The lines are gouged so deep they have rust in them. The circle is salt, packed hard, knee-high.\n\nInside the circle there is a thing that is mostly liquid.\n\nIt has the suggestion of a man at its surface \u2014 the curve of a shoulder, the dark of a half-open mouth, the long flat plane where a forehead used to be. The rest of him is pooled at the bottom of himself, slowly trying to remember.\n\nWhen you step into the blue light, the surface tightens. An eye opens. It is a man's eye. It is exhausted.\n\n\"Oh,\" he says, and his voice is wet, \"a visitor.\"",
+      "choices": [
+        {
+          "text": "Stay outside the circle. Speak.",
+          "next": "deep_basement_3"
+        },
+        {
+          "text": "Walk back up the stairs.",
+          "next": "tower_foyer"
+        }
+      ]
+    },
+    {
+      "id": "deep_basement_3",
+      "chapter": "WAVE 4 \u00b7 THE TOWER BASEMENT",
+      "text": "\"You are not him,\" says the thing in the circle, almost grateful. \"You are not the boy who keeps me. Good. Good.\"\n\nYou ask his name. He says he has forgotten it. He says the wizard took it as part of the binding and keeps it in a jar somewhere upstairs. He says he was a man, once, on a road, and the wizard found him useful for an old purpose.\n\nYou ask what purpose.\n\nHe smiles with the part of him that is currently shaped like a mouth.\n\n\"I know,\" he says, \"one thing about the Keeper of the Gate. One true thing. Nobody else here knows it. The wizard suspects it. He has never asked me because asking me would mean letting me go.\"\n\nMoth's hand finds your sleeve.\n\n\"I will tell you,\" he says, \"but you must trade. A trade, fair as trades go. I am not allowed to give it away.\"\n\nWhat will you trade?",
+      "choices": [
+        {
+          "text": "A memory. Something you would rather keep.",
+          "next": "deep_basement_memory"
+        },
+        {
+          "text": "Your true name.",
+          "next": "deep_basement_name"
+        },
+        {
+          "text": "A violent end. Break the circle. Kill him. (sword/shadow_blade)",
+          "next": "deep_basement_kill",
+          "require": "sword"
+        },
+        {
+          "text": "End him cleanly with the shadow blade.",
+          "next": "deep_basement_kill",
+          "require": "shadow_blade"
+        },
+        {
+          "text": "Refuse the trade. Climb back up.",
+          "next": "tower_foyer"
+        }
+      ]
+    },
+    {
+      "id": "deep_basement_memory",
+      "chapter": "WAVE 4 \u00b7 THE TOWER BASEMENT",
+      "text": "You think of one \u2014 a small one, you tell yourself, a small one will do \u2014 and the thing in the circle says, very gently, \"No. A real one. One you would not give if you weren't standing here.\"\n\nSo you give him this: the morning before the Hollow Gate opened, when {missing_short} sat on the kitchen step and laughed at something you said, and the sun was on {missing_poss} face, and you knew, for one bright second, that everything was going to be all right.\n\nYou give him the laugh.\n\nHe drinks it. The blue light dims. Something in you dims with it.\n\nHe tells you, very softly: \"The Keeper was a king. The first king of your kingdom. He refused to die. The Gate is the door he made when he could not stand being a man any longer. He still wants the throne. He takes the children of his line because they are the only ones who can still open it from the other side.\"\n\nMoth has begun, silently, to cry.\n\n\"Now go,\" the thing says, almost kindly. \"Before he comes home.\"",
+      "choices": [
+        {
+          "text": "Climb the stairs with what you bought.",
+          "next": "tower_foyer",
+          "do": [
+            "add_item:keeper_lore",
+            "flag:knows_keeper_origin",
+            "journal:The Keeper was the first king. He has been waiting a long time."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_basement_name",
+      "chapter": "WAVE 4 \u00b7 THE TOWER BASEMENT",
+      "text": "You tell him your name. Your real one. Not the one you use on the road.\n\nThe thing in the circle goes very still. Then it laughs, surprised and a little broken. \"Oh,\" it says. \"Oh, child. I will keep it well. It is not a small gift.\"\n\nYou feel it leave you the way a tooth leaves a jaw \u2014 clean, then a hole where it used to live. For a moment you cannot remember what your mother used to call you when she was angry.\n\nIt comes back. Mostly.\n\nThe thing tells you: \"The Keeper was the first king of your kingdom. He refused to die. The Gate is the door he built when his body would not hold him anymore. He has been waiting on the other side a very long time. He takes the children of his blood because they alone can open the Gate from within. Your {missing_short} is being prepared.\"\n\nVale's hand has gone to their hilt without their meaning it to.\n\n\"Prepared for what?\" you ask.\n\nThe thing in the circle, very softly: \"To wear him.\"",
+      "choices": [
+        {
+          "text": "Up the stairs. Now.",
+          "next": "tower_foyer",
+          "do": [
+            "add_item:keeper_lore",
+            "flag:knows_keeper_origin",
+            "fear:+10",
+            "journal:Traded my name. The Keeper means to wear {missing_short}."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_basement_kill",
+      "chapter": "WAVE 4 \u00b7 THE TOWER BASEMENT",
+      "text": "You step across the salt.\n\nThe ring cracks. The blue light gutters. The thing in the circle does not run. It rises. It is taller than you thought \u2014 a column of dark water with a face at the top of it, the face of a man who has been a man so long ago he barely remembers the shape \u2014 and it comes at you with arms that are not quite arms.\n\nIt is strong. It is so strong. Vale catches its second swing on the flat of a blade and is driven to one knee. Moth screams. You go for its center.\n\nThe blade goes in. It goes through. The dark water that is the rest of him pours over your hand, cold past cold, and for a moment you see \u2014 you ARE \u2014 a man on a road a long time ago, who looked at a wizard's offer of usefulness and said yes because he was tired.\n\nHe dies grateful.\n\nWhat he leaves on the floor is a heap of damp cloth and a single tooth and a piece of folded paper that says, in a hand you do not know: He was the first king. Burn this.\n\nYou do not burn it.",
+      "choices": [
+        {
+          "text": "Take the paper. Go up. Now.",
+          "next": "tower_foyer",
+          "do": [
+            "hp:-4",
+            "add_item:keeper_lore",
+            "flag:knows_keeper_origin",
+            "fear:+5",
+            "journal:Killed the thing in the basement. It thanked me at the end."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_city_siege_1",
+      "chapter": "WAVE 4 \u00b7 THE CITY UNDER SIEGE",
+      "text": "Bells start at the third hour. Not the slow tolling of a death. The fast clanging of a fire that is not a fire.\n\nA boy goes past you in the alley with one shoe on, screaming a name. Smoke is coming up from the east quarter. Not cookfire smoke. The black thick kind.\n\nA woman with a baker's apron grabs your sleeve. \"The Houses are turning,\" she gasps. \"Lord Maren's men in the square. The steward's locked the keep. There's fighting at the Salt Gate. Where do you stand, traveler?\"\n\nYou had thought you had until evening to do your business in this city. You do not have until evening.\n\nRook materializes out of a doorway behind you with one of his small ugly smiles and a longer sword than usual on his hip. \"I was wondering when this would crack,\" he says. \"Picking a side?\"\n\nWhat do you do?",
+      "choices": [
+        {
+          "text": "The steward. He is the law, what there is of it.",
+          "next": "deep_city_siege_steward"
+        },
+        {
+          "text": "The rebels. The Houses are right that the crown has rotted.",
+          "next": "deep_city_siege_rebel"
+        },
+        {
+          "text": "The civilians. Get them out of the streets. (no combat)",
+          "next": "deep_city_siege_civ"
+        },
+        {
+          "text": "None of them. Slip out the south gate before it shuts.",
+          "next": "deep_city_siege_flee"
+        }
+      ]
+    },
+    {
+      "id": "deep_city_siege_steward",
+      "chapter": "WAVE 4 \u00b7 THE CITY UNDER SIEGE",
+      "text": "You go to the keep. The steward's men are forming up in the courtyard \u2014 half of them boys, half of them old, all of them frightened. The captain has a bandage across his eye and is shouting orders to people who do not want to die today.\n\nRook falls in beside you without being asked. \"Hello, Captain,\" he says, friendly as a knife. \"Three more hands. Where do you want us?\"\n\nThe captain looks at your blade and your scars and says: \"Salt Gate. They'll come there first. Don't let it open.\"\n\nYou run. The streets are slick with something you don't look at. Rook fights at your right. He is better than he pretends. At one point he saves your life with a backhand cut that opens a man's wrist before the man knows to bleed.\n\nThe Salt Gate holds because you hold it. By the time the steward's relief column comes, you are sitting on the cobbles with your back against the gate-iron and Rook is laughing, breathless, beside you.\n\n\"Well,\" he says. \"That was honest work, for once.\"\n\nThe steward himself comes to find you that night. He puts a hand on your shoulder and says nothing for a long time. Then he gives you a small thing on a chain. \"For the road,\" he says.",
+      "choices": [
+        {
+          "text": "Take the blessing. Drink with Rook.",
+          "next": "city_keep",
+          "do": [
+            "hp:-3",
+            "companion:rook",
+            "trust:+5",
+            "flag:steward_blessing",
+            "journal:Held the Salt Gate. The steward gave me his token. Rook signed on."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_city_siege_rebel",
+      "chapter": "WAVE 4 \u00b7 THE CITY UNDER SIEGE",
+      "text": "You find Lord Maren's banner in the square \u2014 three black hounds on white. The men under it are not thugs. They are merchants' sons and discharged soldiers and a couple of women with axes and grief on their faces. They are right about a lot of things.\n\nMaren himself is younger than the songs will say. He looks at you and reads you fast.\n\n\"You're not from here,\" he says. \"Why are you here?\"\n\nYou tell him: the crown stole someone you love. He nods once, sharp.\n\n\"Then we are friends today.\"\n\nThe fighting is bad. The steward's men have the high walls. You take the bell tower with twelve others; six come back down. Rook fights at your shoulder for a while and then is gone, into the smoke, and you do not see him again that day.\n\nWhen the dust settles, Maren has the city. He kneels to you in the square \u2014 actually kneels \u2014 and says, \"Come back when you have your blood back. There will be a seat for you here.\"\n\nYou are not sure you wanted to be the kind of person who has a seat in a city of new graves. But you took one.",
+      "choices": [
+        {
+          "text": "Bind your wounds. Go.",
+          "next": "city_alleys",
+          "do": [
+            "hp:-5",
+            "trust:+5",
+            "gold:+20",
+            "flag:rebel_friend",
+            "journal:Fought with Maren. The city changed hands. I helped."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_city_siege_civ",
+      "chapter": "WAVE 4 \u00b7 THE CITY UNDER SIEGE",
+      "text": "You and Ash and Moth go where the fighting is not. You bang on shutters. You drag old men out of doorways. You carry a woman in labor four streets to a midwife who is herself bleeding from a cut on the forehead.\n\nMoth is good at this. Moth is luminous at this. You realize you have never seen them so sure of themselves.\n\nAn alley full of children won't come out because they think you are with the soldiers. Ash sits down in the muck and starts singing the silly counting song the bookseller taught them. One child comes. Then another. Then all of them.\n\nYou get nineteen people out of the east quarter before the fire turns it to a furnace. Nineteen.\n\nAt sundown, the woman with the baker's apron finds you. She gives you a loaf still warm. \"Word's going around about you,\" she says. \"That's the kind of word that opens doors. Remember us, traveler.\"\n\nRook drifts up at twilight, bloody. He looks at you a long moment, then nods, slow. \"You're the strangest soldier I've ever met,\" he says. \"I think I like you better for it.\"",
+      "choices": [
+        {
+          "text": "Eat the bread. Sleep when you can.",
+          "next": "city_keep",
+          "do": [
+            "trust:+10",
+            "rel:moth:+10",
+            "rel:rook:+5",
+            "journal:Pulled nineteen people out of the fire. Not a fight I'll forget."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_city_siege_flee",
+      "chapter": "WAVE 4 \u00b7 THE CITY UNDER SIEGE",
+      "text": "You take the south gate before it shuts. You take it at a run. Ash is behind you and Moth is between you and Vale is bringing up the rear, sword out, daring anyone to slow the company down.\n\nNo one does.\n\nThe city is behind you by the time the second bell starts. Smoke is rising from three places now. You can hear, very faintly, somebody screaming.\n\nYou tell yourself: that is not your war. {missing_short_cap} is your war.\n\nYou tell yourself a few more things on the road south. Most of them are true. None of them are all the way true.\n\nMoth will not look at you for a while.\n\nWhat will the journal say?",
+      "choices": [
+        {
+          "text": "\"I left a city to burn. I will not pretend I didn't.\"",
+          "next": "wastes_ride",
+          "do": [
+            "fear:+5",
+            "rel:moth:-5",
+            "journal:Left the city burning. {missing_short_cap} is more important. I hope."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_dream_1",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S DREAM-HUNT",
+      "text": "You go to sleep by the fire. You know what is happening as soon as it happens.\n\nYou are still by the fire. The fire is still burning. But Ash is not breathing. Vale is not breathing. Moth's eyes are open and they are not seeing.\n\nSomething steps out from behind the dead tree at the edge of the camp.\n\nHe is tall. He is wearing a crown that is not metal. His face is the face of a man who has practiced being a face for too long. He smiles at you with all his teeth and they are correct in number and arrangement and that is somehow worse.\n\n\"There you are,\" the Keeper says. His voice is patient, almost fond. \"I wondered when you would come close enough to hunt.\"\n\nYou cannot move your legs. You can move your eyes and your hands.\n\nThis is a dream. This is also not a dream. He is in the dream with you and what he does here will print on you when you wake.\n\nWhat do you do, round one?",
+      "choices": [
+        {
+          "text": "Hide. Slip behind the tree before he names you.",
+          "next": "deep_dream_2_hide"
+        },
+        {
+          "text": "Run. Out of the firelight, into the dark. (require: hp:5)",
+          "next": "deep_dream_2_run",
+          "require": "hp:5"
+        },
+        {
+          "text": "Fight. Draw the shadow blade in the dream.",
+          "next": "deep_dream_2_fight",
+          "require": "shadow_blade"
+        },
+        {
+          "text": "Speak. Say his name back at him. (require: flag:knows_keeper_name)",
+          "next": "deep_dream_2_speak",
+          "require": "flag:knows_keeper_name"
+        }
+      ]
+    },
+    {
+      "id": "deep_dream_2_hide",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S DREAM-HUNT",
+      "text": "You slide sideways into the shadow of the dead tree. You do it the way a child does it \u2014 small, completely, holding your breath.\n\nThe Keeper walks past. He is humming. The humming is, you realize, your own breathing, slowed down and played back to you.\n\nHe stops at the fire. He turns his head all the way around like a thing that has not used a neck in a long time. He says, \"Round two, little one.\"\n\nYou are still alive in the dream. Good. Hide cost you nothing this round.",
+      "choices": [
+        {
+          "text": "Round two. Hide again, deeper.",
+          "next": "deep_dream_3_hide"
+        },
+        {
+          "text": "Round two. Run. (require: hp:5)",
+          "next": "deep_dream_3_run",
+          "require": "hp:5"
+        },
+        {
+          "text": "Round two. Fight. (shadow_blade)",
+          "next": "deep_dream_3_fight",
+          "require": "shadow_blade"
+        },
+        {
+          "text": "Round two. Speak. (flag:knows_keeper_name)",
+          "next": "deep_dream_3_speak",
+          "require": "flag:knows_keeper_name"
+        }
+      ]
+    },
+    {
+      "id": "deep_dream_2_run",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S DREAM-HUNT",
+      "text": "You run. Your legs work in the dream because you have decided they will. You go out past the firelight into the long flat dark of the wastes and you run until your lungs are knives.\n\nWhen you stop you are at the foot of a hill that was not there before. The Keeper is standing on top of it. He has not moved. He has been there the whole time.\n\n\"Round two,\" he says, gently, the way you would say it to a child losing a game.\n\nYou wake half-up. Your chest aches. Something has been removed from your head \u2014 a page from the journal. You can feel the gap. It was about {missing_short}. You cannot remember which day.",
+      "choices": [
+        {
+          "text": "Round two. Hide.",
+          "next": "deep_dream_3_hide",
+          "do": [
+            "hp:-3",
+            "journal:Lost a page. The Keeper is hunting me in sleep."
+          ]
+        },
+        {
+          "text": "Round two. Run again.",
+          "next": "deep_dream_3_run",
+          "require": "hp:5",
+          "do": [
+            "hp:-3"
+          ]
+        },
+        {
+          "text": "Round two. Fight.",
+          "next": "deep_dream_3_fight",
+          "require": "shadow_blade",
+          "do": [
+            "hp:-3"
+          ]
+        },
+        {
+          "text": "Round two. Speak.",
+          "next": "deep_dream_3_speak",
+          "require": "flag:knows_keeper_name",
+          "do": [
+            "hp:-3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_dream_2_fight",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S DREAM-HUNT",
+      "text": "The shadow blade is in your hand because you wanted it there. In dreams that is enough.\n\nYou go at him. He lets you.\n\nThe blade goes through his ribs without resistance. He looks down at it with something close to interest. He says: \"Oh, that is a good little knife. Whose was it before yours?\"\n\nHe takes hold of the blade with his bare hand and pushes himself further onto it, until your fist is against his sternum and his face is very close to yours.\n\n\"Round two,\" he murmurs, almost lovingly, into your ear.\n\nThe blade was the wrong choice. He likes blades.",
+      "choices": [
+        {
+          "text": "Round two. Hide.",
+          "next": "deep_dream_3_hide",
+          "do": [
+            "hp:-3"
+          ]
+        },
+        {
+          "text": "Round two. Run.",
+          "next": "deep_dream_3_run",
+          "require": "hp:5",
+          "do": [
+            "hp:-3"
+          ]
+        },
+        {
+          "text": "Round two. Speak. (knows_keeper_name)",
+          "next": "deep_dream_3_speak",
+          "require": "flag:knows_keeper_name",
+          "do": [
+            "hp:-3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_dream_2_speak",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S DREAM-HUNT",
+      "text": "You say his name.\n\nThe Keeper stops moving. He puts a hand to his own mouth, as if to check it is still there. Then he laughs. It is not the laugh of a man who is afraid. It is the laugh of a man who is delighted.\n\n\"Well,\" he says. \"Aren't you a clever animal. Round two.\"\n\nNaming him did not hurt him. It interested him. He is paying attention now in a different way.\n\nYou have his attention. Be careful what you do with it.",
+      "choices": [
+        {
+          "text": "Round two. Hide.",
+          "next": "deep_dream_3_hide"
+        },
+        {
+          "text": "Round two. Run.",
+          "next": "deep_dream_3_run",
+          "require": "hp:5"
+        },
+        {
+          "text": "Round two. Fight.",
+          "next": "deep_dream_3_fight",
+          "require": "shadow_blade"
+        },
+        {
+          "text": "Round two. Speak again \u2014 ask what he wants.",
+          "next": "deep_dream_3_speak_talk"
+        }
+      ]
+    },
+    {
+      "id": "deep_dream_3_hide",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S DREAM-HUNT",
+      "text": "Round two: you hide in the shadow of Ash. They are not breathing in the dream, but they are still warm, and the Keeper does not look at the dead.\n\nHe walks among the camp. He stops at Moth. He bends down and almost \u2014 almost \u2014 kisses their forehead.\n\nYou make no sound.\n\nHe straightens. \"Round three, little one,\" he says, \"and then you will be mine for the morning.\"",
+      "choices": [
+        {
+          "text": "Round three. Fight him, ready or not. (shadow_blade)",
+          "next": "deep_dream_final_fight",
+          "require": "shadow_blade"
+        },
+        {
+          "text": "Round three. Speak his name. (flag:knows_keeper_name)",
+          "next": "deep_dream_final_speak",
+          "require": "flag:knows_keeper_name"
+        },
+        {
+          "text": "Round three. Hide one more time.",
+          "next": "deep_dream_final_hide"
+        }
+      ]
+    },
+    {
+      "id": "deep_dream_3_run",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S DREAM-HUNT",
+      "text": "Round two: you go further. You run past the hill, past a river that was not there yesterday, past a stand of dead trees that lean toward you as you pass.\n\nThe Keeper is at the end of the running. He always is. He says, gently: \"There is no further. You know that, don't you?\"\n\nYou know. But you ran anyway, because the body insists.\n\nYou ache when you wake half-up. Another page is gone.",
+      "choices": [
+        {
+          "text": "Round three. Fight. (shadow_blade)",
+          "next": "deep_dream_final_fight",
+          "require": "shadow_blade",
+          "do": [
+            "hp:-3"
+          ]
+        },
+        {
+          "text": "Round three. Speak. (knows_keeper_name)",
+          "next": "deep_dream_final_speak",
+          "require": "flag:knows_keeper_name",
+          "do": [
+            "hp:-3"
+          ]
+        },
+        {
+          "text": "Round three. Hide.",
+          "next": "deep_dream_final_hide",
+          "do": [
+            "hp:-3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_dream_3_fight",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S DREAM-HUNT",
+      "text": "Round two: you go at him again. He sighs the way a tutor sighs at a slow pupil. He sets your blade aside with one palm and puts his other palm flat against your forehead.\n\nYou wake half-up gasping. There is a print on your forehead like a sun-burn. A page of the journal has been pulled.",
+      "choices": [
+        {
+          "text": "Round three. Speak. (knows_keeper_name)",
+          "next": "deep_dream_final_speak",
+          "require": "flag:knows_keeper_name",
+          "do": [
+            "hp:-3"
+          ]
+        },
+        {
+          "text": "Round three. Hide.",
+          "next": "deep_dream_final_hide",
+          "do": [
+            "hp:-3"
+          ]
+        },
+        {
+          "text": "Round three. Fight one more time.",
+          "next": "deep_dream_final_fight",
+          "require": "shadow_blade",
+          "do": [
+            "hp:-3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_dream_3_speak",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S DREAM-HUNT",
+      "text": "Round two: you say his name again. Louder. As an accusation.\n\nThis time it lands. He flinches \u2014 the smallest twitch at the corner of his mouth \u2014 and you see, for one heartbeat, the tired old man underneath the practiced face. A king who has not slept in eight hundred years.\n\nThen the practiced face is back.\n\n\"Clever,\" he says. \"Round three. Make it interesting.\"",
+      "choices": [
+        {
+          "text": "Round three. Speak \u2014 and ask him to let {missing_short} go.",
+          "next": "deep_dream_final_speak"
+        },
+        {
+          "text": "Round three. Fight. (shadow_blade)",
+          "next": "deep_dream_final_fight",
+          "require": "shadow_blade"
+        },
+        {
+          "text": "Round three. Hide.",
+          "next": "deep_dream_final_hide"
+        }
+      ]
+    },
+    {
+      "id": "deep_dream_3_speak_talk",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S DREAM-HUNT",
+      "text": "\"What do you want?\" you ask him.\n\nThe Keeper considers the question. He sits down on the dead tree at the edge of the camp. He looks suddenly very tired.\n\n\"To live,\" he says, simply. \"That is all anyone ever wants. I refused to die. I do not regret it. But living has cost more than I expected. And {missing_short} \u2014 your {missing_short} \u2014 is the cleanest body of my line in eight hundred years. I will be young again in {missing_obj}. I am sorry. I do not regret that either.\"\n\nYou cannot speak.\n\n\"Round three,\" he says, almost gently.",
+      "choices": [
+        {
+          "text": "Round three. Speak \u2014 refuse him.",
+          "next": "deep_dream_final_speak"
+        },
+        {
+          "text": "Round three. Fight. (shadow_blade)",
+          "next": "deep_dream_final_fight",
+          "require": "shadow_blade"
+        },
+        {
+          "text": "Round three. Hide.",
+          "next": "deep_dream_final_hide"
+        }
+      ]
+    },
+    {
+      "id": "deep_dream_final_fight",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S DREAM-HUNT",
+      "text": "You go at him with everything you have left in the dream \u2014 every grief, every road, every bad night since {missing_short_cap} was taken.\n\nThe shadow blade glows in your hand, the way it has not since the tower. It tastes him.\n\nFor the first time he steps back.\n\nYou cut him across the cheek. A line of darkness opens in his face and what comes out is not blood. It is sleep. It is years of unspent sleep.\n\nHe touches the cut. He looks at his fingers. He looks at you.\n\n\"Oh,\" he says, very quietly. \"You will be a problem.\"\n\nThen the dream breaks like a window and you are awake at the fire, gasping, alive, your hand still wrapped around the shadow blade.\n\nYou cut him. He felt it. You will pay for it later. But he knows your face now and he knows you draw blood.",
+      "choices": [
+        {
+          "text": "Sit up. Watch the dark. Don't sleep again tonight.",
+          "next": "camp_rest",
+          "do": [
+            "hp:-3",
+            "flag:keeper_blooded",
+            "trust:+5",
+            "journal:Cut the Keeper in dream. He is afraid of me now. A little."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_dream_final_speak",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S DREAM-HUNT",
+      "text": "You say his name a third time, and this time you put a word with it. The word is no.\n\n\"You will not have {missing_obj},\" you say. \"You will not have {missing_obj}. You will not have {missing_obj}.\"\n\nThree refusals. Three is the old number.\n\nThe dream cracks at its corners. The Keeper's practiced face goes thin. He raises a hand \u2014 to do what, you do not know \u2014 and then he is pulled backward, fast, as if by a long invisible cord, into the dark behind the dead tree.\n\nHe is gone. The fire is again only a fire. Ash is breathing again. Vale is breathing again. Moth turns over in their blankets and mumbles something about bread.\n\nYou wake. Your hands shake. You are intact.\n\nHe will be back. But you held the ground.",
+      "choices": [
+        {
+          "text": "Stay up. Watch the stars.",
+          "next": "camp_rest",
+          "do": [
+            "flag:keeper_blooded",
+            "trust:+8",
+            "journal:Said no to the Keeper three times. He went. For now."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_dream_final_hide",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S DREAM-HUNT",
+      "text": "You hide one more time. You are small and quiet and the Keeper walks past you and does not find you.\n\nBut hiding is not winning. He stands at the fire and waits, patient as a debt, until the dream gives out from sheer length.\n\nYou wake exhausted. He did not catch you. He did not need to. He has a measure of you now and he will use it.\n\nAnother page is gone from the journal. You cannot remember the song {missing_short} used to hum while {missing_pron} braided your hair.",
+      "choices": [
+        {
+          "text": "Get up. Walk it off.",
+          "next": "camp_rest",
+          "do": [
+            "hp:-3",
+            "fear:+5",
+            "journal:Hid from the Keeper. Lost the song."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_bandits_1",
+      "chapter": "WAVE 4 \u00b7 THE ROAD-COMPANY",
+      "text": "They have the road blocked properly. Not a fallen tree \u2014 a felled tree, freshly axed, the cut still pale. Two on the trunk, three in the brush, one with a crossbow on the slope. Veterans. You can tell by how little they move.\n\nThe one on the trunk stands. He is older than you expected \u2014 gray in his beard, an old burn down one side of his face, a cloak that was a soldier's cloak once. He raises a hand, open, palm out.\n\n\"Easy,\" he calls. \"Easy. We're not here for blood.\"\n\nHis voice has the cadence of an officer giving orders he has given a thousand times.\n\nVale, very low, beside you: \"That's a King's man. Old wars. I knew his sergeant.\"\n\nThe man on the tree says: \"We need thirty in gold. You get to walk on. Nobody dies. Don't make us do this the other way.\"\n\nWhat do you do?",
+      "choices": [
+        {
+          "text": "Draw. Fight your way through.",
+          "next": "deep_bandits_fight"
+        },
+        {
+          "text": "Pay the thirty. (gold:30)",
+          "next": "deep_bandits_pay",
+          "require": "gold:30"
+        },
+        {
+          "text": "Recruit them \u2014 these are useful hands. (trust:70)",
+          "next": "deep_bandits_recruit",
+          "require": "trust:70"
+        },
+        {
+          "text": "Talk down their leader. Vale knew his sergeant.",
+          "next": "deep_bandits_talk"
+        }
+      ]
+    },
+    {
+      "id": "deep_bandits_fight",
+      "chapter": "WAVE 4 \u00b7 THE ROAD-COMPANY",
+      "text": "Vale curses you in three languages and then is already moving. The crossbow lets fly. The bolt takes Ash in the shoulder \u2014 Ash who said this morning that they had a good feeling about today \u2014 and Ash goes down with a grunt that is somehow worse than a scream.\n\nIt is over in less than a minute. Five of them dead. One running. The old man with the burn down his face is on his knees in the road with Vale's blade at his throat. He is not begging. He is just looking up at Vale with old, embarrassed eyes.\n\n\"I served under your sergeant at the Loma crossing,\" he says, quietly. \"He died because the crown did not send the relief column. They did not send it because the king was sick of the war and forgot.\"\n\nVale's hand does not move on the hilt.\n\nYou go through the pockets of the dead. There is thirty in copper between all of them.\n\nYou take it. There is no good way to take it. You take it anyway.",
+      "choices": [
+        {
+          "text": "Patch Ash. Walk.",
+          "next": "wastes_gate",
+          "do": [
+            "hp:-3",
+            "gold:+30",
+            "journal:Fought the road-company. They were the King's old men. We took their copper."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_bandits_pay",
+      "chapter": "WAVE 4 \u00b7 THE ROAD-COMPANY",
+      "text": "You count it out. Thirty in gold. You hand it up to the man on the tree.\n\nHe takes it without looking at it. He nods once.\n\n\"Safe road,\" he says. \"You go straight on, you'll hit the Crow's Foot inn by dark. Tell Tobish that Halric sent you, and tell him I'm still alive, and tell him I'm sorry about his sister.\"\n\nVale, beside you, has gone very still.\n\nHalric of the road-company stands aside. His people fade back into the trees. The road opens.\n\nAs you pass, the old man calls after you: \"There's worse than us further on. Keep your light close.\"",
+      "choices": [
+        {
+          "text": "Walk on. Tell Tobish.",
+          "next": "wastes_gate",
+          "do": [
+            "gold:-30",
+            "trust:+3",
+            "journal:Paid Halric his thirty. He knew Tobish."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_bandits_recruit",
+      "chapter": "WAVE 4 \u00b7 THE ROAD-COMPANY",
+      "text": "You step forward. You take off your hood. You look the old man on the tree in the face.\n\n\"I'm going to the Hollow Gate,\" you say, plainly. \"The Keeper took my {missing_short}. I am going to bring {missing_obj} back or die there. You have six veterans. I have four hands and a hard road. Come with me.\"\n\nThe old man \u2014 Halric, you will learn his name in an hour \u2014 looks at you a long moment. He looks at Vale. Vale nods once, the smallest nod. He looks at his people.\n\nOne of them spits and walks into the trees. Another laughs softly and shakes his head and follows.\n\nFour stay.\n\nHalric climbs down off the tree. \"We don't take orders well,\" he warns. \"We're tired men. But we know the road past the wastes and we know what to do with a crossbow.\"\n\nThe company is bigger tonight. Your max HP goes up by the simple math of four more bodies between you and the dark. You sleep deeper than you have in weeks.",
+      "choices": [
+        {
+          "text": "Make camp with the new hands. Drink the bad wine.",
+          "next": "wastes_gate",
+          "do": [
+            "max_hp:+2",
+            "trust:+5",
+            "flag:road_company",
+            "journal:Recruited Halric and four of his veterans. The road feels less long."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_bandits_talk",
+      "chapter": "WAVE 4 \u00b7 THE ROAD-COMPANY",
+      "text": "Vale steps forward before you can stop them. They pull their hood back.\n\n\"You served under Garin at Loma,\" Vale says. It is not a question.\n\nThe old man on the tree goes still. He looks at Vale. He looks for a long time. Then his shoulders come down by an inch.\n\n\"You were the squire,\" he says, slowly. \"Garin's squire. You carried his body off the field. I saw you do it. I have never told anyone what I saw at Loma.\"\n\n\"Then we have something in common,\" Vale says.\n\nThe old man \u2014 Halric, his name is Halric \u2014 sits down on the tree. He is suddenly an old man and not an officer. He says: \"We were hungry. The new king does not pay his old soldiers. The crown ate our years and forgot our names. We are not bandits. We are accountants.\"\n\nHe waves his people back into the trees. The road opens. He gives you, unprompted, a thin silver ring he has carried since the war. \"For luck,\" he says. \"Tell anyone you meet on the road that Halric let you pass.\"",
+      "choices": [
+        {
+          "text": "Take the ring. Honor the passage.",
+          "next": "wastes_gate",
+          "do": [
+            "trust:+10",
+            "flag:bandit_friend",
+            "rel:vale:+5",
+            "journal:Vale named Halric's sergeant. He let us through. Gave a ring."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_lost_city_1",
+      "chapter": "WAVE 4 \u00b7 THE LOST CITY OF THE FIRST KINGS",
+      "text": "The tunnel map shows it but does not name it. A symbol like a crown with a slash through it, off the main route, in a hollow of land the road avoids.\n\nYou tell the others. Vale wants to skip it. Ash wants to see it. Moth says, very softly, \"I dreamed about a place like that.\"\n\nYou go.\n\nThe approach is a cut between two hills. The cut narrows. The cut becomes a road, paved in flat dark stone, half-eaten by root. The road bends. The road opens.\n\nIn front of you is a city.\n\nIt is not large. It is dead. It has been dead for so long that the trees inside the walls are older than the walls. Stone faces watch you from above the gate. Their eyes have been broken out on purpose, every one of them, by someone who came after.\n\nNo one speaks for a long time.\n\nFinally Vale says: \"What is this.\"\n\nYou don't know yet. But you know who knew. Whoever broke those eyes knew.",
+      "choices": [
+        {
+          "text": "Walk in. The gate is open.",
+          "next": "deep_lost_city_2"
+        },
+        {
+          "text": "Back out. Not today.",
+          "next": "hill_search"
+        }
+      ]
+    },
+    {
+      "id": "deep_lost_city_2",
+      "chapter": "WAVE 4 \u00b7 THE LOST CITY OF THE FIRST KINGS",
+      "text": "The gate is open because there is no gate, only the iron pivots where one used to be. You step through into a square. A fountain at the center, dry, its basin full of dead leaves and one perfectly intact white feather.\n\nAround the square, low buildings, their roofs collapsed. One building stands. It has a domed top and a wide flat lintel and the symbol over the door is the same crown-with-a-slash that was on the map.\n\nMoth says: \"That one. That's the one I dreamed about.\"\n\nThere are doorways into the buildings around the square \u2014 three obvious ones. The library, the domed thing, the throne hall at the far end with a hundred broken columns leading up to it.\n\nWhere do you start?",
+      "choices": [
+        {
+          "text": "The library. Knowledge first.",
+          "next": "deep_lost_city_library"
+        },
+        {
+          "text": "The domed building. Whatever Moth dreamed.",
+          "next": "deep_lost_city_dome"
+        },
+        {
+          "text": "The throne hall. Names first.",
+          "next": "deep_lost_city_throne"
+        }
+      ]
+    },
+    {
+      "id": "deep_lost_city_library",
+      "chapter": "WAVE 4 \u00b7 THE LOST CITY OF THE FIRST KINGS",
+      "text": "The library has lost most of its roof. What it has not lost are stone shelves carved into the walls, with stone tablets still on them, mostly intact.\n\nThe writing is old. Older than the kingdom you know. Older, you slowly realize, than the kingdom YOU KNOW knows.\n\nAsh sounds out a word. It is a name. Then another. They are king-names. A list of king-names \u2014 but the list runs in the wrong direction, going forward in time, and at the end, in a hand that is somehow shakier than the rest, is a name you do not know followed by the words HE WILL NOT GO.\n\nThe ink is rust-brown. It is not ink.\n\nMoth is reading another tablet. They look up, face white. They say: \"This is our kingdom. This was our kingdom. Before. It says here that the first king built a door and went into the door because he refused to die.\"\n\nThe library's broken roof lets in a square of cold light. You stand in it for a long time.",
+      "choices": [
+        {
+          "text": "Take what you can read. Move on.",
+          "next": "deep_lost_city_dome",
+          "do": [
+            "journal:The first king refused to die. He built a door. He is the Keeper."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_lost_city_dome",
+      "chapter": "WAVE 4 \u00b7 THE LOST CITY OF THE FIRST KINGS",
+      "text": "The dome inside is painted. The paint has held because the air is dry and the dome was sealed until you broke the door.\n\nThe painting is a map of the night sky. Not your night sky. An older one. The constellations are wrong by small amounts.\n\nAt the dome's apex is a figure. A man with a crown. He is reaching down with one long arm and his fingers are passing through a thin black arch \u2014 a Gate \u2014 and on the other side of the arch a child is reaching up.\n\nMoth makes a small sound and sits down on the floor.\n\nUnderneath the painting, around the inside of the dome at eye height, runs a line of writing. You read what you can.\n\n\"The first king made the door. He went in. He kept his name. He kept his hunger. He returns when the line is sweet enough.\"\n\n\"When the line is sweet enough,\" Ash repeats. \"Sweet enough.\"\n\nThey mean {missing_short}.",
+      "choices": [
+        {
+          "text": "Step out. You can't be in here right now.",
+          "next": "deep_lost_city_throne",
+          "do": [
+            "fear:+5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_lost_city_throne",
+      "chapter": "WAVE 4 \u00b7 THE LOST CITY OF THE FIRST KINGS",
+      "text": "The throne hall has no roof at all. The hundred columns stand open to the sky. The throne at the far end is broken on purpose \u2014 the seat carved across with a single deep gouge, top to bottom, by someone who took an axe to it long after the king was gone.\n\nVale walks the length of the hall slowly, hand on hilt. \"They broke the eyes,\" Vale says, \"and they broke the throne, and they did not burn the city. Why?\"\n\nYou think you know. They didn't burn it because burning honors a place. They left it standing as a warning.\n\nAt the foot of the throne, half-buried in centuries of dust, is a small clay tablet. You pick it up. The writing is a child's hand.\n\nIt says: HE PROMISED TO COME BACK FOR ME. HE DID NOT COME BACK.\n\nThere is no date. There is no name.\n\nYou put it in your pack. You don't know why.\n\nYou come out of the lost city heavier than you went in, but also \u2014 strangely \u2014 stronger. Knowing a thing has weight. Knowing a thing also gives you somewhere to stand.",
+      "choices": [
+        {
+          "text": "Out. Daylight. Air.",
+          "next": "hill_search",
+          "do": [
+            "max_hp:+3",
+            "flag:knows_keeper_origin",
+            "trust:+5",
+            "journal:Found the lost city. Read the tablets. The first king was the Keeper. There were children he did not come back for."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_second_offer_1",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S SECOND OFFER",
+      "text": "You stand at the foot of the Hollow Gate. The stone arch is black and the dark inside it is older than night, the way they said, the way you did not believe until now.\n\nThe wind here moves wrong.\n\nBefore you can step through, someone speaks behind you. It is the voice of the person you love most in this company. The voice you have come to listen for over fires, on roads, in the bad hours.\n\nYou turn.\n\nThey are standing too still. Their eyes are theirs. Their mouth is theirs. But the words coming out are not theirs.\n\n\"Go home,\" they say, in your beloved's voice. \"Go home with me. Marry me. I will send {missing_short} dreams of you for the rest of {missing_poss} life \u2014 good dreams, soft dreams, dreams where you are alive and happy and {missing_pron} is loved. {missing_short_cap} will not suffer. {missing_pron_cap} will not know {missing_pron} was lost. You will be old together. You will have children. The Keeper will keep his word.\"\n\nThey reach for your hand.\n\nThis is the second offer.",
+      "choices": [
+        {
+          "text": "Refuse. Step back. {missing_short_cap} is not a dream.",
+          "next": "deep_second_offer_refuse"
+        },
+        {
+          "text": "Accept. Take their hand. Go home.",
+          "next": "deep_second_offer_accept"
+        },
+        {
+          "text": "Speak to your beloved. Not to what's wearing them.",
+          "next": "deep_second_offer_speak"
+        }
+      ]
+    },
+    {
+      "id": "deep_second_offer_refuse",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S SECOND OFFER",
+      "text": "You step back. You do not look away from them, because looking away would feel like giving them up, and they are not gone. They are being worn.\n\n\"No,\" you say. \"I came for {missing_short}. I am not going home until I have {missing_obj} with me. {missing_pron_cap} is not a dream I am willing to have for the rest of my life.\"\n\nThe thing in your beloved's face smiles. It is a small smile. It is almost \u2014 almost \u2014 proud.\n\n\"Then come through,\" it says, in your beloved's voice, and the voice cracks at the end into something older, and your beloved is back in their own body, gasping, hands shaking, eyes wet, and the Keeper is gone from them like a coat shrugged off.\n\nThey grab you. Hard. They are crying.\n\n\"I'm sorry,\" they say. \"I'm sorry. I didn't know how to fight {missing_obj}.\"\n\n\"You didn't have to,\" you say. \"I did.\"\n\nYou turn back to the Gate. It is waiting.",
+      "choices": [
+        {
+          "text": "Take their hand. Step through together.",
+          "next": "hollow_gate",
+          "do": [
+            "trust:+10",
+            "flag:refused_second_offer",
+            "journal:The Keeper offered to send {missing_short} dreams of me. I said no."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_second_offer_accept",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S SECOND OFFER",
+      "text": "You take their hand.\n\nIt is warm. It is your beloved's hand. It has held you through three bad nights and you know it the way you know your own.\n\n\"All right,\" you say, very quietly. \"All right. I am tired.\"\n\nThe thing in your beloved's face smiles wider. It nods, kindly. Behind you, the Gate dims as a fire dims when no one feeds it.\n\nYour beloved squeezes your hand. The squeeze is real. The squeeze is them, for a second, panicked, mouthing NO, NO, NO with no sound.\n\nThen they are gone, and your beloved is whole again, and they kiss you, and you go home together. The road is short. The dreams the Keeper sends you of {missing_short} are very good.\n\nYou live a long life.\n\nYou wake, sometimes, in the dark, with a feeling that you traded something you should not have traded. But you cannot remember what.\n\nThis is one ending. There are others.",
+      "choices": [
+        {
+          "text": "[ending: the gentle betrayal]",
+          "next": "finale_start",
+          "do": [
+            "flag:sacrifice_ending",
+            "journal:I took the Keeper's second offer. I went home."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_second_offer_speak",
+      "chapter": "WAVE 4 \u00b7 THE KEEPER'S SECOND OFFER",
+      "text": "You ignore the words and look at your beloved's eyes.\n\n\"Are you in there?\" you ask. \"Are you hearing this?\"\n\nThe mouth that is not theirs keeps talking. \"They cannot hear you. I am holding their tongue. Go home with me. Marry me. I will send {missing_short} dreams \u2014\"\n\nYou interrupt. You say your beloved's name. Just their name. The way you say it when you are alone with them.\n\nSomething behind their eyes lurches.\n\nYou say it again.\n\nA tear rolls out of one of their eyes. The mouth keeps trying to make the Keeper's offer, but the words come out broken now, stuttering. The eyes \u2014 the eyes are your beloved's, and they are SCREAMING.\n\nYou put your hand against their cheek. \"Come back,\" you say.\n\nThey come back. With a wrench, with a sob, they come back. They sag against you. The Keeper goes out of them like a held breath let go.\n\n\"I'm here,\" your beloved whispers. \"I'm here.\"\n\nThe Gate is still waiting.",
+      "choices": [
+        {
+          "text": "Hold them a moment. Then walk through together.",
+          "next": "hollow_gate",
+          "do": [
+            "trust:+10",
+            "flag:refused_second_offer",
+            "journal:Called my beloved back. The Keeper could not keep them. Step through together."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_camp_aftermath",
+      "chapter": "WAVE 4 \u00b7 CAMP",
+      "text": "Morning. The fire is gray ash. Someone has banked it, badly, in the night.\n\nMoth is asleep against Ash's shoulder. Ash is awake, watching you. They have been watching you for some time.\n\n\"You were saying his name,\" Ash says, quietly. \"In your sleep. The Keeper's. You sounded like you were arguing with him.\"\n\nYou don't answer.\n\n\"Did you win?\" Ash asks.\n\nYou think about it.\n\nYou think you might have. A little. You don't say so out loud, because saying so out loud feels like it would unmake it.\n\nAsh nods, as if that itself were an answer. They pass you the waterskin. The water is cold and good.\n\nVale comes back from the perimeter and dumps an armful of dry brush on the fire. \"Up,\" they say. \"Road's not getting shorter.\"\n\nYou get up. The pages of the journal are fewer than they were. But you are still you. Mostly.",
+      "choices": [
+        {
+          "text": "Pack. March.",
+          "next": "camp_rest"
+        }
+      ]
+    },
+    {
+      "id": "deep_wraith_followup",
+      "chapter": "WAVE 4 \u00b7 WHAT THE WRAITH LEFT",
+      "text": "The morning after you put it down, you find one of its threads tangled in your cloak \u2014 a single strand of gray that is not your hair and not anyone's hair.\n\nYou hold it up to the light. It moves on its own.\n\nAsh sees and goes pale. \"Burn it,\" they say.\n\nVale, behind you: \"Keep it. We may need to prove what it was.\"\n\nYou keep it. You put it in the bottom of your pack where it cannot whisper to you. You think about {missing_short}'s voice at the end of the screaming and you think about who else's voices were in there. You did not recognize three of them.\n\nThere were three other people the Keeper has taken. Or three other people he will take.\n\nYou put the question to the journal because you do not want to put it to your friends yet. Whose voices were those?",
+      "choices": [
+        {
+          "text": "Walk on. Don't tell them. Yet.",
+          "next": "wastes_alone",
+          "do": [
+            "journal:Kept a thread of the wraith. Three voices in it I didn't know."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_basement_followup",
+      "chapter": "WAVE 4 \u00b7 WHAT THE BASEMENT LEFT",
+      "text": "You come up the stair into the menagerie. The thing that sings in a child's voice has stopped singing. It is watching you with eyes you had not noticed before.\n\nIt says, in the child's voice: \"You went down.\"\n\n\"Yes,\" you say.\n\n\"He told you,\" it says. \"He told you the thing.\"\n\n\"Yes,\" you say.\n\nIt is quiet a moment. Then: \"Will you come back for me?\"\n\nYou do not answer. You cannot, yet, promise that. You can lie. You can lie easily \u2014 it is only a thing in a cage, it sings in a child's voice but it is not a child, you tell yourself.\n\nIt is watching you to see if you will lie.\n\nWhat do you do?",
+      "choices": [
+        {
+          "text": "Tell it the truth. \"I don't know.\"",
+          "next": "tower_menagerie",
+          "do": [
+            "trust:+3",
+            "journal:The thing in the cage asked if I would come back for it. I said I don't know."
+          ]
+        },
+        {
+          "text": "Promise. You can break the promise later if you have to.",
+          "next": "tower_menagerie",
+          "do": [
+            "fear:+3",
+            "flag:menagerie_promise",
+            "journal:Promised the thing in the cage I would come back. We'll see."
+          ]
+        },
+        {
+          "text": "Walk past it without speaking.",
+          "next": "tower_menagerie",
+          "do": [
+            "fear:+5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_city_aftermath",
+      "chapter": "WAVE 4 \u00b7 AFTER THE CITY",
+      "text": "Whatever you did in the city, the city is changed and you are changed.\n\nThe road south smells of smoke for two days. Birds keep finding you. They land on the pack and look at you and fly off again. Vale says, dryly, that this means somebody dead is paying attention.\n\nAt the second campfire after the city, Moth comes to sit next to you. They have been quiet since.\n\n\"I keep thinking about the baker's wife,\" they say. \"With the warm loaf. She asked us to remember.\"\n\n\"I remember,\" you say.\n\nMoth nods. They lean their shoulder against yours. After a while they say, very small: \"I want to be the kind of person she meant when she said traveler. I want to come back to that city someday and be that.\"\n\nYou put an arm around them. You think you do too.\n\nWhat does the journal say tonight?",
+      "choices": [
+        {
+          "text": "\"I am going to deserve the word she used for me.\"",
+          "next": "camp_rest",
+          "do": [
+            "rel:moth:+5",
+            "journal:Want to deserve the word the baker's wife used. Traveler."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_lost_city_followup",
+      "chapter": "WAVE 4 \u00b7 WHAT THE LOST CITY LEFT",
+      "text": "That night you take the clay tablet out of your pack and turn it in the firelight. HE PROMISED TO COME BACK FOR ME. HE DID NOT COME BACK.\n\nAsh reads it over your shoulder. Their face changes.\n\n\"There were others,\" they say, slowly. \"Before {missing_short}. Before us. There have been kings' children he has taken since the first one and he has not come back for any of them.\"\n\nVale, who has been pretending not to listen: \"Then we are not the first to walk this road. We are only the first who came armed enough to know what we were walking into.\"\n\nMoth: \"What happened to the others? Inside?\"\n\nNo one has an answer.\n\nYou put the tablet back. You sleep badly. You dream of a small room behind the Gate where a hundred children are sitting in a circle, waiting, very patient, for someone to come back for them.\n\n{missing_short_cap} is one of them.",
+      "choices": [
+        {
+          "text": "Wake. Walk. Faster.",
+          "next": "camp_rest",
+          "do": [
+            "fear:+5",
+            "journal:Dreamed of the children behind the Gate. {missing_short_cap} is one of them. I will not be late."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_bandits_camp",
+      "chapter": "WAVE 4 \u00b7 THE ROAD-COMPANY",
+      "text": "If you took Halric and his veterans on, the first night in their company is loud.\n\nThey have bad wine and they share it. They have bad songs and they sing them. One of them \u2014 a woman with a scar across her chin and a laugh like a saw \u2014 knows Vale, and the two of them sit a long time by the fire saying nothing at all, which is the best kind of conversation old soldiers have.\n\nHalric himself comes to sit with you.\n\n\"You told me,\" he says, \"that the Keeper took your {missing_short}. You did not tell me you were going to the Hollow Gate to bring {missing_obj} home.\"\n\n\"I'm going to the Hollow Gate to bring {missing_obj} home,\" you say.\n\nHe is quiet a long while.\n\nThen: \"Lad. Lass. Friend. We will get you to the Gate. We will not go through it. I want you to know that now.\"\n\n\"I know,\" you say. \"That's all I'm asking.\"\n\nHe nods. He claps you on the shoulder and goes back to his wine.\n\nYou sleep better than you have in weeks.",
+      "choices": [
+        {
+          "text": "Sleep. Tomorrow is the wastes.",
+          "next": "wastes_ride",
+          "do": [
+            "hp:+3",
+            "rel:vale:+3",
+            "journal:Halric will get me to the Gate. He will not go through. Fair enough."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_threshold_extra",
+      "chapter": "WAVE 4 \u00b7 THRESHOLD",
+      "text": "Before the Gate, before the second offer, before any of it \u2014 you stop on the last rise of road and look back.\n\nThe kingdom is small from here. You can see, very faintly, the smoke of the city where you fought, or did not fight. You can see the line of the witch's wood. You can see, if you squint, the tower.\n\nMoth comes up beside you. They do not say anything for a long time.\n\nThen: \"Do you think we'll come back this way?\"\n\nYou think about lying. You don't.\n\n\"I don't know,\" you say. \"I hope so. I want to come back this way with {missing_short} between us, complaining about the road.\"\n\nMoth laughs. It is a real laugh. Their hand finds yours.\n\n\"All right,\" they say. \"Then let's go get {missing_obj}.\"\n\nThe wind smells like the wastes ahead. You start down.",
+      "choices": [
+        {
+          "text": "Down to the Gate.",
+          "next": "threshold_1",
+          "do": [
+            "rel:moth:+5",
+            "trust:+3",
+            "journal:Stood on the last rise. Said the truth out loud. Going to get {missing_short}."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_finale_method_extra",
+      "chapter": "WAVE 4 \u00b7 METHOD",
+      "text": "Before you step through, you take inventory in the way old soldiers do \u2014 not of gear, of self.\n\nWhat you have: a blade or a knife. A talisman from the steward, perhaps. The Hedge Witch's word. Halric's ring. A tablet from a city older than this kingdom. A thread from a wraith. A promise from a thing in a cage you may or may not keep. The voice of {missing_short} at the end of a scream.\n\nWhat you do not have: certainty.\n\nVale, at your elbow: \"You don't have to know how it ends. You only have to know how it starts. It starts with you walking through. That's all.\"\n\nYou look at the Gate. You look at the company. You look at the small list of things in your pack that, between them, name everything you have become on this road.\n\nIt is enough. It will have to be enough.\n\nWhat is the first sentence on the other side?",
+      "choices": [
+        {
+          "text": "\"I came for {missing_short}.\"",
+          "next": "finale_method",
+          "do": [
+            "trust:+5",
+            "journal:Walked through the Gate. First sentence: I came for {missing_short}."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "deep_wraith_lingers",
+      "chapter": "WAVE 4 \u00b7 THE WRAITH LINGERS",
+      "text": "If the wraith survived your first night, it is here on the second.\n\nAt dusk, the same gray shape, a little closer to the road this time. It has learned the cadence of your walking. It is walking, now, in the rhythm of your feet.\n\nThe company is quieter today. Moth has stopped speaking out loud, in case it copies them. Ash is whispering songs under their breath in a language Vale taught them \u2014 the wraith does not have that language yet.\n\nYou make camp earlier. You build the fire higher. You have one more chance.\n\nWhat have you found on the road today that you did not have yesterday?",
+      "choices": [
+        {
+          "text": "A warding draught \u2014 bartered from a charcoal-burner.",
+          "next": "deep_wraith_road_light",
+          "do": [
+            "add_item:warding_draught"
+          ]
+        },
+        {
+          "text": "The Keeper's name \u2014 Halric's wife was a hedge-priest. (require: flag:bandit_friend)",
+          "next": "deep_wraith_road_name",
+          "require": "flag:bandit_friend",
+          "do": [
+            "flag:knows_keeper_name"
+          ]
+        },
+        {
+          "text": "Nothing new. You will simply outlast it tonight.",
+          "next": "deep_wraith_road_fail"
+        }
+      ]
+    },
+    {
+      "id": "deep_basement_cage_followup",
+      "chapter": "WAVE 4 \u00b7 THE CAGE",
+      "text": "If you promised the thing in the cage you would come back for it, that promise sits in you on the road. It does not get lighter.\n\nMoth, at the second fire after the tower, says quietly: \"You promised something in there. Didn't you.\"\n\nYou tell them. About the thing in the menagerie. About the child's voice.\n\nMoth is quiet a long time.\n\nThen: \"When we have {missing_short}. When we are coming back. We'll stop. We'll let it out. I'll help you.\"\n\nYou had not realized how heavy the promise was until they offered to carry it with you.\n\nYou nod. You cannot speak for a minute.\n\nAsh, on the other side of the fire, pretending not to listen, says: \"I'll help too.\"\n\nVale, without looking up from sharpening their blade: \"Aye.\"\n\nThe road is long. But it has people on it.",
+      "choices": [
+        {
+          "text": "Bank the fire. Sleep.",
+          "next": "camp_rest",
+          "do": [
+            "trust:+8",
+            "rel:moth:+8",
+            "rel:ash:+5",
+            "rel:vale:+3",
+            "journal:They will help me come back for the thing in the cage."
+          ]
+        }
+      ]
+    }
+  ]
+}

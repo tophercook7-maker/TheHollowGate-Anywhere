@@ -27,6 +27,43 @@
           "do": [
             "add_item:supplies"
           ]
+        },
+        {
+          "text": "A felled tree across the road. Veterans in the brush.",
+          "next": "deep_bandits_1"
+        }
+      ]
+    },
+    {
+      "id": "rider_demand",
+      "chapter": "CHAPTER II \u00b7 THE WASTES",
+      "text": "You hold up the ring. The rider's eyes flick to it, then to your face. Slowly, deliberately, they spit on the ground.\n\"A crown is a crown. I don't owe it nothing.\"\nBut they don't leave. Not yet.\n\"...The road is mine, though. Two gold and I lead you through. No promises past that.\"",
+      "choices": [
+        {
+          "text": "Pay the two gold.",
+          "next": "wastes_ride",
+          "require": "gold:2",
+          "do": [
+            "gold:-2",
+            "companion:ash"
+          ]
+        },
+        {
+          "text": "Refuse. Ride alone.",
+          "next": "wastes_alone",
+          "do": [
+            "trust:-5",
+            "fear:5"
+          ]
+        },
+        {
+          "text": "Offer the castle talisman.",
+          "next": "wastes_ride",
+          "require": "castle_talisman",
+          "do": [
+            "rem_item:castle_talisman",
+            "companion:ash"
+          ]
         }
       ]
     },
@@ -85,6 +122,32 @@
           "do": [
             "trust:5"
           ]
+        },
+        {
+          "text": "Call a halt. Make camp for the night.",
+          "next": "camp_rest"
+        },
+        {
+          "text": "Follow the goat track to the hut on the hill.",
+          "next": "side_captain_hut"
+        },
+        {
+          "text": "Stop for the minstrel on the milestone.",
+          "next": "side_minstrel_1"
+        },
+        {
+          "text": "Follow Moth toward an old tower.",
+          "next": "side_moth_roost_1",
+          "require": "companion:moth"
+        },
+        {
+          "text": "Halt. Something thin and gray is following you down the road.",
+          "next": "deep_wraith_road_1"
+        },
+        {
+          "text": "[wraith lingers from yesterday]",
+          "next": "deep_wraith_lingers",
+          "require": "flag:wraith_follows"
         }
       ]
     },
@@ -116,6 +179,23 @@
             "fear:15",
             "trust:-5"
           ]
+        },
+        {
+          "text": "Find a hollow. Make camp.",
+          "next": "camp_rest"
+        },
+        {
+          "text": "Climb to the stone hut with the smoke.",
+          "next": "side_captain_hut"
+        },
+        {
+          "text": "Visit the King's Yard outside the wall.",
+          "next": "side_graveyard_gate"
+        },
+        {
+          "text": "The tunnel map shows a crown-with-a-slash off the main route.",
+          "next": "deep_lost_city_1",
+          "require": "tunnel_map"
         }
       ]
     },
@@ -137,6 +217,10 @@
           "do": [
             "trust:-10"
           ]
+        },
+        {
+          "text": "Walk up to the tower door.",
+          "next": "tower_approach"
         }
       ]
     },
@@ -155,13 +239,17 @@
         {
           "text": "Refuse. Do this your own way.",
           "next": "wastes_gate"
+        },
+        {
+          "text": "Push past him. Explore the tower.",
+          "next": "tower_foyer"
         }
       ]
     },
     {
       "id": "barracks",
       "chapter": "CHAPTER II \u00b7 BARRACKS",
-      "text": "The captain is sharpening a sword. He laughs when you ask for men.\n\"Princess runs off into the dark and you want a parade?\"\nThen he sees the ring \u2014 or your face \u2014 and stops.\n\"I\u2019ll send Vale. He\u2019s the best I have. And the most ruined. If that suits you.\"",
+      "text": "The captain is sharpening a sword. He laughs when you ask for men.\n\"{missing_short_cap} runs off into the dark and you want a parade?\"\nThen he sees the ring \u2014 or your face \u2014 and stops.\n\"I\u2019ll send Vale. He\u2019s the best I have. And the most ruined. If that suits you.\"",
       "choices": [
         {
           "text": "Accept Ser Vale.",
@@ -173,6 +261,14 @@
         {
           "text": "Decline. You work better alone.",
           "next": "wastes_gate"
+        },
+        {
+          "text": "Bed down in the barracks loft.",
+          "next": "camp_rest"
+        },
+        {
+          "text": "Slip out to the King's Yard.",
+          "next": "side_graveyard_gate"
         }
       ]
     },
@@ -191,6 +287,10 @@
         {
           "text": "Ignore her and head for the Wastes alone.",
           "next": "wastes_gate"
+        },
+        {
+          "text": "Push into the city proper.",
+          "next": "city_lost"
         }
       ]
     },

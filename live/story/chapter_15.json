@@ -1,0 +1,1177 @@
+{
+  "scenes": [
+    {
+      "id": "side_inn_arrival",
+      "chapter": "SIDE \u00b7 THE WAYHOUSE WIDOW",
+      "text": "The wayhouse leans into the wind like an old woman bracing for cold. Smoke threads from a crooked chimney. A painted sign \u2014 a kettle, a moon \u2014 creaks on one nail.\n\nInside smells of barley and rosemary and something older: lavender pressed flat between book pages.\n\nA woman in widow-grey looks up from the hearth. Her hair is the color of river stones. Her eyes are tired in a way sleep does not cure.\n\n\"Sit,\" she says. \"You walked the wastes road. That earns a bowl.\"\n\nShe ladles stew into a wooden bowl before you can answer. Two coins sit on the table beside an empty chair, as if someone left them and never came back.\n\nWhat draws your eye first?",
+      "choices": [
+        {
+          "text": "The empty chair across from you.",
+          "next": "side_inn_chair"
+        },
+        {
+          "text": "The widow herself, gently.",
+          "next": "side_inn_widow_talk"
+        },
+        {
+          "text": "Eat first. Talk later.",
+          "next": "side_inn_eat",
+          "do": [
+            "trust:+2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_inn_eat",
+      "chapter": "SIDE \u00b7 THE WAYHOUSE WIDOW",
+      "text": "You eat. The stew is good in the way only a stranger's stew can be \u2014 salt and care and the suggestion that someone, somewhere, wants you to live through tomorrow.\n\nThe widow watches you the way one watches a fire one isn't sure will catch.\n\n\"You're going to the Gate,\" she says. Not a question.\n\nYou look up. Steam curls between you.\n\n\"Most who stop here are. Few come back this way.\"\n\nHer hand strays to her apron pocket. Something there \u2014 folded, soft, much-touched. She catches you noticing and folds her hands over it like a moth she doesn't want to crush.\n\nWhat do you say?",
+      "choices": [
+        {
+          "text": "\"You lost someone to it too.\"",
+          "next": "side_inn_widow_talk"
+        },
+        {
+          "text": "\"What's in your pocket?\"",
+          "next": "side_inn_letter_offer"
+        },
+        {
+          "text": "Finish quietly. Leave coin.",
+          "next": "side_inn_leave_kind",
+          "do": [
+            "gold:-3",
+            "trust:+3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_inn_chair",
+      "chapter": "SIDE \u00b7 THE WAYHOUSE WIDOW",
+      "text": "The chair is worn smooth at the arms. Someone sat there many evenings. Someone leaned on the left side more than the right.\n\n\"My husband's,\" the widow says, without looking up. \"Forty winters in that chair. Forty-one if you count the year I kept setting his bowl out after.\"\n\nShe says it plainly. Not asking for pity. Just naming a true thing the way you name a star.\n\n\"He went through the Gate. Long before your grandmother was a girl. He was a King's Hunter, then. They sent six. One came back without a tongue. The rest \u2014 \" she shrugs at the chair.\n\nThe firelight finds the edge of something pale in her apron pocket.\n\nDo you ask?",
+      "choices": [
+        {
+          "text": "\"What's in your pocket?\"",
+          "next": "side_inn_letter_offer"
+        },
+        {
+          "text": "\"I'm sorry. Truly.\"",
+          "next": "side_inn_widow_talk",
+          "do": [
+            "trust:+2"
+          ]
+        },
+        {
+          "text": "Eat in silence with her.",
+          "next": "side_inn_eat"
+        }
+      ]
+    },
+    {
+      "id": "side_inn_widow_talk",
+      "chapter": "SIDE \u00b7 THE WAYHOUSE WIDOW",
+      "text": "\"His name was Owin,\" she says, and the name comes out the way names do when they've been polished by forty years of saying them only to yourself.\n\n\"He told me, the morning he left, that he'd write. That he'd send word from the other side, if there was an other side. That if I didn't read his letter, it meant he was still coming home.\"\n\nShe takes the folded paper from her pocket. The fold is so old it has gone soft as cloth.\n\n\"I never read it. For forty years, I never read it. Because if I read it, then he's truly gone.\"\n\nShe sets it on the table between you. Her hand stays on it.\n\n\"My eyes are bad now. The ink's faded. I couldn't read it if I tried. But you \u2014 \"\n\nWhat do you say?",
+      "choices": [
+        {
+          "text": "\"I'll read it for you.\" (Need seeing draught)",
+          "next": "side_inn_letter_read",
+          "require": "seeing_draught"
+        },
+        {
+          "text": "\"You should read it yourself. When you're ready.\"",
+          "next": "side_inn_letter_decline",
+          "do": [
+            "trust:+3"
+          ]
+        },
+        {
+          "text": "\"I can't. I'm sorry.\"",
+          "next": "side_inn_leave_kind"
+        }
+      ]
+    },
+    {
+      "id": "side_inn_letter_offer",
+      "chapter": "SIDE \u00b7 THE WAYHOUSE WIDOW",
+      "text": "The widow looks at you a long moment. Then she lays the letter on the table the way one lays a small bird that might still be alive.\n\n\"My husband wrote it. The night before the Gate. I have carried it in my apron for forty years and never broken the seal.\"\n\nHer voice does not shake. That is somehow worse than shaking.\n\n\"I told myself: as long as I haven't read it, he could still be coming back. As long as the wax holds, the door is open.\"\n\nShe slides it half an inch toward you.\n\n\"My eyes are too old now. The ink's gone ghost. But if you have a way \u2014 \"\n\nDo you?",
+      "choices": [
+        {
+          "text": "Use the seeing draught.",
+          "next": "side_inn_letter_read",
+          "require": "seeing_draught"
+        },
+        {
+          "text": "\"I'd need a draught to make it legible. I don't have one.\"",
+          "next": "side_inn_letter_decline"
+        },
+        {
+          "text": "\"Keep it sealed. He'd want it that way.\"",
+          "next": "side_inn_letter_decline",
+          "do": [
+            "trust:+2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_inn_letter_read",
+      "chapter": "SIDE \u00b7 THE WAYHOUSE WIDOW",
+      "text": "You uncork the seeing draught. Bitter copper on the tongue. The world sharpens \u2014 the grain of the table, the dust in the firelight, the ghost-pale ink that thickens, suddenly, into letters.\n\nYou break the seal. It crumbles like a moth wing.\n\nMaren, the letter begins. If you are reading this, I did not come back. Do not mourn me long. I want you to know I went in afraid and the fear was bearable because I had been loved by you. That is the trick of it \u2014 being loved makes the dark less wide. Set a bowl for me a year, and then no more. Marry the baker if he asks. He has been asking for thirty years and I have been pretending not to notice. Forgive me for going. Forgive yourself for staying. \u2014 Owin.\n\nThe widow does not cry. Her face goes very still, like a pond when the wind stops.\n\n\"The baker,\" she breathes, \"the baker,\" and a sound that is not quite laughter slips out of her.\n\nWhat now?",
+      "choices": [
+        {
+          "text": "Sit with her until she's ready.",
+          "next": "side_inn_after_letter",
+          "do": [
+            "trust:+5",
+            "rem_item:seeing_draught",
+            "journal:Read a widow's forty-year letter. Owin says: being loved makes the dark less wide."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_inn_letter_decline",
+      "chapter": "SIDE \u00b7 THE WAYHOUSE WIDOW",
+      "text": "She nods slowly, the way people nod when relief and disappointment arrive at the same door.\n\n\"Maybe that's right. Maybe it stays sealed.\"\n\nShe tucks it back into her apron, where it will go on being a door not opened.\n\nShe refills your bowl without asking. The stew is somehow better the second time, like she ladled some unspoken thing into it.\n\n\"Take this with you,\" she says, and presses something small and stoppered into your palm. \"Against bad dreams. The kind the road gives.\"\n\nIt's a warding draught \u2014 small, amber, faintly sloshing.\n\n\"Go on. The light's burning while we sit.\"\n\nWill you?",
+      "choices": [
+        {
+          "text": "Take it. Thank her. Go.",
+          "next": "side_inn_leave_kind",
+          "do": [
+            "add_item:warding_draught",
+            "journal:A widow gave me a draught against bad dreams. I did not earn it. I will carry it anyway."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_inn_after_letter",
+      "chapter": "SIDE \u00b7 THE WAYHOUSE WIDOW",
+      "text": "You sit with her until the fire goes low. She does not speak for a long time. Then she stands up and does an astonishing thing: she takes the chair \u2014 Owin's chair \u2014 and turns it to face the door instead of the table.\n\n\"There,\" she says. \"Now it's facing out. So whoever sits in it next is leaving, not waiting.\"\n\nShe presses two things into your hands: a small purse of coin and a stoppered draught the color of dawn.\n\n\"One for the road. One for the dark. Don't argue.\"\n\nAt the door she catches your sleeve.\n\n\"If you find a boy \u2014 if you find any of them \u2014 tell them their people set bowls out. Tell them we kept the chairs.\"\n\nWill you?",
+      "choices": [
+        {
+          "text": "\"I'll tell them. I promise.\"",
+          "next": "side_inn_leave_kind",
+          "do": [
+            "gold:+10",
+            "add_item:warding_draught",
+            "trust:+5",
+            "flag:widow_promise",
+            "journal:Promised a widow to tell the lost: their people kept the chairs."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_inn_leave_kind",
+      "chapter": "SIDE \u00b7 THE WAYHOUSE WIDOW",
+      "text": "Outside, the wind has changed. It feels less like a hand pushing you back and more like one at your shoulder, steady.\n\nYou look back once. The widow stands in her doorway, small and grey and somehow taller than she was an hour ago. She lifts a hand.\n\nYou lift yours.\n\nThe road is the road again. But the cold in your chest has shifted half a step toward warm.\n\nWhat carries you onward?",
+      "choices": [
+        {
+          "text": "The promise of the Gate. Walk on.",
+          "next": "wastes_alone"
+        },
+        {
+          "text": "Rejoin the caravan track.",
+          "next": "caravan_foothills"
+        }
+      ]
+    },
+    {
+      "id": "side_captain_hut",
+      "chapter": "SIDE \u00b7 THE RETIRED CAPTAIN",
+      "text": "The hut squats in a fold of the foothills like a stone that decided to be a house. Smoke. A goat. An axe split into a stump, left there as if its owner walked away mid-swing and never came back.\n\nA man sits on the step. Grey beard, grey eyes, a shoulder that doesn't move quite right. A King's Hunter's badge tarnished green hangs on a nail by the door, half-hidden behind a drying onion.\n\nHe watches you climb without standing.\n\n\"If you're lost,\" he says, \"the road's back that way. If you're here to recruit me, the road's also back that way. Quicker.\"\n\nA dog the size of a small bear sleeps at his boots and does not bother to look up.\n\nWhat do you say?",
+      "choices": [
+        {
+          "text": "\"I'm not recruiting. I'm thirsty.\"",
+          "next": "side_captain_water"
+        },
+        {
+          "text": "\"I know who you were.\"",
+          "next": "side_captain_seen"
+        },
+        {
+          "text": "\"Your axe is stuck.\"",
+          "next": "side_captain_axe"
+        }
+      ]
+    },
+    {
+      "id": "side_captain_water",
+      "chapter": "SIDE \u00b7 THE RETIRED CAPTAIN",
+      "text": "He grunts. Jerks his thumb at a barrel by the door. \"Ladle's clean. Goat's not.\"\n\nThe water is so cold it hurts your teeth. You drink twice. He watches without watching, the way old soldiers watch.\n\n\"Where you bound?\" he asks at last.\n\nYou don't answer in words. You don't need to. He sees it in your jaw, your boots, the weight you carry on the left side from a weapon you haven't drawn yet.\n\n\"The Gate.\" Flat. \"For the King's child.\"\n\nThe word child opens something in his face for half a heartbeat, and then he closes it again, with practice.\n\nDo you press?",
+      "choices": [
+        {
+          "text": "\"You lost someone to it.\"",
+          "next": "side_captain_son"
+        },
+        {
+          "text": "\"I need a hand for one fight. Just one.\"",
+          "next": "side_captain_ask_early"
+        },
+        {
+          "text": "Let it lie. Thank him for the water.",
+          "next": "side_captain_leave_soft",
+          "do": [
+            "trust:+2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_captain_seen",
+      "chapter": "SIDE \u00b7 THE RETIRED CAPTAIN",
+      "text": "The dog opens one eye.\n\nThe captain does not move, but something in him goes very still, the way a wolf goes still before it decides whether to run or bite.\n\n\"Then you know to go away.\"\n\n\"I know your men called you Old Iron. I know you led the last Hunt that came back whole. I know you trained the badge that hangs by your door.\"\n\nA long silence. The wind moves in the long grass.\n\n\"Whole,\" he repeats. Quiet. \"We didn't come back whole. We came back counting.\"\n\nHe looks at you properly for the first time.\n\n\"Sit, if you're sitting. Don't sit, if you're going. I haven't the patience for the middle of things.\"\n\nWhat do you do?",
+      "choices": [
+        {
+          "text": "Sit. \"Tell me about the Hunt.\"",
+          "next": "side_captain_son",
+          "do": [
+            "trust:+3"
+          ]
+        },
+        {
+          "text": "\"I need a hand for one fight.\"",
+          "next": "side_captain_ask_early"
+        },
+        {
+          "text": "Go. Leave him his quiet.",
+          "next": "side_captain_leave_soft"
+        }
+      ]
+    },
+    {
+      "id": "side_captain_axe",
+      "chapter": "SIDE \u00b7 THE RETIRED CAPTAIN",
+      "text": "\"It's been stuck three years,\" he says. \"It can be stuck three more.\"\n\nBut he is watching you to see if you'll try.\n\nYou set your shoulder, brace your foot against the stump, and rock the haft. It comes loose with a soft sucking sound, like something that didn't want to be free and is.\n\nYou hand it back to him handle-first.\n\nHe takes it. He looks at the blade. He looks at you. The dog, astonishingly, sits up.\n\n\"Huh,\" the captain says.\n\nThen, quieter: \"Sit, traveller. I've a stew. It's mostly onion. But it's hot.\"\n\nWill you?",
+      "choices": [
+        {
+          "text": "Sit. Eat. Listen.",
+          "next": "side_captain_son",
+          "do": [
+            "trust:+4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_captain_son",
+      "chapter": "SIDE \u00b7 THE RETIRED CAPTAIN",
+      "text": "The stew is mostly onion. It is also somehow the second-best meal you have had this week.\n\n\"My boy went through,\" the captain says, eyes on the fire. \"Eleven years back. Not a Hunter \u2014 too young. He went on his own. Climbed the wall, took my second sword, walked to the arch. He'd heard his mother crying about a cousin lost the year before. Thought he could fix it.\"\n\nHe stirs the pot once.\n\n\"Eleven. Eleven years old.\"\n\nThe dog rests its head on his boot.\n\n\"I sat here three years thinking I'd go after him. Then five years thinking I was too old. Then this \u2014 \" he taps the stiff shoulder \" \u2014 and I stopped pretending.\"\n\nHe looks at you.\n\n\"Why are you really at my door?\"",
+      "choices": [
+        {
+          "text": "\"I think your boy might still be in there.\"",
+          "next": "side_captain_hope",
+          "do": [
+            "trust:+4"
+          ]
+        },
+        {
+          "text": "\"I need someone who's been to the edge of it.\"",
+          "next": "side_captain_ask_full"
+        },
+        {
+          "text": "\"I don't know. I just walked uphill until I saw smoke.\"",
+          "next": "side_captain_ask_full",
+          "do": [
+            "trust:+2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_captain_hope",
+      "chapter": "SIDE \u00b7 THE RETIRED CAPTAIN",
+      "text": "His hand goes very still on the spoon.\n\n\"Don't,\" he says, soft. \"Don't say that lightly. I have buried that boy a thousand times in my head and put him back together a thousand more. Don't open it again unless you mean it.\"\n\nYou meet his eye.\n\n\"The Keeper takes children. He keeps them. Some of them are still children, on the other side. Time runs strange there. If your boy was eleven when he went, he may still be eleven.\"\n\nThe captain sets the spoon down with the care of a man defusing a thing that might kill him.\n\n\"What's his name?\" you ask.\n\n\"Halric.\" The name comes out cracked.\n\nThen, quieter: \"What do you need.\"\n\nThis is the moment. What do you ask?",
+      "choices": [
+        {
+          "text": "\"Your arm beside mine for one fight.\"",
+          "next": "side_captain_yes"
+        },
+        {
+          "text": "\"Your second sword. The one Halric didn't take.\"",
+          "next": "side_captain_sword"
+        },
+        {
+          "text": "\"Both. If you'll give them.\"",
+          "next": "side_captain_yes",
+          "require": "trust:60"
+        }
+      ]
+    },
+    {
+      "id": "side_captain_ask_early",
+      "chapter": "SIDE \u00b7 THE RETIRED CAPTAIN",
+      "text": "He laughs without smiling. \"One fight. They always say one fight. Then it's one more, and one more, and then it's a grave on a hill with no name.\"\n\nHe shakes his head. \"You don't know me well enough yet, traveller. And I don't know you. Come back when we've shared bread. Or don't come back. Either's honest.\"\n\nThe dog sighs in agreement.\n\nWhat do you do?",
+      "choices": [
+        {
+          "text": "Stay. Share the stew.",
+          "next": "side_captain_son",
+          "do": [
+            "trust:+2"
+          ]
+        },
+        {
+          "text": "Go. Walk on uphill.",
+          "next": "side_captain_leave_soft"
+        }
+      ]
+    },
+    {
+      "id": "side_captain_ask_full",
+      "chapter": "SIDE \u00b7 THE RETIRED CAPTAIN",
+      "text": "He nods slowly. Not yes. Just acknowledgement.\n\n\"I'll think on it,\" he says. \"Walk the ridge tonight. If you're still alive in the morning, come back. If you don't come back, I'll know what I'd have been walking into.\"\n\nIt is the closest thing to a kindness an old soldier knows how to offer.\n\nWill you?",
+      "choices": [
+        {
+          "text": "\"Tomorrow, then.\" Walk the ridge.",
+          "next": "side_captain_yes",
+          "require": "trust:60"
+        },
+        {
+          "text": "\"Tomorrow, then.\" Walk the ridge.",
+          "next": "side_captain_leave_soft"
+        }
+      ]
+    },
+    {
+      "id": "side_captain_yes",
+      "chapter": "SIDE \u00b7 THE RETIRED CAPTAIN",
+      "text": "He stands. Slow. The stiff shoulder protests; he ignores it the way he has ignored it for years.\n\n\"One fight,\" he says. \"That's the price. One fight, one road. After that, if I'm still upright, I come home to my dog.\"\n\nHe takes a long, narrow bundle from above the door and unwraps it. Inside: a sword. Plain steel. The pommel is wrapped in faded blue cord \u2014 a child's hand-knot, the kind a boy ties when he's practicing.\n\n\"Halric's wrap,\" the captain says. \"He did it for me before \u2014 \" he waves the rest away. \"It'll cut what needs cutting.\"\n\nHe whistles low. The dog stands.\n\n\"Lead on, traveller. Old Iron rides one more time.\"\n\nWhat do you say?",
+      "choices": [
+        {
+          "text": "\"Thank you, Captain.\"",
+          "next": "side_captain_join",
+          "do": [
+            "add_item:sword",
+            "max_hp:+2",
+            "trust:+5",
+            "flag:captain_pledged",
+            "journal:Old Iron pledged his sword for one fight. Halric's blue cord on the pommel."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_captain_sword",
+      "chapter": "SIDE \u00b7 THE RETIRED CAPTAIN",
+      "text": "He nods once, like a door closing on something gentler.\n\n\"That I can do. That doesn't ask me to leave my dog.\"\n\nHe goes inside. Comes back with a long, narrow bundle. Unwraps it on the step.\n\nThe sword inside is plain steel, well-kept. The pommel is wound in faded blue cord \u2014 a child's knot.\n\n\"Halric tied that. Before he left. Said I needed something pretty.\" The captain's mouth twitches. \"It's not pretty. But the knot held.\"\n\nHe presses it into your hands.\n\n\"Take it where I won't. Bring it back if you can. Bring my boy back if you can. Bring neither if you can't.\"\n\nWill you?",
+      "choices": [
+        {
+          "text": "\"I'll try, Captain.\"",
+          "next": "side_captain_leave_soft",
+          "do": [
+            "add_item:sword",
+            "trust:+4",
+            "journal:Old Iron gave me his son's sword. The blue cord was tied by an eleven-year-old."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_captain_join",
+      "chapter": "SIDE \u00b7 THE RETIRED CAPTAIN",
+      "text": "You walk down the hill side by side, the captain and you and the dog at his heel. He does not speak. Old soldiers don't, when they've just agreed to something they swore off years ago.\n\nAt the bend, he stops. Looks back at the hut. The smoke. The chair on the step.\n\nThen he turns his back on it.\n\n\"Right,\" he says. \"Where's this fight?\"\n\nWhich road?",
+      "choices": [
+        {
+          "text": "Onward through the hills.",
+          "next": "hill_search"
+        },
+        {
+          "text": "Back toward the wastes road.",
+          "next": "wastes_ride"
+        }
+      ]
+    },
+    {
+      "id": "side_captain_leave_soft",
+      "chapter": "SIDE \u00b7 THE RETIRED CAPTAIN",
+      "text": "At the bend you look back. The captain is standing on his step with his hand on the dog's head, watching you go.\n\nHe lifts a hand. Just once. Soldier's farewell.\n\nYou lift yours.\n\nThe hut grows small. The hill grows large.\n\nWhere now?",
+      "choices": [
+        {
+          "text": "Onward through the hills.",
+          "next": "hill_search"
+        },
+        {
+          "text": "Back toward the wastes road.",
+          "next": "wastes_ride"
+        }
+      ]
+    },
+    {
+      "id": "side_minstrel_1",
+      "chapter": "SIDE \u00b7 THE MINSTREL",
+      "text": "Past a bent thorn, you hear it before you see it: a lute, badly tuned, played beautifully anyway.\n\nA figure sits on a milestone, one boot off, the other dangling. Patched cloak, hair the color of old brass, a smile that is too easy for this road.\n\n\"Traveller!\" they call, without looking up. \"You're the third today. Two of you are real. One of you is a ghost wearing a real one's coat. Care to guess which?\"\n\nThey strum a chord. Hum. Then a verse drifts out, quiet as a held breath:\n\nThe Keeper keeps a door of stone,\nA door that no one shuts.\nHe takes the brave, he takes the bone,\nHe takes the loved, the lost, the known \u2014\nBut never takes the nuts.\n\nThey grin at you. \"Last line's a joke. I add it so I don't cry. Verse one of seven. Want to hear the rest? You'll need to find me again. The road's long.\"\n\nWhat do you do?",
+      "choices": [
+        {
+          "text": "\"Why the nuts?\"",
+          "next": "side_minstrel_1b",
+          "do": [
+            "trust:+2"
+          ]
+        },
+        {
+          "text": "\"Sing me another verse now.\"",
+          "next": "side_minstrel_1c"
+        },
+        {
+          "text": "Toss them a coin and walk on.",
+          "next": "side_minstrel_1_leave",
+          "do": [
+            "gold:-1"
+          ]
+        },
+        {
+          "text": "Walk on without coin.",
+          "next": "side_minstrel_1_leave"
+        }
+      ]
+    },
+    {
+      "id": "side_minstrel_1b",
+      "chapter": "SIDE \u00b7 THE MINSTREL",
+      "text": "\"Because,\" the minstrel says, pulling the boot back on, \"the Keeper does take the nuts. Eventually. He takes everything. The joke is that everyone listens to the song and assumes there's one thing he won't touch.\"\n\nThey wink. \"There isn't.\"\n\nThe lute strums again, softer.\n\nHe stands in a dark older than night,\nHe wears a crown of listening.\nHe does not eat, he does not fight \u2014\nHe simply waits, and waits, and writes\nThe names of those he's missing.\n\nA chill, fine as silk, lays itself across the back of your neck.\n\n\"Verse two,\" they say. \"On the house. You look like you needed it. The rest, you'll have to come find.\"\n\nWhere will the road take you?",
+      "choices": [
+        {
+          "text": "Onward. Mark the minstrel in memory.",
+          "next": "side_minstrel_1_leave",
+          "do": [
+            "flag:minstrel_v1",
+            "flag:minstrel_v2",
+            "journal:The Keeper wears a crown of listening. He writes the names of those he is missing."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_minstrel_1c",
+      "chapter": "SIDE \u00b7 THE MINSTREL",
+      "text": "\"Eager! I like eager. Eager dies first but laughing.\"\n\nThe lute again. A new verse:\n\nHe stands in a dark older than night,\nHe wears a crown of listening.\nHe does not eat, he does not fight \u2014\nHe simply waits, and waits, and writes\nThe names of those he's missing.\n\nThey watch you over the lute.\n\n\"That one's for free. The rest cost. Not coin \u2014 meetings. The song wants to be sung in pieces. Find me in the city. Find me at the threshold. I'll be there. I'm always there. Singing's all I'm good for.\"\n\nDo you press for more?",
+      "choices": [
+        {
+          "text": "\"Wait \u2014 what does 'crown of listening' mean?\"",
+          "next": "side_minstrel_1d",
+          "do": [
+            "flag:minstrel_v1",
+            "flag:minstrel_v2"
+          ]
+        },
+        {
+          "text": "Walk on, marked.",
+          "next": "side_minstrel_1_leave",
+          "do": [
+            "flag:minstrel_v1",
+            "flag:minstrel_v2",
+            "journal:The Keeper wears a crown of listening."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_minstrel_1d",
+      "chapter": "SIDE \u00b7 THE MINSTREL",
+      "text": "\"It means he doesn't speak,\" the minstrel says, and for the first time their voice has no music in it. \"He listens. He listens to every wish, every promise, every name a mother whispers over a cradle. He hears the ones that aren't kept. He keeps the ones that aren't heard.\"\n\nThey turn the peg, retune the string.\n\n\"That's all I'll say without the next two verses paid for in meetings. Off with you. I have other roads to ruin.\"\n\nWhere now?",
+      "choices": [
+        {
+          "text": "Onward.",
+          "next": "side_minstrel_1_leave",
+          "do": [
+            "journal:The Keeper listens for promises that were not kept."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_minstrel_1_leave",
+      "chapter": "SIDE \u00b7 THE MINSTREL",
+      "text": "You walk on. Behind you the lute drifts up, lazy and gold, and then is gone.\n\nThe wind picks up. The milestone behind you stands alone, as if there was never a minstrel on it at all.\n\nThe road waits.",
+      "choices": [
+        {
+          "text": "Continue on the wastes road.",
+          "next": "wastes_ride"
+        }
+      ]
+    },
+    {
+      "id": "side_minstrel_2",
+      "chapter": "SIDE \u00b7 THE MINSTREL",
+      "text": "You hear the lute before you see the alley. Same lute. Same hands. Different city.\n\nThe minstrel is sitting on an overturned crate in a pool of late sun, surrounded by three children and a one-eared cat. They wave you over without breaking the chord.\n\n\"Look who survived! The road kept you. The road keeps fewer than it lets go these days.\"\n\nThe children scatter, giggling, when you arrive. The cat does not.\n\n\"Verse three and four,\" the minstrel says. \"That's what you're here for, isn't it? You didn't seek me out. You walked past three taverns to get to this alley. The song's in your blood now. That's how it works.\"\n\nThey strum.\n\nDo you sit?",
+      "choices": [
+        {
+          "text": "Sit. Listen.",
+          "next": "side_minstrel_2b",
+          "require": "flag:minstrel_v1"
+        },
+        {
+          "text": "Sit. Listen.",
+          "next": "side_minstrel_2b"
+        },
+        {
+          "text": "\"I haven't time.\"",
+          "next": "side_minstrel_2_leave"
+        }
+      ]
+    },
+    {
+      "id": "side_minstrel_2b",
+      "chapter": "SIDE \u00b7 THE MINSTREL",
+      "text": "The minstrel sings, quieter now, leaning close so only you can hear:\n\nHe was a boy once, long ago,\nHe loved a girl who loved the snow.\nShe drowned beneath a frozen river,\nHe asked the dark to bring her \u2014 \nThe dark said yes. The dark said: enter.\nHe entered. And forgot her.\n\nA long pause. The cat watches you.\n\nAnd every child he takes since then\nIs her \u2014 he thinks. He thinks again.\nHe cannot quite remember when\nHe stopped remembering her name.\nThat is the wound. That is the game.\n\nThe minstrel sets the lute down.\n\n\"He's looking for a girl who drowned a thousand years ago. Every child is her, and never her. That's why he can't stop.\"\n\nYou cannot speak.",
+      "choices": [
+        {
+          "text": "\"What was her name?\"",
+          "next": "side_minstrel_2c",
+          "do": [
+            "flag:minstrel_v3",
+            "flag:minstrel_v4",
+            "journal:The Keeper was a boy who lost a girl to a frozen river. He has forgotten her name. That is his wound."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_minstrel_2c",
+      "chapter": "SIDE \u00b7 THE MINSTREL",
+      "text": "The minstrel smiles, gentle.\n\n\"Don't know. Nobody does. That's the song. That's the point. If anyone remembered her name and said it to him \u2014 \" they whistle, low \" \u2014 well. We'll see.\"\n\nThey pick up the lute again.\n\n\"Last verse is at the threshold. Don't be late. The song doesn't keep.\"\n\nThe cat stretches, yawns, and walks off down the alley as if it has somewhere to be.\n\nThe minstrel is gone before you stand.\n\nWhere now?",
+      "choices": [
+        {
+          "text": "Back into the city.",
+          "next": "side_minstrel_2_leave"
+        }
+      ]
+    },
+    {
+      "id": "side_minstrel_2_leave",
+      "chapter": "SIDE \u00b7 THE MINSTREL",
+      "text": "You step out of the alley into the noise of the city. A baker's bell. A child crying. A guard whistling something almost like the minstrel's tune and not quite getting it right.\n\nThe song stays under your ribs.",
+      "choices": [
+        {
+          "text": "On.",
+          "next": "city_lost"
+        }
+      ]
+    },
+    {
+      "id": "side_minstrel_3",
+      "chapter": "SIDE \u00b7 THE MINSTREL",
+      "text": "At the threshold of the Hollow Gate, where the stone arch hums against your teeth, you do not expect music.\n\nBut there they are. The minstrel. Sitting cross-legged on a rock that should not have grown grass and has anyway, lute in their lap, hair lit silver by a sky that is not sky.\n\n\"I told you I'd be here,\" they say. They look smaller. Or the world is larger. One of those.\n\n\"Last verse. Then I go home and sleep for a year. Ready?\"\n\nThey don't wait for an answer.",
+      "choices": [
+        {
+          "text": "\"Sing it.\"",
+          "next": "side_minstrel_3b",
+          "require": "flag:minstrel_v3"
+        },
+        {
+          "text": "\"Sing it.\"",
+          "next": "side_minstrel_3b"
+        }
+      ]
+    },
+    {
+      "id": "side_minstrel_3b",
+      "chapter": "SIDE \u00b7 THE MINSTREL",
+      "text": "He cannot bear the sound of her name.\nHe will not hear it spoken plain.\nIf one should say it true and clear\nThe dark would crack, the door would shear,\nHe'd remember why he came \u2014\nAnd then he'd be a boy again.\n\nThe minstrel stops. Looks at you. The lute falls quiet.\n\n\"Find her name. Say it. He's been keeping the door open looking for her. Close the wound, close the door.\"\n\nYou stare at them.\n\n\"I don't know her name,\" you whisper.\n\n\"No,\" they agree. \"But someone in there does. He's written it down. He's written it down a thousand times and not known why. Look for the writing.\"\n\nA wind moves through that does not move the grass. The minstrel is gone, between one blink and the next, leaving only the lute, which is also gone a moment later, as if it followed.",
+      "choices": [
+        {
+          "text": "On. To the Gate.",
+          "next": "threshold_1",
+          "do": [
+            "flag:minstrel_v5",
+            "flag:keeper_weakness",
+            "journal:The Keeper's weakness: a girl's name he has forgotten. He has written it down a thousand times. Look for the writing."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_graveyard_gate",
+      "chapter": "SIDE \u00b7 THE GRAVEYARD",
+      "text": "Beyond the city's south wall, where the road forgets to be a road, the King's Yard begins. Yew trees so old they have hollowed at the trunk. Stone faces eaten by lichen. Names worn down to suggestions.\n\nThe gate is iron and half-fallen. A sign nailed to the post: KING'S HUNTERS, FALLEN AT THE GATE. Below it, smaller, the words We did not come back. We did not stop being yours.\n\nThe air here is colder than the air outside the wall. Mist moves around the stones in a way that has nothing to do with wind.\n\nDo you enter?",
+      "choices": [
+        {
+          "text": "Step through the gate.",
+          "next": "side_graveyard_first"
+        },
+        {
+          "text": "Walk the wall instead.",
+          "next": "side_graveyard_leave"
+        }
+      ]
+    },
+    {
+      "id": "side_graveyard_first",
+      "chapter": "SIDE \u00b7 THE GRAVEYARD",
+      "text": "The first stone you stop at is small \u2014 barely knee-high. A woman is sitting on it. Or near it. The way she catches the mist tells you she is not quite touching the ground.\n\nShe is dressed in old livery. A Hunter's sash, faded. Her hands are folded in her lap as if waiting for tea.\n\n\"You smell of the road,\" she says, and her voice is the rustle of yew leaves. \"You smell of where I went. Don't sit. Sitting is for the dead.\"\n\nShe smiles. It is a kind smile, which is somehow worse.\n\n\"My name was Tess. I went through eighty winters ago. Never came back. You'll meet a few of us. Don't be frightened. We don't bite. We've forgotten how.\"\n\nWhat do you say?",
+      "choices": [
+        {
+          "text": "\"What's it like, beyond?\"",
+          "next": "side_graveyard_tess"
+        },
+        {
+          "text": "\"How did you fail?\"",
+          "next": "side_graveyard_tess_fail"
+        },
+        {
+          "text": "\"Are there others I should speak with?\"",
+          "next": "side_graveyard_walk"
+        }
+      ]
+    },
+    {
+      "id": "side_graveyard_tess",
+      "chapter": "SIDE \u00b7 THE GRAVEYARD",
+      "text": "Tess tilts her head. Mist follows the motion a half-beat late.\n\n\"It is quiet. That is the first thing. Quieter than any place that has ever held a sound. The Keeper does not speak. The taken do not speak \u2014 they listen. You forget what your own voice sounds like, after a time.\"\n\nShe looks at her folded hands.\n\n\"It is also kinder than they say. The taken are not hurt. They are held. That is the awful part. They are held so gently that they forget they were ever going somewhere.\"\n\nShe lifts her eyes.\n\n\"If you go after a child \u2014 make noise. Sing. Stamp. Curse. Anything. The silence is what takes them. Not the dark.\"\n\nWhat do you ask?",
+      "choices": [
+        {
+          "text": "\"How do I bring one back?\"",
+          "next": "side_graveyard_tess_fail"
+        },
+        {
+          "text": "\"Are there others here?\"",
+          "next": "side_graveyard_walk",
+          "do": [
+            "flag:hunter_lore",
+            "trust:+5",
+            "journal:A dead Hunter named Tess: 'The silence is what takes them. Not the dark. Make noise.'"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_graveyard_tess_fail",
+      "chapter": "SIDE \u00b7 THE GRAVEYARD",
+      "text": "She lowers her gaze. The mist around her thickens, then thins.\n\n\"I went in shouting,\" she says. \"I was very brave. I had a sword and a sash and a head full of songs about myself.\"\n\nShe smiles, sadly.\n\n\"The Keeper did not fight me. He listened to me. He listened until I had nothing left to say. Then I was quiet, like the rest. Then I forgot why I came. I think I was there a long time. I think I was there a short time. I do not know which.\"\n\nShe looks up.\n\n\"Don't go in alone. Don't go in without a name to say aloud. Don't go in believing you are the hero. The Keeper feeds on heroes. The Keeper has eaten heroes for centuries.\"\n\nWhere do you walk?",
+      "choices": [
+        {
+          "text": "Deeper among the stones.",
+          "next": "side_graveyard_walk",
+          "do": [
+            "flag:hunter_lore",
+            "trust:+5",
+            "journal:Tess: Do not go in believing you are the hero. He feeds on heroes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_graveyard_walk",
+      "chapter": "SIDE \u00b7 THE GRAVEYARD",
+      "text": "You walk deeper. Other figures begin to gather along the path \u2014 never blocking it, only present. A man with a broken pike. A girl with leaves in her hair. A grey-bearded captain who nods at you the way captains nod at recruits.\n\nNone speak. They watch you the way grown things watch a sapling stand straight in the wind.\n\nAt the end of the path is a tall stone, taller than the rest. The name on it is half-eaten by moss but still legible:\n\nHALWYN OF THE SECOND HOUSE \u2014 DIED AT THE GATE \u2014 GRANDFATHER TO HEIRS YET UNBORN.\n\nA figure stands beside this stone. Tall. Crowned with what looks, for a heartbeat, like antlers \u2014 and then is only a circlet, only a man.",
+      "choices": [
+        {
+          "text": "Approach the tall stone.",
+          "next": "side_graveyard_grandfather"
+        }
+      ]
+    },
+    {
+      "id": "side_graveyard_grandfather",
+      "chapter": "SIDE \u00b7 THE GRAVEYARD",
+      "text": "He turns his head as you come close. His eyes are the colour of pond water in spring.\n\n\"I know your house,\" he says. \"Or your house's house. I am Halwyn. I was {other_name}'s great-grandfather, four generations back. I went through the Gate when my own daughter was taken. I did not bring her back.\"\n\nHis voice is the sound of an empty hall.\n\n\"I have stood by this stone a long time, waiting for the next of mine. I did not expect the next of mine to come here for a sibling. I did not expect there to be two lost at once.\"\n\nHe lifts a hand. His sleeve falls back. The arm beneath is mostly mist.\n\n\"Tell me, child of my line \u2014 who is lost?\"",
+      "choices": [
+        {
+          "text": "\"{missing_name}. The Keeper took {missing_obj}.\"",
+          "next": "side_graveyard_g2"
+        },
+        {
+          "text": "\"{other_name}. The witch's wood took {other_obj}.\"",
+          "next": "side_graveyard_g2b"
+        },
+        {
+          "text": "\"Both. Both are lost.\"",
+          "next": "side_graveyard_g2c"
+        }
+      ]
+    },
+    {
+      "id": "side_graveyard_g2",
+      "chapter": "SIDE \u00b7 THE GRAVEYARD",
+      "text": "He nods, very slowly.\n\n\"The Keeper. The same Keeper. Always the same Keeper. He has been there longer than my name has been spoken aloud.\"\n\nHe looks at you a long moment.\n\n\"You are not the first of our blood to walk to the arch. You may be the first who matters. There is a thing my daughter said, the night before she was taken \u2014 she said the dark answered her when she asked it questions. The dark in the arch has ears. Speak to it as if it is a person. It is. It was. It forgot, but it was.\"\n\nWhat do you say?",
+      "choices": [
+        {
+          "text": "\"What else did she say?\"",
+          "next": "side_graveyard_g3"
+        },
+        {
+          "text": "\"Will you walk with me to the Gate?\"",
+          "next": "side_graveyard_walks"
+        }
+      ]
+    },
+    {
+      "id": "side_graveyard_g2b",
+      "chapter": "SIDE \u00b7 THE GRAVEYARD",
+      "text": "The grandfather closes his eyes.\n\n\"The wood. The wood does not take. The wood changes. If {other_name} wears antlers now, {other_pron} is still {other_name}. The shape is not the soul. Remember that. Many of our line did not remember and so failed both their lost ones.\"\n\nHe opens his eyes.\n\n\"There is a thing my daughter said, the night before she was taken \u2014 she said the dark answered her when she asked it questions. Both your lost ones are behind doors that have ears.\"\n\nWhat do you ask?",
+      "choices": [
+        {
+          "text": "\"What else did she say?\"",
+          "next": "side_graveyard_g3"
+        },
+        {
+          "text": "\"Will you walk with me to the Gate?\"",
+          "next": "side_graveyard_walks"
+        }
+      ]
+    },
+    {
+      "id": "side_graveyard_g2c",
+      "chapter": "SIDE \u00b7 THE GRAVEYARD",
+      "text": "Halwyn bows his head.\n\n\"Both. Then you carry what no one of our line has carried before. The wood and the arch are old enemies and old lovers. They were one place once. They were sundered.\"\n\nHe looks up.\n\n\"My daughter said the dark answered her when she asked it questions. The wood answers too, in its way. Speak to both. Demand neither. Ours is not a line that demands; ours is a line that asks.\"\n\nWhat do you say?",
+      "choices": [
+        {
+          "text": "\"What else did she say?\"",
+          "next": "side_graveyard_g3"
+        },
+        {
+          "text": "\"Will you walk with me to the Gate?\"",
+          "next": "side_graveyard_walks"
+        }
+      ]
+    },
+    {
+      "id": "side_graveyard_g3",
+      "chapter": "SIDE \u00b7 THE GRAVEYARD",
+      "text": "He thinks. Mist moves through his beard.\n\n\"She said the dark behind the arch was grieving. That was her word. Grieving, not hungry. She said it the way a healer says a sickness, not the way a soldier says an enemy.\"\n\nHe meets your eye.\n\n\"Take that with you. Grief is something we know. Hunger is something we don't.\"\n\nHis form is thinning. The mist is reclaiming him.\n\n\"Go, child of my line. We watch from here. We cannot help, but we will not look away.\"",
+      "choices": [
+        {
+          "text": "\"Thank you, grandfather.\"",
+          "next": "side_graveyard_leave",
+          "do": [
+            "flag:hunter_lore",
+            "flag:grandfather_lore",
+            "trust:+5",
+            "journal:My ancestor Halwyn: the dark in the arch is GRIEVING, not hungry. Speak to it like a person. It was, once."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_graveyard_walks",
+      "chapter": "SIDE \u00b7 THE GRAVEYARD",
+      "text": "He smiles, the way the dead smile \u2014 with the corners of the mouth, but not the eyes, because the eyes have already gone elsewhere.\n\n\"I cannot leave the stones, child. The stones hold us. We hold the stones. That is the bargain.\"\n\nHe lifts a hand. The mist at his shoulder takes the shape of an old crest for half a heartbeat \u2014 your crest, in older lines.\n\n\"But we will watch. Every one of us. When you reach the arch, look up. The wind will move a way it does not move for other travellers. That will be us.\"\n\nHe begins to fade.",
+      "choices": [
+        {
+          "text": "\"I will look up.\"",
+          "next": "side_graveyard_leave",
+          "do": [
+            "flag:hunter_lore",
+            "flag:grandfather_lore",
+            "trust:+5",
+            "journal:At the arch, look up. The wind will move strangely. That is my line, watching."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_graveyard_leave",
+      "chapter": "SIDE \u00b7 THE GRAVEYARD",
+      "text": "You step back through the iron gate. The cold lifts from your shoulders the way a heavy coat lifts.\n\nBehind you, the yard is only yew trees and stones and mist. As it should be. As it has been for centuries.\n\nThe city's noise reaches you again. A baker's bell. A guard's whistle. A child laughing in a courtyard you cannot see.\n\nThe wind shifts, briefly, against the way it should. You think of an old man's hand lifting.",
+      "choices": [
+        {
+          "text": "Into the city.",
+          "next": "city_lost"
+        },
+        {
+          "text": "Back to the barracks.",
+          "next": "barracks"
+        }
+      ]
+    },
+    {
+      "id": "side_pell_rumor",
+      "chapter": "SIDE \u00b7 THE LOST CHILD",
+      "text": "It is in the market that you hear it first. A fishmonger's wife, three baskets down, telling another woman:\n\n\"\u2014 the one with the chipped tooth, yeah? Half my age and twice my mouth. Eating bread backwards in the alley behind the chandler's. Backwards! From the crust in. I said, boy, you've been gone, and he said who's gone, missus, I'm right here.\"\n\nThe other woman laughs. The fishmonger's wife shakes her head.\n\n\"Pell, his name was. They said the Gate took him last spring. They were wrong, or he came back. Skin's grey, mind. Won't say where he's been.\"\n\nYou go still. Pell. Juno's Pell.",
+      "choices": [
+        {
+          "text": "\"Where is the chandler's alley?\"",
+          "next": "side_pell_alley"
+        },
+        {
+          "text": "Buy a fish to thank her. Ask gently.",
+          "next": "side_pell_alley",
+          "do": [
+            "gold:-1",
+            "trust:+2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_pell_alley",
+      "chapter": "SIDE \u00b7 THE LOST CHILD",
+      "text": "The chandler's alley smells of beef tallow and old rain. A cat sits on a barrel like an officer. At the end of the alley, behind a stack of broken crates, a child is folded against the wall, knees up, eating the heel of a loaf.\n\nBackwards. From the crust in.\n\nHe is perhaps eight. He has a chipped front tooth that whistles when he breathes. His skin is the colour of paper left in a drawer. His eyes are very large and very dry, like they have forgotten how to make tears and are working it out again.\n\nHe sees you.\n\n\"You smell like the road,\" he says, polite. \"Hello, road person. I'm Pell. I think.\"\n\nWhat do you say?",
+      "choices": [
+        {
+          "text": "Kneel. \"Pell, your cousin Juno is looking for you.\"",
+          "next": "side_pell_juno"
+        },
+        {
+          "text": "\"Where have you been?\"",
+          "next": "side_pell_been"
+        },
+        {
+          "text": "Offer him your supplies.",
+          "next": "side_pell_feed",
+          "require": "supplies"
+        }
+      ]
+    },
+    {
+      "id": "side_pell_juno",
+      "chapter": "SIDE \u00b7 THE LOST CHILD",
+      "text": "The name does something. Not a smile. A flicker. Like a coal pretending to be ash, deciding maybe to be a coal again.\n\n\"Juno,\" he says. Tastes it. \"Juno had a frog. The frog's name was Mister.\"\n\nHe blinks. A tear, exactly one, escapes the dry place and tracks down his cheek as if astonished to find itself there.\n\n\"Juno is real,\" he says, like he's been needing to know.\n\nHe is real. Real real. Skin too grey, breath too whistly, but the boy under it is in there.\n\n\"Will you take me to her?\" he asks. \"I would like to be taken to her. I don't remember the way. The Gate keeps the way.\"\n\nWhat do you do?",
+      "choices": [
+        {
+          "text": "\"I'll take you. Come on.\"",
+          "next": "side_pell_carry",
+          "do": [
+            "flag:pell_found",
+            "trust:+3"
+          ]
+        },
+        {
+          "text": "\"First \u2014 tell me how you got out.\"",
+          "next": "side_pell_been"
+        }
+      ]
+    },
+    {
+      "id": "side_pell_been",
+      "chapter": "SIDE \u00b7 THE LOST CHILD",
+      "text": "He tilts his head, considering.\n\n\"There was a quiet place,\" he says. \"It wasn't bad. There was a man who didn't have a face, exactly, but he had the shape of a face where one should be. He didn't hurt us. He just listened. He listened so hard I forgot what my voice sounded like.\"\n\nThe chipped tooth whistles.\n\n\"There were lots of us. Boys. Girls. Babies, even, but the babies didn't cry, which I thought was strange. We sat in a long room. The room was made of waiting.\"\n\nHe looks up.\n\n\"A door opened. I don't know why. The man wasn't looking. I walked out. I walked a long time. I came out behind the chandler's. The cat let me sleep in the alley. The cat is named Officer.\"\n\nHe pats the cat as if introducing you.\n\n\"Will you take me to Juno?\"",
+      "choices": [
+        {
+          "text": "\"Yes. Now.\"",
+          "next": "side_pell_carry",
+          "do": [
+            "flag:pell_found",
+            "flag:gate_lore_pell",
+            "trust:+3",
+            "journal:Pell escaped the Gate. He says: the Keeper has the SHAPE of a face. The room is made of waiting. A door opened \u2014 he doesn't know why."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_pell_feed",
+      "chapter": "SIDE \u00b7 THE LOST CHILD",
+      "text": "You crouch and pass him your supplies. He takes them carefully, as if afraid the food might leave again.\n\nHe eats slowly. Not ravenous \u2014 thoughtful. Like a person learning how eating works.\n\n\"This is real food,\" he says, mouth full. \"The food in there didn't taste of anything. It tasted of forgetting.\"\n\nHe looks at you and his eyes are slightly less dry.\n\n\"Are you a good road person? You feel like a good one. I would like a good one to take me to my cousin Juno.\"\n\nWill you?",
+      "choices": [
+        {
+          "text": "\"I'll take you.\"",
+          "next": "side_pell_carry",
+          "do": [
+            "rem_item:supplies",
+            "flag:pell_found",
+            "trust:+3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_pell_carry",
+      "chapter": "SIDE \u00b7 THE LOST CHILD",
+      "text": "He is lighter than he should be. A child his age should weigh more. You think of the room made of waiting and have to look at the sky for a moment.\n\nThe cat \u2014 Officer \u2014 follows you for half a street, then sits down to supervise from a distance.\n\nPell talks the whole way. Not constantly \u2014 in small bursts, like a bird working out it can sing again.\n\n\"Juno is going to be cross with me,\" he murmurs against your shoulder. \"I borrowed her ribbon. I forgot to give it back. I think it's still in there. I'm sorry, road person, you might have to go back for the ribbon.\"\n\nWhere will you take him?",
+      "choices": [
+        {
+          "text": "To the caravan, where Juno waits.",
+          "next": "side_pell_juno_reunion"
+        },
+        {
+          "text": "Find Juno in the city first.",
+          "next": "side_pell_juno_reunion"
+        }
+      ]
+    },
+    {
+      "id": "side_pell_juno_reunion",
+      "chapter": "SIDE \u00b7 THE LOST CHILD",
+      "text": "Juno is sitting on a wagon-tail braiding rope when she sees you coming. Her hands stop. Her mouth opens. No sound.\n\nPell wriggles in your arms. \"Down,\" he says, polite. \"Down please, road person.\"\n\nYou set him on his feet. He walks the last six steps himself, slow and steady, like a small dignitary.\n\nJuno slides off the wagon and meets him in the middle of the street, on her knees in the dust, both hands on his face like she has to check he's solid.\n\n\"You borrowed my ribbon,\" she chokes out, instead of anything else.\n\n\"I'm sorry,\" Pell whispers. \"It's still in the room of waiting. The road person might go back for it.\"\n\nThey hold each other a long time. Tobish the wagon driver turns his face away and pretends to be busy with a harness.",
+      "choices": [
+        {
+          "text": "Step back. Let them have this.",
+          "next": "side_pell_aftermath",
+          "do": [
+            "trust:+10",
+            "rel:moth:+5",
+            "flag:pell_home",
+            "journal:Brought Pell home to Juno. He says I might have to go back for a ribbon. I think I will."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_pell_aftermath",
+      "chapter": "SIDE \u00b7 THE LOST CHILD",
+      "text": "Juno catches up to you at the edge of the caravan, eyes red.\n\n\"You,\" she says, and stops, because the rest of the sentence won't come.\n\nShe presses something into your hand: a small bone token, carved like a fish. The kind caravans use for safe-passage among their own.\n\n\"If you ever \u2014 ever \u2014 need a wagon, a meal, a hiding place, a road \u2014 you show this. Any of ours will know. Any of ours will move.\"\n\nShe wipes her face with the heel of her hand.\n\n\"He says you're going back in. He says you might find a ribbon. Find more than a ribbon. Find every one of them. Pell says the door opened on its own. He says it wants to open. Make it.\"\n\nWhat will you say?",
+      "choices": [
+        {
+          "text": "\"I will.\"",
+          "next": "side_pell_road",
+          "do": [
+            "add_item:supplies",
+            "gold:+8",
+            "trust:+5",
+            "journal:Juno's token: any caravan will move for me now. Pell says the door WANTS to open."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_pell_road",
+      "chapter": "SIDE \u00b7 THE LOST CHILD",
+      "text": "You leave them on the wagon-tail, Pell tucked under Juno's arm like he might still float away, Officer the cat watching from a barrel as if to confirm the delivery.\n\nThe last thing you hear before you turn the corner is Pell, sleepy and matter-of-fact: \"The road person smells like the road. The road is good.\"\n\nWhere now?",
+      "choices": [
+        {
+          "text": "Into the market.",
+          "next": "city_market"
+        },
+        {
+          "text": "Into the alleys.",
+          "next": "city_alleys"
+        }
+      ]
+    },
+    {
+      "id": "side_bookseller_return",
+      "chapter": "SIDE \u00b7 THE BOOKSELLER",
+      "text": "The bell over the door still chimes the way bells do in shops where the owner cares about the chime.\n\nThe bookseller looks up from a ledger. She is older than the last time. Older in the way people get older when they've been waiting.\n\n\"You came back,\" she says. \"They mostly don't.\"\n\nShe closes the ledger. Slides off her stool. Walks to a shelf you didn't notice the first time \u2014 it's behind a curtain the colour of dried roses \u2014 and takes down a slim book bound in pale leather.\n\n\"This one's not for you,\" she says, holding it out. \"This one's for {missing_name}. I've been keeping it.\"\n\nWhat do you say?",
+      "choices": [
+        {
+          "text": "\"How did you know I'd come back?\"",
+          "next": "side_bookseller_knew"
+        },
+        {
+          "text": "\"What's in it?\"",
+          "next": "side_bookseller_book"
+        },
+        {
+          "text": "Take it. \"Thank you.\"",
+          "next": "side_bookseller_book"
+        }
+      ]
+    },
+    {
+      "id": "side_bookseller_knew",
+      "chapter": "SIDE \u00b7 THE BOOKSELLER",
+      "text": "She smiles, small and tired.\n\n\"I knew because of the Keeper's name. Once someone learns his name, the road bends them back to me. It always has. He's the one who makes the bending.\"\n\nShe taps the book.\n\n\"This was written by his mother. Long ago. Before he was the Keeper. When he was just a boy who'd lost a girl. She wrote it for him to read when he came back. He never did. So I kept it. I have been keeping it for a long time.\"\n\nA pause. The shop is very quiet.\n\n\"It's not for him now. It's for the one he takes. If your {missing_short} reads it inside the dark, the dark may listen. Mothers' words have weight there.\"\n\nWhat do you ask?",
+      "choices": [
+        {
+          "text": "\"What's in it?\"",
+          "next": "side_bookseller_book"
+        },
+        {
+          "text": "\"You knew his mother?\"",
+          "next": "side_bookseller_mother"
+        }
+      ]
+    },
+    {
+      "id": "side_bookseller_book",
+      "chapter": "SIDE \u00b7 THE BOOKSELLER",
+      "text": "She opens it. The pages are creamy with age. The hand inside is small, careful, a woman's writing from a century that wrote slowly.\n\nMy darling boy, the first page reads, if you are reading this, you have come back to me. I will not be alive to greet you, but I will have been alive to write this, and that is something. The dark you walked into is older than I am. But not older than love. Love is older. Love is the oldest thing.\n\nThe bookseller closes the book gently.\n\n\"There's more. Don't read it now. Save it. Give it to your {missing_short} to read at the moment they most need to remember they are loved. The book knows when. It will warm in their hands.\"\n\nShe presses it into yours.\n\n\"Bring it back if you can. Don't, if you can't.\"",
+      "choices": [
+        {
+          "text": "\"Thank you.\"",
+          "next": "side_bookseller_out",
+          "do": [
+            "add_item:keeper_mother_book",
+            "trust:+5",
+            "flag:has_mother_book",
+            "journal:A bookseller kept the Keeper's mother's letter for a hundred years. It is for {missing_name} to read. The book knows when."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_bookseller_mother",
+      "chapter": "SIDE \u00b7 THE BOOKSELLER",
+      "text": "She nods. Looks past you, into the dust of years.\n\n\"My great-great-grandmother did. They were friends. The Keeper's mother was a midwife. Her name was Anya. She buried her son in her head a long time before she stopped writing to him.\"\n\nShe blinks. Comes back.\n\n\"She wrote this book in the year after he went. She brought it to my line and said, keep this for him, in case he forgets. My family has kept it for a hundred and twenty winters. I am the last of my line. I have been waiting for you, in a way. Or someone like you.\"\n\nShe presses the book into your hands.\n\n\"His mother's name was Anya. Anya. If you ever need a sound to throw at him \u2014 that one will land.\"",
+      "choices": [
+        {
+          "text": "Take the book. \"Anya. I'll remember.\"",
+          "next": "side_bookseller_out",
+          "do": [
+            "add_item:keeper_mother_book",
+            "trust:+5",
+            "flag:has_mother_book",
+            "flag:keeper_mother_name",
+            "journal:The Keeper's mother was Anya. Her book is in my pack. A sound to throw at him that will land."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_bookseller_out",
+      "chapter": "SIDE \u00b7 THE BOOKSELLER",
+      "text": "At the door she catches your wrist. Her grip is dry and warm.\n\n\"One more thing. The dark in the arch can read. He has been reading for a thousand years, looking for a name he has forgotten. If you find his writing in there \u2014 his hand \u2014 look at it. Don't be polite. Look.\"\n\nShe releases you.\n\n\"The bell will chime when you come back. I will be here, if I am still here. If I am not \u2014 leave the book on the counter. Someone else will keep it.\"\n\nThe bell chimes as you step out.",
+      "choices": [
+        {
+          "text": "On.",
+          "next": "city_alleys"
+        }
+      ]
+    },
+    {
+      "id": "side_moth_roost_1",
+      "chapter": "SIDE \u00b7 MOTH'S CROWS",
+      "text": "Moth has not been herself for a day and a half. Not sullen, exactly \u2014 just thin, somehow, like a held note running out of breath.\n\nAt the rest stop, while you scrape ash from a kettle, she says, very quietly:\n\n\"My crows are scattered.\"\n\nShe says it without looking at you. The way one says a thing they don't want to need help with.\n\n\"There was a roost. Old tower, iron weathervanes. Storm took the vanes, vanes took the wind, wind took the flock. I can feel them \u2014 they're alive, they're just spread. If I could find the tower and put one vane back up \u2014 \"\n\nShe breaks off. Picks at a thread on her cuff.\n\n\"Forget it. Not why we're here.\"\n\nWhat do you say?",
+      "choices": [
+        {
+          "text": "\"Where's the tower?\"",
+          "next": "side_moth_roost_2",
+          "require": "companion:moth"
+        },
+        {
+          "text": "\"We'll find it. Today.\"",
+          "next": "side_moth_roost_2"
+        },
+        {
+          "text": "Sit with her. Don't push.",
+          "next": "side_moth_sit",
+          "do": [
+            "rel:moth:+3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_moth_sit",
+      "chapter": "SIDE \u00b7 MOTH'S CROWS",
+      "text": "You sit beside her and pretend the kettle still needs scraping. After a while she leans her shoulder against yours, the small careful weight of a person who doesn't usually lean.\n\n\"I'll show you,\" she says eventually. \"After this. After we get the {missing_short} back. The tower's been there a hundred years. It can wait a week more.\"\n\nShe sniffs, businesslike.\n\n\"But thank you for not making me ask.\"",
+      "choices": [
+        {
+          "text": "\"Anytime.\"",
+          "next": "side_moth_roost_2",
+          "do": [
+            "rel:moth:+5"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_moth_roost_2",
+      "chapter": "SIDE \u00b7 MOTH'S CROWS",
+      "text": "She leads you off the road, down a switchback no one would have noticed if she hadn't pointed it out, and there \u2014 set in a fold of hill the colour of bruises \u2014 stands an old watchtower. Three storeys. Half-collapsed. Four iron rods at the top where four weathervanes used to spin.\n\nOnly one vane is left. The other three lie in the grass like sleeping fish.\n\n\"They have to spin,\" Moth says, climbing already. \"That's the trick. Iron and wind and a name on each one. My great-grandmother's name's on that one \u2014 \" she points \" \u2014 and then her sister, and then their dog, and then a man none of us remember.\"\n\nShe glances down at you.\n\n\"Help me lift?\"",
+      "choices": [
+        {
+          "text": "\"Up we go.\"",
+          "next": "side_moth_roost_3"
+        }
+      ]
+    },
+    {
+      "id": "side_moth_roost_3",
+      "chapter": "SIDE \u00b7 MOTH'S CROWS",
+      "text": "The climb is rougher than it looks. Moth goes ahead like a person who has climbed this tower in dreams. You follow with a vane balanced across your back, the iron cold against your spine.\n\nAt the top, the wind is sudden and large, the kind that gets in your clothes. Moth braces the rod. You lift. The vane slots home with a sound like a door clicking shut on a winter night.\n\nIt catches. Spins. Catches.\n\nMoth laughs \u2014 actually laughs, a small bright sound \u2014 and the wind takes her hair sideways.\n\nFrom somewhere very far, a single crow calls.\n\nThen another, closer.\n\nThen ten. Then thirty. They come from every direction, dropping out of nowhere skies, landing on the tower around you like a soft black storm settling.",
+      "choices": [
+        {
+          "text": "Watch in wonder.",
+          "next": "side_moth_roost_4"
+        }
+      ]
+    },
+    {
+      "id": "side_moth_roost_4",
+      "chapter": "SIDE \u00b7 MOTH'S CROWS",
+      "text": "Moth holds out her hands. A big crow with one white feather behind its head settles on her wrist and headbutts her thumb. She makes a sound like someone who has been holding her breath for a year.\n\n\"This is Margery,\" she tells you, scratching the crow's throat. \"She's a terror. I have missed her.\"\n\nMargery considers you with one slow eye. Then, judgment passed, the crow hops onto your shoulder, taps your ear once with her beak, and flies off to assert dominance on a nearby weathervane.\n\nMoth turns to you. Her eyes are very bright.\n\n\"They'll come when I call now. Anywhere. Even \u2014 \" she swallows \" \u2014 even there. Even the dark behind the arch. Crows fly where the dead fly. Crows know the way home.\"\n\nWhat do you say?",
+      "choices": [
+        {
+          "text": "\"Then they'll be useful.\"",
+          "next": "side_moth_roost_5",
+          "do": [
+            "rel:moth:+15",
+            "flag:moth_flock",
+            "journal:Moth's flock is hers again. Margery the crow likes me. Crows know the way home \u2014 even from the dark."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_moth_roost_5",
+      "chapter": "SIDE \u00b7 MOTH'S CROWS",
+      "text": "Going down is easier than coming up. The flock follows for a while, then peels off \u2014 Margery first, the others after, in a long unspooling thread of black against the bruised sky.\n\nAt the bottom Moth stops. Looks at you. The brightness in her eyes is still there.\n\n\"I owe you,\" she says. \"Don't argue. I owe you and I will pay it. Probably by being annoying about it for the rest of our lives. Get used to it.\"\n\nShe knocks her shoulder against yours.\n\nWhere now?",
+      "choices": [
+        {
+          "text": "Back to the road.",
+          "next": "wastes_ride"
+        },
+        {
+          "text": "Cut through toward the witch's wood.",
+          "next": "witch_leave_road"
+        }
+      ]
+    },
+    {
+      "id": "side_witch_jar_1",
+      "chapter": "SIDE \u00b7 THE WITCH'S MOTHER",
+      "text": "The Hedge Witch is mending a stocking when you come into the grove. She mends like she does everything \u2014 with bored, terrifying precision.\n\nWithout looking up: \"You have the question-shaped face today. Ask.\"\n\nYou ask the one you have been holding.\n\n\"You said your mother's in a jar.\"\n\nThe needle stops. The grove gets a degree quieter.\n\nShe lifts her eyes.\n\n\"I did say that. I assumed you'd been polite enough to forget.\"\n\nA long look.\n\n\"You want to meet her.\"",
+      "choices": [
+        {
+          "text": "\"Only if you'll let me.\"",
+          "next": "side_witch_jar_2",
+          "require": "companion:hedge_witch"
+        },
+        {
+          "text": "\"Only if she'll let me.\"",
+          "next": "side_witch_jar_2"
+        },
+        {
+          "text": "\"Never mind. Stupid question.\"",
+          "next": "side_witch_jar_skip"
+        }
+      ]
+    },
+    {
+      "id": "side_witch_jar_skip",
+      "chapter": "SIDE \u00b7 THE WITCH'S MOTHER",
+      "text": "She snorts. Goes back to her stocking.\n\n\"Stupid questions are the only ones worth asking, hatchling. But fine. Another time. She doesn't get many visitors. She'll be cross with me for not bringing you in.\"\n\nThe grove warms again.",
+      "choices": [
+        {
+          "text": "Stay by the fire a while.",
+          "next": "camp_rest"
+        }
+      ]
+    },
+    {
+      "id": "side_witch_jar_2",
+      "chapter": "SIDE \u00b7 THE WITCH'S MOTHER",
+      "text": "She sets the stocking aside. Rises with the small effort of someone who has been mortal a long time. Leads you behind the grove, behind a hawthorn so old it looks like furniture, to a cottage you did not see on the way in and will not, you suspect, find again.\n\nInside: one room. One window. One shelf.\n\nOn the shelf, a jar.\n\nThe jar is the size of a soup pot. Inside the jar is a swirl of pale smoke that moves the way thought moves \u2014 not air, not water, attention. A pair of eyes opens in the smoke. They are her mother's eyes. You can tell because the witch sighs in the exact same exasperated octave.\n\n\"Hello, mother,\" the witch says.\n\nThe smoke ripples.\n\n\"She's been bored,\" the witch says. \"She'll be insufferable. Stand there. Don't lean on the shelf.\"",
+      "choices": [
+        {
+          "text": "\"Hello, ma'am.\"",
+          "next": "side_witch_jar_3"
+        }
+      ]
+    },
+    {
+      "id": "side_witch_jar_3",
+      "chapter": "SIDE \u00b7 THE WITCH'S MOTHER",
+      "text": "The smoke gathers itself into something more face-shaped. The eyes consider you. They are warmer than the witch's eyes. You realize, with a small shock, that this is what the witch's eyes look like when she's not pretending.\n\nA voice comes out of the jar. It is not a sound. It is the idea of a voice, settling directly behind your forehead.\n\nOne, it says. I get to say one true sentence. My daughter knows the rules. Listen.\n\nThe witch crosses her arms. Pretends not to be holding her breath.\n\nThe voice considers you for a long moment, like a tailor measuring.\n\nThen it says:\n\nThe Keeper's mother forgave him before he ever did the thing he is sorry for. He does not know this. Tell him.\n\nThe smoke settles. The eyes close.\n\nThe jar is just a jar.",
+      "choices": [
+        {
+          "text": "Stand very still.",
+          "next": "side_witch_jar_4",
+          "do": [
+            "flag:keeper_forgiven",
+            "trust:+3",
+            "journal:The witch's mother in a jar: 'The Keeper's mother forgave him before he ever did the thing he is sorry for. He does not know this. Tell him.'"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_witch_jar_4",
+      "chapter": "SIDE \u00b7 THE WITCH'S MOTHER",
+      "text": "The witch lets out a breath. Picks up the jar with careful, casual hands. Wraps it in a cloth that smells of rosemary.\n\n\"She likes you,\" she says, on the way out. \"She used to give my suitors three sentences. You got one. She likes you. Don't get a head about it.\"\n\nOutside, the hawthorn looks like a hawthorn again, not furniture. The cottage is gone or was never there.\n\nThe witch stops at the grove's edge. Looks at you sideways.\n\n\"For the record,\" she says. \"My mother was wrong about exactly one thing in her life, and she has not yet told me what it was. So if the Keeper's mother is wrong too, we work with what we've got. Now go ruin a god, hatchling.\"",
+      "choices": [
+        {
+          "text": "Back to the fire.",
+          "next": "camp_rest"
+        },
+        {
+          "text": "Back to the grove path.",
+          "next": "witch_grove"
+        }
+      ]
+    }
+  ]
+}

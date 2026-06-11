@@ -1,0 +1,72 @@
+{
+  "scenes": [
+    {
+      "id": "epilogue_fight",
+      "chapter": "EPILOGUE \u00b7 ONE YEAR ON",
+      "text": "A year later.\nThe kingdom is loud again. There are markets. There are dogs. There is a holiday \u2014 recently invented, badly organized, beloved \u2014 where children wear paper crowns and run through the streets shouting nonsense, which is everyone's favorite kind of nonsense.\n{missing_name} is alive. {missing_pron_cap} is thinner than the portraits remembered, and {missing_poss} laugh is rarer than it was in the dream-garden, and {missing_pron} does not sleep without a candle. But {missing_pron} is alive.\nThe Keeper is not.\nYou killed it. You did. It cost you a shoulder you don't lift right anymore and a friend you do not name, even in your own head, even now. You killed it. The kingdom calls you a hero. You let them. It is easier than correcting them.",
+      "choices": [
+        {
+          "text": "Walk through the market with {missing_obj}.",
+          "next": "epilogue_fight_end"
+        }
+      ]
+    },
+    {
+      "id": "epilogue_fight_end",
+      "chapter": "EPILOGUE \u00b7 ONE YEAR ON",
+      "text": "{missing_pron_cap} loops {missing_poss} arm through yours. {missing_pron_cap} has gotten brave about the arm-looping. The first month, {missing_pron} couldn't bear to be touched at all. You waited. You are good at waiting now.\nA child shoves a paper crown into your hand. \"You have to wear it,\" the child says, fierce. \"It's the rules.\"\nYou put it on. {missing_pron_cap} laughs \u2014 the small startled laugh, the dream-laugh, the one you walked through walls for. {missing_pron_cap} puts on {missing_poss} own crown, the paper one, and tips it rakishly.\n\"How do I look,\" {missing_pron} says.\n\"Like a {missing_short},\" you say. \"Like mine.\"\nThe market goes on. The shoulder aches in the cold. {other_name}'s name is on a stone in the garden, and you visit, and you tell {other_obj} about the markets. Some nights you dream of the Gate. Some nights you don't.\nSome nights, beside {missing_obj}, you sleep through.",
+      "choices": []
+    },
+    {
+      "id": "epilogue_talk",
+      "chapter": "EPILOGUE \u00b7 ONE YEAR ON",
+      "text": "A year later.\nThe Keeper still exists. You did not kill it. You talked to it. You said its old name, the one the bookseller put on the back of your tongue, and the saying of it cracked something in the dark, and the dark \u2014 wept. Or what passed for weeping.\nIt is smaller now. It lives in the Gate still, but it does not take children. There is a treaty, of a sort, that you negotiated half-mad and bleeding at three in the morning a year ago, and that nobody quite believes is real until they notice the children come home.\n{missing_name} is alive. The treaty's first signature. {missing_pron_cap} writes letters to the Keeper sometimes, you discover. Polite ones. {missing_pron_cap} says it is the only way {missing_pron} sleeps.",
+      "choices": [
+        {
+          "text": "Read one of the letters with {missing_obj}.",
+          "next": "epilogue_talk_end"
+        }
+      ]
+    },
+    {
+      "id": "epilogue_talk_end",
+      "chapter": "EPILOGUE \u00b7 ONE YEAR ON",
+      "text": "{missing_pron_cap} lets you read one. {missing_pron_cap} is shy about it. The letter says, in {missing_poss} careful hand: I am not afraid of you today. I am writing this from a kitchen. The kettle is on. The person I love is across the table. I want you to know there are kettles and kitchens. I want you to remember you used to be a person who knew about them. Yours, with \u2014 and then a word {missing_pron} has crossed out, and rewritten, and crossed out again \u2014 yours, anyway.\nYou put the letter down. You take {missing_poss} hand across the table.\n\"It worked, you know,\" {missing_pron} says. \"The talking. You did that. You.\"\n\"We did it.\"\n\"We did it.\"\nOutside, a child shouts something nonsensical and joyful. The kettle whistles. {other_name}, in the garden's stone, is remembered. The Gate is a door now, not a mouth. You sit with the {missing_short} you love and drink tea, and the world, for an afternoon, behaves.",
+      "choices": []
+    },
+    {
+      "id": "epilogue_clever",
+      "chapter": "EPILOGUE \u00b7 ONE YEAR ON",
+      "text": "A year later.\nThe Gate is sealed. Not destroyed \u2014 sealed. With a trick. Your trick. You used the wizard's true name and the Keeper's old one and the warm tooth on its cord and a riddle that the Keeper, in its arrogance, accepted, and when it accepted you closed the door behind it from the outside.\nIt is in there still. Forever, perhaps. You try not to think about forever.\n{missing_name} is alive. {missing_pron_cap} sleeps badly. So do you. You sleep badly together, which is, it turns out, a kind of sleeping well.",
+      "choices": [
+        {
+          "text": "Walk to the cliff above the Gate.",
+          "next": "epilogue_clever_end"
+        }
+      ]
+    },
+    {
+      "id": "epilogue_clever_end",
+      "chapter": "EPILOGUE \u00b7 ONE YEAR ON",
+      "text": "You go, sometimes, the two of you. To the cliff above where the Gate used to be a Gate.\nIt looks like a stone arch now. Just stone. Birds nest in it. A goatherd grazes his flock at its foot and pretends not to know what it was.\n{missing_pron_cap} stands beside you in the wind. {missing_poss_cap} hair is longer. {missing_poss_cap} hand finds yours without looking.\n\"Do you ever feel bad,\" {missing_pron} says, \"that you tricked it.\"\n\"Every day.\"\n\"Good.\" {missing_pron_cap} squeezes your hand. \"You should. That's how I know you are still you and not a clever thing pretending. The Keeper would never feel bad about a trick. You do. So.\"\n{missing_pron_cap} tips {missing_poss} head against your shoulder.\n\"Let's go home,\" {missing_pron} says. \"I'll read to you. I was reading something the night they took me. I never finished it. I want you to hear how it ends.\"",
+      "choices": []
+    },
+    {
+      "id": "epilogue_sacrifice",
+      "chapter": "EPILOGUE \u00b7 ONE YEAR ON",
+      "text": "A year later.\nYou are not here. Not in the way you used to be.\nYou traded yourself. You stepped into the Keeper's place when it howled for one, and you held the door open from the inside long enough for {missing_name} to walk through it into the world.\n{missing_pron_cap} did not want to go. {missing_pron_cap} fought. {missing_pron_cap} bit Ser Vale's hand. {missing_pron_cap} screamed your name \u2014 your real one, which {missing_pron} had refused to learn in dreams but learned anyway in the end \u2014 and the screaming is what you remember of the world, sometimes, when you remember anything.\nYou are in the dark now. But the dark is \u2014 quieter, with you in it. You are not the Keeper. You are something gentler. You let the children go home.",
+      "choices": [
+        {
+          "text": "Listen. {missing_pron_cap} is dreaming again tonight.",
+          "next": "epilogue_sacrifice_end"
+        }
+      ]
+    },
+    {
+      "id": "epilogue_sacrifice_end",
+      "chapter": "EPILOGUE \u00b7 ONE YEAR ON",
+      "text": "{missing_pron_cap} sleeps. {missing_pron_cap} dreams. {missing_pron_cap} dreams of you, every night, and the dream is a small room with a window with stars in it, and you sit on the pallet and {missing_pron} sits beside you.\n\"You're still here,\" {missing_pron} says, every time, in wonder.\n\"I'm still here.\"\n\"I am not letting them put another person on the throne until I find a way to bring you back.\"\n\"Don't waste your life on that.\"\n\"It isn't a waste. Listen.\" {missing_pron_cap} takes your dream-hand. {missing_pron_cap} is older in this dream. {missing_pron_cap} is wearing the crown well now. \"There is a girl in the city named Juno. There is a boy named Bram. There is a bookseller. There is a woman who walked out of the Gate. They are all looking. I have them looking. We will find the door from this side and we will come and get you. Stubborn comes home. Someone told me that. I think it was you.\"\nYou kiss {missing_obj} in the dream. The dark, around you, is patient. The door, from this side, is patient too.\nYou wait. {missing_pron_cap} is coming. You wait.",
+      "choices": []
+    }
+  ]
+}

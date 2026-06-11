@@ -3,7 +3,7 @@
     {
       "id": "intro",
       "chapter": "CHAPTER I \u00b7 COURTYARD",
-      "text": "The King does not look up when you enter. His crown is upside-down on the table.\nThe spymaster was found that morning \u2014 no wounds, no marks, a scream frozen on his face.\n\n\"Elara was taken last night from her chambers. No body. No ransom. The wizard felt a door open somewhere else.\"\n\nHe slides three things across the table.\n\n  1. A signet ring \u2014 opens any door in the kingdom\n  2. A pouch of gold\n  3. A sealed letter from the spymaster\n\n\"Find her. Come back without her, and I won\u2019t need to execute you.\"",
+      "text": "The King does not look up when you enter. His crown is upside-down on the table.\nThe spymaster was found that morning \u2014 no wounds, no marks, a scream frozen on his face.\n\n\"{missing_name} was taken last night. No body. No ransom. The wizard felt a door open somewhere else.\"\n\nHe slides three things across the table.\n\n  1. A signet ring \u2014 opens any door in the kingdom\n  2. A pouch of gold\n  3. A sealed letter from the spymaster\n\n\"Find my {missing_child}. Come back without {missing_poss} and I won\u2019t need to execute you.\"",
       "choices": [
         {
           "text": "Take the ring. Ride for the Wastes.",

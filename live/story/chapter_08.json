@@ -1,0 +1,756 @@
+{
+  "scenes": [
+    {
+      "id": "city_lost",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "You are inside the walls and the city is wrong. Half the windows are shuttered with fresh wood. Half are not \u2014 those houses are open, doors gone, taken or fled. A cart goes past piled with chairs and one small dog tied on top of the chairs. The dog is calm. Its owner is not.\n\nA woman grabs your sleeve. \"Are you the one they sent? Tell the King \u2014 no. There is no King. Never mind.\" She lets go and is gone.\n\nA boy is selling water at three times the price. He looks ashamed about it. He is selling it anyway.",
+      "choices": [
+        {
+          "text": "Buy water from the boy.",
+          "next": "city_market",
+          "require": "gold:5",
+          "do": [
+            "gold:-5",
+            "hp:+1",
+            "trust:+5"
+          ]
+        },
+        {
+          "text": "To the keep. Find who's left in charge.",
+          "next": "city_keep"
+        },
+        {
+          "text": "Into the back alleys. Listen for trouble.",
+          "next": "city_alleys"
+        },
+        {
+          "text": "Walk to the quiet street behind the theatre.",
+          "next": "quiet_street_1"
+        },
+        {
+          "text": "Follow the lute into a side alley.",
+          "next": "side_minstrel_2"
+        },
+        {
+          "text": "Walk to the King's Yard outside the wall.",
+          "next": "side_graveyard_gate"
+        }
+      ]
+    },
+    {
+      "id": "city_market",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "The boy gives you the cup with both hands. \"My mother says the nobles are running. My father says good. I think my father is going to get us killed.\"\n\nYou drink. The water is cold and clean. The boy watches you drink. He looks like he has not eaten today.\n\nYou hand him a piece of your bread without thinking. He takes it without thinking. Neither of you says anything for a moment. Then he points down a narrow street.\n\n\"Spymaster's in the old tax house. They're holding him. They're going to hang him at dark. He was {missing_title}'s man.\"",
+      "choices": [
+        {
+          "text": "To the tax house.",
+          "next": "city_taxhouse",
+          "do": [
+            "flag:boy_tip"
+          ]
+        },
+        {
+          "text": "To the keep first.",
+          "next": "city_keep"
+        },
+        {
+          "text": "To the alleys.",
+          "next": "city_alleys"
+        },
+        {
+          "text": "The fishmonger's wife is gossiping about a boy.",
+          "next": "side_pell_rumor"
+        }
+      ]
+    },
+    {
+      "id": "city_keep",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "The keep doors are open. That is the first wrong thing. The second is the steward, sitting on the steps with his chain of office in his lap like a dead snake.\n\n\"Lord Cathmer fled at dawn,\" he says. \"Lady Veska at noon. The garrison captain is drunk. I am, as you see, also drunk. The {missing_short_cap}'s man is in the tax house. We are going to hang him because someone has to hang someone or the city will eat itself.\"\n\nHe looks up. He almost laughs.\n\n\"Stop us, if you like. I would be grateful. I cannot stop myself.\"",
+      "choices": [
+        {
+          "text": "\"I'll stop you.\"",
+          "next": "city_taxhouse",
+          "do": [
+            "flag:steward_blessing",
+            "trust:+5"
+          ]
+        },
+        {
+          "text": "\"Let him hang. Tell me what he knew first.\"",
+          "next": "city_taxhouse_hang",
+          "do": [
+            "fear:+5",
+            "trust:-5"
+          ]
+        },
+        {
+          "text": "To the alleys.",
+          "next": "city_alleys"
+        },
+        {
+          "text": "Bells. Smoke from the east quarter. Something is breaking.",
+          "next": "deep_city_siege_1"
+        },
+        {
+          "text": "Two days out from the city, write what you saw.",
+          "next": "deep_city_aftermath",
+          "require": "flag:steward_blessing"
+        }
+      ]
+    },
+    {
+      "id": "city_alleys",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "The alleys are quieter than the streets, which is the wrong way around. You walk soft. You have your hand near your weapon. You are right to.\n\nThree men step out of a doorway behind you and one out of a doorway ahead. They are not soldiers. They are not bandits. They are something in between \u2014 men who used to be paid and are no longer paid and have not yet decided what they are.\n\nIn the corner of your eye, in the dark of the doorway, a fifth man \u2014 bound at the wrists, gagged, watching you with a flat, calm interest. Rook.",
+      "choices": [
+        {
+          "text": "Fight.",
+          "next": "city_alley_fight",
+          "require": "sword"
+        },
+        {
+          "text": "Fight.",
+          "next": "city_alley_fight",
+          "require": "shadow_blade"
+        },
+        {
+          "text": "Fight dirty.",
+          "next": "city_alley_fight",
+          "require": "knife"
+        },
+        {
+          "text": "Talk.",
+          "next": "city_alley_talk"
+        },
+        {
+          "text": "Throw your purse and run.",
+          "next": "city_alley_run",
+          "require": "gold:10"
+        },
+        {
+          "text": "Check the chandler's alley for a rumor.",
+          "next": "side_pell_rumor"
+        },
+        {
+          "text": "Return to the bookseller's quiet street.",
+          "next": "side_bookseller_return",
+          "require": "flag:knows_keeper_name"
+        },
+        {
+          "text": "A woman in a baker's apron grabs your sleeve. The Houses are turning.",
+          "next": "deep_city_siege_1"
+        },
+        {
+          "text": "Two days out, the smell of smoke is still on the road.",
+          "next": "deep_city_aftermath",
+          "require": "flag:rebel_friend"
+        }
+      ]
+    },
+    {
+      "id": "city_alley_fight",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "You take the one in front first because he is the biggest and the others are watching him to know what to do. He goes down with a sound like a sack of meal falling off a shelf.\n\nThe other three are slower than you. One of them is faster than you should have allowed. He cuts you along the ribs before you put him down.\n\nWhen it is over the alley smells like a butcher's. Rook is still in the doorway. He has worked the gag off with his shoulder.\n\n\"Took your time,\" he says. \"Cut me loose. We've got about a minute before the watch finds us, and the watch is worse than they were.\"",
+      "choices": [
+        {
+          "text": "Cut him loose.",
+          "next": "city_rook_free",
+          "do": [
+            "hp:-3",
+            "companion:rook",
+            "rel:rook:+5",
+            "flag:rook_joined",
+            "journal:Killed four men in an alley for a man tied in a doorway. He says thank you with his eyes. Not his mouth."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city_alley_talk",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "\"I have no coin worth your trouble,\" you say, slow, hands wide. \"I have a job and the job pays. If you help me, you get paid. If you cut me, you get a corpse and a watch problem.\"\n\nThe big one in front considers it. He is tired. They are all tired. After a moment he steps back. He jerks his head at Rook in the doorway.\n\n\"Take him too. He's worth nothing to us and his face is making me sad. We were never here.\"\n\nThey are gone like smoke.",
+      "choices": [
+        {
+          "text": "Cut Rook loose.",
+          "next": "city_rook_free",
+          "do": [
+            "companion:rook",
+            "rel:rook:+5",
+            "flag:rook_joined",
+            "trust:+5",
+            "journal:Talked four men out of a killing. Walked out with a fifth. The city is still teaching me things."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city_alley_run",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "You throw the purse high. The coins flash. The men look at the coins because men always do.\n\nYou are around the corner before they remember you. You hear scuffling and a short, ugly fight over what you left behind.\n\nTwo streets later you stop, hands on knees, breath ragged. From a doorway across the way, a bound man you do not yet know watches you go. He does not call out. He nods, once, as if he understands.\n\nYou will not see Rook again until the Gate.",
+      "choices": [
+        {
+          "text": "On.",
+          "next": "city_keep",
+          "do": [
+            "gold:-10",
+            "flag:left_rook",
+            "journal:Bought my life off four men. Left someone in a doorway. I'll see him again or I won't."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city_rook_free",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "You cut him loose. His wrists are raw under the rope. He rubs them once and that is all the complaint he makes.\n\nHe is taller than you thought. Older. He has a soldier's hands and a thief's stillness and his eyes are the gray of a winter river. He does not thank you.\n\nHe says: \"You're going to the Gate. So am I. I have a reason. I'll tell you when I trust you. Don't ask before then.\"\n\nHe falls in at your shoulder. He moves like he has done this all his life.",
+      "choices": [
+        {
+          "text": "To the tax house. The spymaster.",
+          "next": "city_taxhouse",
+          "do": [
+            "flag:rook_with_you"
+          ]
+        },
+        {
+          "text": "To the keep first.",
+          "next": "city_keep"
+        }
+      ]
+    },
+    {
+      "id": "city_taxhouse",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "The tax house is a low brick building with one window. Two guards on the door. They are drinking, which is good for you. Inside, in a back room you can see through the window, a thin man sits at a table with his hands tied behind him. He is writing with a pen held in his teeth. He has been writing for a long time. The page is black.\n\nA bag on the floor at his feet. In it, a folded square of paper. Even from here you can see it has no readable ink on it \u2014 only a faint shimmer, like oil on water.",
+      "choices": [
+        {
+          "text": "Talk your way in past the guards.",
+          "next": "city_taxhouse_in",
+          "require": "trust:60"
+        },
+        {
+          "text": "Slip in through the window after dark.",
+          "next": "city_taxhouse_in",
+          "require": "companion:rook"
+        },
+        {
+          "text": "Use the signet ring. Command them.",
+          "next": "city_taxhouse_in",
+          "require": "signet_ring"
+        },
+        {
+          "text": "Wait for the hanging, take the bag off the body.",
+          "next": "city_taxhouse_hang"
+        },
+        {
+          "text": "Slip out toward the quiet street.",
+          "next": "quiet_street_1"
+        }
+      ]
+    },
+    {
+      "id": "city_taxhouse_in",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "You get in. How does not matter. The spymaster looks up from the page in his teeth and his eyes are bright.\n\n\"You're late,\" he says, around the pen. \"I am writing the last things she said to me. She knew. She walked through the Gate awake. She wanted me to tell someone.\"\n\nHe spits the pen out. \"The page is in dark ink. You cannot read it without sight. I do not have time to teach you. Take it. Find someone who can. And cut me loose so I can die standing.\"",
+      "choices": [
+        {
+          "text": "Read it now. (Use seeing_draught.)",
+          "next": "city_spymaster_read",
+          "require": "seeing_draught",
+          "do": [
+            "rem_item:seeing_draught"
+          ]
+        },
+        {
+          "text": "Pocket it. Read it at the Gate.",
+          "next": "city_spymaster_after",
+          "do": [
+            "add_item:elara_letter",
+            "flag:have_letter",
+            "journal:Took {missing_name}'s last letter. Cannot read it. Will read it when I can."
+          ]
+        },
+        {
+          "text": "Cut him loose. Take him with you.",
+          "next": "city_spymaster_free"
+        }
+      ]
+    },
+    {
+      "id": "city_spymaster_read",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "The page floods. Her handwriting is small and crowded and angry.\n\n\"It is not my {other_sibling} who comes back if you take the wrong path. It is the Keeper wearing him. He will be kind. He will know our songs. Do not embrace him. He hates light. I am not afraid. Tell my father I am not afraid. I am furious. Use the back way. {other_name} drew it. The Keeper has a name. Make him hear it twice.\"\n\nYou fold the page. You sit down for a moment because your knees are tired.",
+      "choices": [
+        {
+          "text": "Cut the spymaster loose. Out.",
+          "next": "city_spymaster_after",
+          "do": [
+            "add_item:elara_letter",
+            "flag:read_elara_letter",
+            "trust:+10",
+            "journal:{missing_name} is furious, not afraid. She told me how to win. Twice. The name. Twice."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city_spymaster_free",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "You cut him loose. He stands and his knees almost go. He catches himself on the table.\n\n\"I cannot run,\" he says, plainly. \"They will catch us before the gate. Take the letter. Go. I will sit in the doorway with a candle and tell them I am the one they wanted. They are not bright men. It will buy you an hour.\"\n\nHe smiles. He has no front teeth. He smiles anyway.",
+      "choices": [
+        {
+          "text": "Take the letter. Go.",
+          "next": "city_spymaster_after",
+          "do": [
+            "add_item:elara_letter",
+            "flag:spymaster_died_for_you",
+            "trust:+10",
+            "journal:He sat in the doorway with a candle so I could go. I did not know his name. I should have asked."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city_taxhouse_hang",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "You wait until dark. They drag him out. He does not fight. They string him up from a beam in the square in front of a small, ashamed crowd. He looks for someone in the crowd and finds you and his eyes are not angry. He nods, once.\n\nWhen the square empties you cut the bag off his belt. The letter is still in it. The ink is unreadable to you. You walk out of the city with a dead man's last words in your coat.",
+      "choices": [
+        {
+          "text": "On, to the Gate.",
+          "next": "city_spymaster_after",
+          "do": [
+            "add_item:elara_letter",
+            "fear:+10",
+            "trust:-5",
+            "flag:let_spymaster_hang",
+            "journal:Let him hang. Took the letter off his body. I will see his face on the inside of my eyelids for a while."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "city_spymaster_after",
+      "chapter": "CHAPTER V \u00b7 THE LOST CITY",
+      "text": "You are out of the city by the side gate, the one the smugglers use, the one with the broken hinge.\n\nThe road to the Hollow Gate is empty. The sky is the color of old iron. Whoever is with you is quiet.\n\nA mile out, you find a place between two stones where the wind drops, and the company stops without being told. You will not sleep much. But you will sleep.",
+      "choices": [
+        {
+          "text": "Make camp.",
+          "next": "camp_rest"
+        },
+        {
+          "text": "Push through the night to the Gate.",
+          "next": "hollow_gate",
+          "do": [
+            "hp:-2",
+            "fear:+5"
+          ]
+        },
+        {
+          "text": "Strike camp a mile from the Gate.",
+          "next": "threshold_1"
+        }
+      ]
+    },
+    {
+      "id": "camp_rest",
+      "chapter": "INTERLUDE \u00b7 CAMP",
+      "text": "You have a fire that is too small and a watch that is too short and a sky with too many stars. The country is very quiet here. The Gate is somewhere ahead, breathing on its own.\n\nYour people are arranged around the fire the way tired people arrange themselves \u2014 close, but not touching. Someone is sharpening something. Someone is not eating their share.\n\nThere is nothing to do but wait for first light, and the things that wait do not always wait quietly.",
+      "choices": [
+        {
+          "text": "Sit with Ser Vale.",
+          "next": "vale_camp_1",
+          "require": "companion:vale"
+        },
+        {
+          "text": "Sit with Ser Vale a while longer.",
+          "next": "vale_camp_2",
+          "require": "rel:vale:15"
+        },
+        {
+          "text": "Speak plainly with Ser Vale.",
+          "next": "vale_camp_3",
+          "require": "rel:vale:30"
+        },
+        {
+          "text": "Sit with Moth.",
+          "next": "moth_camp_1",
+          "require": "companion:moth"
+        },
+        {
+          "text": "Sit with Moth a while longer.",
+          "next": "moth_camp_2",
+          "require": "rel:moth:15"
+        },
+        {
+          "text": "Speak plainly with Moth.",
+          "next": "moth_camp_3",
+          "require": "rel:moth:30"
+        },
+        {
+          "text": "Sit with Rook.",
+          "next": "rook_camp_1",
+          "require": "companion:rook"
+        },
+        {
+          "text": "Sit with Rook a while longer.",
+          "next": "rook_camp_2",
+          "require": "rel:rook:15"
+        },
+        {
+          "text": "Speak plainly with Rook.",
+          "next": "rook_camp_3",
+          "require": "rel:rook:30"
+        },
+        {
+          "text": "Sit with the Hedge Witch.",
+          "next": "witch_camp_1",
+          "require": "companion:hedge_witch"
+        },
+        {
+          "text": "Sit with the Hedge Witch a while longer.",
+          "next": "witch_camp_2",
+          "require": "rel:hedge_witch:15"
+        },
+        {
+          "text": "Speak plainly with the Hedge Witch.",
+          "next": "witch_camp_3",
+          "require": "rel:hedge_witch:30"
+        },
+        {
+          "text": "Sleep. Push on at first light.",
+          "next": "hollow_gate",
+          "do": [
+            "hp:+2",
+            "flag:camped"
+          ]
+        },
+        {
+          "text": "Sleep, and hope to dream of {missing_short}.",
+          "next": "dream_royal_1"
+        },
+        {
+          "text": "Sleep again. Reach for {missing_obj}.",
+          "next": "dream_royal_2",
+          "require": "flag:dream_royal_1"
+        },
+        {
+          "text": "Sleep, dream, remember.",
+          "next": "dream_royal_3",
+          "require": "flag:dream_royal_2"
+        },
+        {
+          "text": "Sleep. Hold the dream tight.",
+          "next": "dream_royal_4",
+          "require": "flag:dream_royal_3"
+        },
+        {
+          "text": "Ask the witch about her mother in a jar.",
+          "next": "side_witch_jar_1",
+          "require": "companion:hedge_witch"
+        },
+        {
+          "text": "You sleep. Something is in the dream with you.",
+          "next": "deep_dream_1",
+          "require": "flag:dream_royal_2"
+        },
+        {
+          "text": "Morning. Ash was watching you sleep.",
+          "next": "deep_camp_aftermath",
+          "require": "flag:keeper_blooded"
+        },
+        {
+          "text": "Turn the clay tablet in the firelight.",
+          "next": "deep_lost_city_followup",
+          "require": "flag:knows_keeper_origin"
+        },
+        {
+          "text": "First night with the road-company.",
+          "next": "deep_bandits_camp",
+          "require": "flag:road_company"
+        }
+      ]
+    },
+    {
+      "id": "vale_camp_1",
+      "chapter": "INTERLUDE \u00b7 CAMP",
+      "text": "Vale is oiling his sword by the fire. He is not very good at it. His hands are still not steady from the cage.\n\nYou sit. You do not say anything. After a while he hands you the cloth and the oil without looking up and you do it for him. He lets you. That is the closest thing to thanks he has in him.\n\n\"I prayed for a woman in that cage,\" he says, at last. \"Not {missing_title}. Someone else. I am not as honorable as the songs.\"\n\nHe looks at you, brief, hard, then away.",
+      "choices": [
+        {
+          "text": "\"The songs are for fools.\"",
+          "next": "camp_rest",
+          "require": "flag:gender_f",
+          "do": [
+            "rel:vale:+5",
+            "flag:vale_camp_1",
+            "journal:Vale prayed for me in the cage. He did not say my name. He did not have to."
+          ]
+        },
+        {
+          "text": "\"Good. I prefer men with one honest fear.\"",
+          "next": "camp_rest",
+          "do": [
+            "rel:vale:+5",
+            "flag:vale_camp_1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vale_camp_2",
+      "chapter": "INTERLUDE \u00b7 CAMP",
+      "text": "You take the second watch together because neither of you was going to sleep.\n\nHe tells you about the cage in pieces. The wizard fed him. The wizard was not cruel. The wizard would sit outside the bars and read aloud sometimes, things Vale did not understand, and ask, after, whether the words had moved him. \"He was lonely,\" Vale says. \"I think I am the only person he had spoken to in a year. That is the part I cannot forgive him for. I almost liked him.\"\n\nHe is quiet a moment. \"I do not want to die in the dark. I have done enough dying in the dark.\"",
+      "choices": [
+        {
+          "text": "Take his hand.",
+          "next": "camp_rest",
+          "require": "flag:gender_f",
+          "do": [
+            "rel:vale:+10",
+            "flag:vale_camp_2",
+            "trust:+5",
+            "journal:Held Ser Vale's hand under a watch fire. He did not let go."
+          ]
+        },
+        {
+          "text": "\"You won't. Not on my watch.\"",
+          "next": "camp_rest",
+          "do": [
+            "rel:vale:+10",
+            "flag:vale_camp_2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vale_camp_3",
+      "chapter": "INTERLUDE \u00b7 CAMP",
+      "text": "He says your name. Just that. He has not said it once on this whole road and now he says it and it sounds different in his mouth than in anyone else's.\n\n\"If we live,\" he says, \"I am done with the King's service. I am done with the songs. I want a small house and a bad garden and you in it, if you'll have me. I am saying this now because tomorrow we walk into a thing that eats kings, and I would not like to die having been brave about every stupid thing except the one that mattered.\"",
+      "choices": [
+        {
+          "text": "\"I'll have you.\"",
+          "next": "camp_rest",
+          "require": "flag:gender_f",
+          "do": [
+            "rel:vale:+10",
+            "flag:loved_vale",
+            "trust:+10",
+            "journal:Said yes to a knight under a small fire. Tomorrow we walk into the dark. I am not afraid of the dark anymore. I am afraid of losing him in it."
+          ]
+        },
+        {
+          "text": "\"Ask me again on the other side of the Gate.\"",
+          "next": "camp_rest",
+          "do": [
+            "rel:vale:+5",
+            "flag:vale_camp_3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moth_camp_1",
+      "chapter": "INTERLUDE \u00b7 CAMP",
+      "text": "Moth is sitting outside the firelight with a crow on each shoulder. She does not turn when you sit down. The crows do. They look at you like aunts.\n\n\"You're heavy tonight,\" she says. She means it kindly. \"Set some of it down. The fire won't mind holding it.\"\n\nYou do not know what to set down first. You sit a long time before you speak. She does not hurry you. The crows blink at the same time, twice.",
+      "choices": [
+        {
+          "text": "\"I'm afraid I won't be the one who comes back.\"",
+          "next": "camp_rest",
+          "do": [
+            "rel:moth:+5",
+            "flag:moth_camp_1",
+            "journal:Told Moth I was afraid. She did not tell me not to be. She held one of the crows in her lap like a cat."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moth_camp_2",
+      "chapter": "INTERLUDE \u00b7 CAMP",
+      "text": "\"I am not a girl,\" Moth says, conversationally, while plaiting a piece of grass. \"Not the way the songs mean it. My mother was a hedge-thing. My father was a road. I am what they made between them. I tell you because the people who matter to me should know.\"\n\nShe looks up. Her eyes catch the firelight and for a second they are not quite eyes.\n\n\"You matter to me. That is also a thing I should say while there is time.\"",
+      "choices": [
+        {
+          "text": "\"You matter to me too.\"",
+          "next": "camp_rest",
+          "require": "flag:gender_m",
+          "do": [
+            "rel:moth:+10",
+            "flag:moth_camp_2",
+            "trust:+5",
+            "journal:Moth told me what she is. I told her she matters. The crows seemed pleased."
+          ]
+        },
+        {
+          "text": "Take her hand. Say nothing.",
+          "next": "camp_rest",
+          "do": [
+            "rel:moth:+10",
+            "flag:moth_camp_2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moth_camp_3",
+      "chapter": "INTERLUDE \u00b7 CAMP",
+      "text": "She sits down right against your side. Closer than a road-friend sits.\n\n\"If we live,\" she says, \"I am keeping you. I am not asking. I am telling. Crows mate for life. I am half crow. You will be very tired of me by the end and I will love you anyway. That is the offer. You may refuse it. I would prefer you didn't.\"",
+      "choices": [
+        {
+          "text": "\"Keep me, then.\"",
+          "next": "camp_rest",
+          "require": "flag:gender_m",
+          "do": [
+            "rel:moth:+10",
+            "flag:loved_moth",
+            "trust:+10",
+            "journal:Said yes to a crow-girl. I do not know what I have agreed to. I am not sorry."
+          ]
+        },
+        {
+          "text": "\"Ask me on the other side.\"",
+          "next": "camp_rest",
+          "do": [
+            "rel:moth:+5",
+            "flag:moth_camp_3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rook_camp_1",
+      "chapter": "INTERLUDE \u00b7 CAMP",
+      "text": "Rook does not sit by the fire. He sits at its edge, half in dark, where his hands cannot be read. You sit at the same edge, opposite him.\n\nHe watches you a long time before he speaks.\n\n\"I was a queen's man,\" he says. \"Not your queen. A queen across the sea who is dead now. I was bound at the wrists because I am very good at certain things and certain people did not want me free in their city. None of this changes that you cut me loose. I notice when people cut me loose.\"",
+      "choices": [
+        {
+          "text": "\"What things are you good at?\"",
+          "next": "camp_rest",
+          "do": [
+            "rel:rook:+5",
+            "flag:rook_camp_1",
+            "journal:Rook was a queen's man. He did not say what kind. He said he notices when people cut him loose. I noticed that he noticed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rook_camp_2",
+      "chapter": "INTERLUDE \u00b7 CAMP",
+      "text": "He cleans his knife. He does it the slow way, the careful way, the way a man does a thing he has done ten thousand times and wants to keep doing.\n\n\"I have killed seventeen people,\" he says, calm. \"I remember all of them. Two were children. Those two I dream about. I am telling you because if we share a fire there should be no surprises. If you want me to walk off into the dark I will. No hard feelings. Roads are long.\"",
+      "choices": [
+        {
+          "text": "\"Stay.\"",
+          "next": "camp_rest",
+          "require": "flag:gender_f",
+          "do": [
+            "rel:rook:+10",
+            "flag:rook_camp_2",
+            "trust:+5",
+            "journal:He told me about the two children. He did not look away. I told him to stay. I do not know if I was right."
+          ]
+        },
+        {
+          "text": "\"Stay. The dark has enough of us.\"",
+          "next": "camp_rest",
+          "do": [
+            "rel:rook:+10",
+            "flag:rook_camp_2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rook_camp_3",
+      "chapter": "INTERLUDE \u00b7 CAMP",
+      "text": "He gives you a small thing wrapped in a piece of cloth. Inside is a ring of plain iron with a notch filed in it.\n\n\"I made it in the cage with the rope they tied me with and a nail I worked out of the floor. It is the only thing I have ever made and not sold. It is yours. I am not asking anything in return. I am telling you that if we live I would like to be where you are. If we do not, I would like you to have something I made before you forget my face.\"",
+      "choices": [
+        {
+          "text": "Put on the ring.",
+          "next": "camp_rest",
+          "require": "flag:gender_f",
+          "do": [
+            "rel:rook:+10",
+            "flag:loved_rook",
+            "add_item:rook_note",
+            "trust:+10",
+            "journal:Put on an iron ring made of a rope and a nail. He watched me do it. He looked, for a second, like a boy."
+          ]
+        },
+        {
+          "text": "\"Keep it for me. Give it to me after.\"",
+          "next": "camp_rest",
+          "do": [
+            "rel:rook:+5",
+            "flag:rook_camp_3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_camp_1",
+      "chapter": "INTERLUDE \u00b7 CAMP",
+      "text": "The Hedge Witch is not at the fire. She is twenty paces out, talking, low, to something you cannot see. When you walk up she stops. She does not turn.\n\n\"Sit,\" she says. \"Don't ask who I was talking to. It is not your business and it would not love you.\"\n\nYou sit. The grass is cold. After a moment she sits too, beside you, close enough that her sleeve touches yours.\n\n\"I do not get tired,\" she says. \"I am tired anyway. Explain that to me.\"",
+      "choices": [
+        {
+          "text": "\"Loneliness doesn't care if you can feel it.\"",
+          "next": "camp_rest",
+          "do": [
+            "rel:hedge_witch:+5",
+            "flag:witch_camp_1",
+            "journal:Sat with the Witch in the dark grass. She said she was tired. I think she meant something larger than the road."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_camp_2",
+      "chapter": "INTERLUDE \u00b7 CAMP",
+      "text": "\"I was a girl once,\" she says, into the fire. \"Properly. With a mother and a name and a village. The village burned. The name burned with it. The mother I have, in a jar, at home. I do not say this to many people. I am saying it to you because you did not flinch when I put my hand on yours in the kitchen and most do.\"\n\nShe looks at you sidelong.\n\n\"I will not lie to you. I cannot. I made a promise about that a long time ago. Ask me anything tonight and I will answer.\"",
+      "choices": [
+        {
+          "text": "\"Are you going to survive the Gate?\"",
+          "next": "camp_rest",
+          "require": "flag:gender_m",
+          "do": [
+            "rel:hedge_witch:+10",
+            "flag:witch_camp_2",
+            "trust:+5",
+            "journal:She said she did not know if she would live. She said it like a woman, not a witch. I will remember that."
+          ]
+        },
+        {
+          "text": "\"Do you love me, or are you using me?\"",
+          "next": "camp_rest",
+          "do": [
+            "rel:hedge_witch:+10",
+            "flag:witch_camp_2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witch_camp_3",
+      "chapter": "INTERLUDE \u00b7 CAMP",
+      "text": "She kisses you, once, on the mouth, brief and serious as a vow.\n\n\"I have not done that in eighty years,\" she says. \"I wanted to do it while my mouth was still a mouth. If we live, I will burn the house. I will walk out of the wood with you. I will learn to live in a town. I will be very bad at it. You will laugh at me. I will allow it.\"\n\nShe waits. She is not pretending to be calm. She is not calm.",
+      "choices": [
+        {
+          "text": "Kiss her back.",
+          "next": "camp_rest",
+          "require": "flag:gender_m",
+          "do": [
+            "rel:hedge_witch:+10",
+            "flag:loved_hedge_witch",
+            "trust:+10",
+            "journal:Kissed a witch under a small fire. She said she would burn her house. I think she meant it. I think she has been waiting eighty years to mean it."
+          ]
+        },
+        {
+          "text": "\"Ask me again on the far side.\"",
+          "next": "camp_rest",
+          "do": [
+            "rel:hedge_witch:+5",
+            "flag:witch_camp_3"
+          ]
+        }
+      ]
+    }
+  ]
+}

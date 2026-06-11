@@ -1,0 +1,193 @@
+{
+  "scenes": [
+    {
+      "id": "dream_road_1",
+      "chapter": "CHAPTER III.5 \u00b7 DREAMS IN THE WOOD",
+      "text": "You make a bed of cloak and pine needles a half-mile off the witch's road. Sleep takes you fast \u2014 too fast, with that pulling feeling that means the sleep is being done to you.\nYou are standing in a hallway you don't know. Stone, candlelit, going on forever. At the far end, a figure is curled small against the wall. {missing_short_cap}-thin shoulders. A torn sleeve. A crown set carefully beside {missing_obj}, like {missing_pron}'s afraid to wear it and afraid not to.\nYou take a step. The candles dim. {missing_pron_cap} looks up. {missing_poss_cap} eyes find yours across the hall like {missing_pron} was already looking.\n\"You're real,\" {missing_pron} whispers. \"Oh \u2014 you're real.\"",
+      "choices": [
+        {
+          "text": "Run to {missing_obj}.",
+          "next": "dream_road_2"
+        },
+        {
+          "text": "Walk. Don't startle the dream.",
+          "next": "dream_road_2"
+        }
+      ]
+    },
+    {
+      "id": "dream_road_2",
+      "chapter": "CHAPTER III.5 \u00b7 DREAMS IN THE WOOD",
+      "text": "The hallway never gets shorter. That is how you know it is a dream. But {missing_pron} gets closer somehow \u2014 or you do \u2014 and then {missing_pron} is right in front of you, close enough to see the freckle by {missing_poss} mouth.\n\"I can feel you on the road,\" {missing_pron} says. \"Every day. It's like a thread under my ribs.\"\n{missing_poss_cap} hand comes up \u2014 almost touches your cheek \u2014 stops, hovers. {missing_pron_cap} is afraid to be the one who makes contact, like {missing_pron}'s afraid {missing_pron}'ll vanish.\n\"It calls you the kept one,\" {missing_pron} adds, quieter. \"The Keeper. It calls me that. It tells me I always was. Don't \u2014 don't believe it if it shows you me wearing that name like I chose it.\"",
+      "choices": [
+        {
+          "text": "Take {missing_poss} hand. Hold it.",
+          "next": "dream_road_3",
+          "do": [
+            "flag:dream_royal_1",
+            "trust:+5",
+            "journal:I held {missing_short} in a dream. {missing_poss_cap} hand was warm. It shouldn't have been."
+          ]
+        },
+        {
+          "text": "Promise: \"I'm coming. I swear it.\"",
+          "next": "dream_road_3",
+          "do": [
+            "flag:dream_royal_1",
+            "trust:+4",
+            "fear:-3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dream_road_3",
+      "chapter": "CHAPTER III.5 \u00b7 DREAMS IN THE WOOD",
+      "text": "The hallway folds. The candles tilt sideways. {missing_pron_cap} is gone \u2014 pulled \u2014 and you stumble forward into a clearing in the wood.\nA deer stands in the moonlight. Iron crown. Old eyes.\n{other_name}.\n\"Hello, little one,\" {other_pron} says, with a mouth that shouldn't shape words. \"I haven't long. Listen.\"\n{other_pron_cap} steps closer. Up close, the crown is fused to {other_poss} skull. There is no separating it now.\n\"I went first,\" {other_pron} says. \"I was older. I was supposed to. I failed and the wood took the failing and made me \u2014 this. I'm sorry. {missing_poss_cap} a better one than I was. Save {missing_obj} if you can. And \u2014 if you can't \u2014\" {other_poss_cap} eyes shine. \"Forgive me for going first and leaving you both this.\"",
+      "choices": [
+        {
+          "text": "\"There's nothing to forgive.\"",
+          "next": "dream_road_4",
+          "do": [
+            "trust:+4",
+            "fear:-3"
+          ]
+        },
+        {
+          "text": "Lay your hand on the crowned brow.",
+          "next": "dream_road_4",
+          "do": [
+            "trust:+5",
+            "journal:I laid my hand on {other_short}'s crown. The iron was cold. {other_pron_cap} wept like a person."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dream_road_4",
+      "chapter": "CHAPTER III.5 \u00b7 DREAMS IN THE WOOD",
+      "text": "The clearing tilts.\nNow you are nowhere. Just dark, and a voice that is not a voice \u2014 it is a pressure in the marrow of your teeth.\n\"Walker. Little walker. You are very tired.\"\nThe Keeper.\n\"I will offer once. Turn back. I will let the {missing_short} live in {missing_poss} cage. {missing_pron_cap} will not be unhappy. I make a soft place. You can have a long life. You can have a family. A garden. I will even send {missing_obj} dreams of you, if you like. {missing_pron_cap} will think you a kind ghost.\"\nThe dark waits. Patient. Old.",
+      "choices": [
+        {
+          "text": "Refuse. \"No.\" Just that.",
+          "next": "dream_road_wake",
+          "do": [
+            "flag:refused_keeper",
+            "trust:+6",
+            "fear:-5",
+            "journal:The Keeper offered me a life. I said no. I think it was already smiling."
+          ]
+        },
+        {
+          "text": "Pretend to consider. Learn what you can.",
+          "next": "dream_road_wake",
+          "do": [
+            "flag:keeper_curious",
+            "fear:+5",
+            "journal:I let the Keeper think I was considering. I learned the cage has a door. The door opens both ways."
+          ]
+        },
+        {
+          "text": "Say nothing. Just stand.",
+          "next": "dream_road_wake",
+          "do": [
+            "fear:+3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dream_road_wake",
+      "chapter": "CHAPTER III.5 \u00b7 DREAMS IN THE WOOD",
+      "text": "You wake gasping. The sky is the wrong color of pre-dawn. Your hand is curled like you were holding something.\nThe pines are very still. A bird that should be singing isn't.\nYou know two things you didn't know last night:\nThe Keeper can speak to you in sleep.\nSo can {missing_name}.\nYou roll up your bedroll with hands that won't quite obey, and you put one foot in front of the other, because that is the only answer you have to any of it.",
+      "choices": [
+        {
+          "text": "Walk on toward the road.",
+          "next": "wastes_lost",
+          "do": [
+            "journal:I will not dream on this road again if I can help it. I will, of course."
+          ]
+        },
+        {
+          "text": "Push hard for the city.",
+          "next": "city_gates"
+        }
+      ]
+    },
+    {
+      "id": "apprentice_1",
+      "chapter": "CHAPTER IV.5 \u00b7 THE WIZARD'S APPRENTICE",
+      "text": "The boy sweeps in slow arcs across the foyer, his head tilted toward sounds you can't hear. His eyes are wrapped in clean linen. He cannot be more than fourteen.\nYou sit on the bottom step of the stair. He pauses mid-sweep.\n\"You,\" he says. \"You came back.\"\n\"You knew it was me?\"\n\"You walk like you're sorry about it.\" A small, tired smile. \"Most who come here don't. Sorry, I mean.\" He leans the broom against the wall. \"My name is Bram. He doesn't use it. He calls me boy. I don't mind, mostly. It just \u2014 adds up.\"\nThere is a careful pause, like a held door.\n\"I want to leave,\" Bram says. \"Will you help me?\"",
+      "choices": [
+        {
+          "text": "\"Yes. Of course.\"",
+          "next": "apprentice_2",
+          "do": [
+            "trust:+5",
+            "journal:Bram. The boy in the tower. He has a name and he wants to leave. I said yes."
+          ]
+        },
+        {
+          "text": "\"Tell me what he'd do if he found us.\"",
+          "next": "apprentice_2",
+          "do": [
+            "fear:+2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apprentice_2",
+      "chapter": "CHAPTER IV.5 \u00b7 THE WIZARD'S APPRENTICE",
+      "text": "Bram sits beside you on the step. He folds his hands like he's been taught to be polite to guests, which is its own quiet heartbreak.\n\"He took my eyes for a spell,\" Bram says, factual. \"Not all the way. He says he'll give them back when I'm grown. He says it like a kindness. I'm grown enough. I was grown enough a year ago.\"\nHe tilts his face up at you. The linen is very clean. Someone \u2014 him, probably \u2014 keeps it very clean.\n\"There's a back stair behind the kitchen. He doesn't watch it because he forgets I can move. If I go down it, I can be in the woods before he notices. I have a sister in a village two days east. She thinks I'm dead. I would like her not to.\"",
+      "choices": [
+        {
+          "text": "\"I'll walk you out tonight.\"",
+          "next": "apprentice_3",
+          "do": [
+            "trust:+4"
+          ]
+        },
+        {
+          "text": "\"I'll do better. I'll get your eyes first.\"",
+          "next": "apprentice_eyes",
+          "require": "trust:60",
+          "do": [
+            "trust:+6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apprentice_eyes",
+      "chapter": "CHAPTER IV.5 \u00b7 THE WIZARD'S APPRENTICE",
+      "text": "Bram goes very still. \"You'd \u2014 you can't. He keeps them in the solar. In a \u2014 a jar. He showed me once, before. He thought it would teach me something.\"\n\"It taught you something.\"\n\"Yes. Not what he meant.\"\nYou stand. The stair to the solar is right there. You have, you realize, been thinking about doing harder things than this for weeks.\nYou climb. The wizard is asleep at his desk, robe stained with tea. The jar is on the high shelf, dim and obvious. You take it. He does not wake. Maybe he is letting you. Maybe he is not as cruel as he pretends, or maybe he is so cruel he wants to see what you do with it.\nYou come down. You put the jar in Bram's hands.\nHe cries, finally. Not loud. Just enough to know he's a person.",
+      "choices": [
+        {
+          "text": "Walk him out the back stair.",
+          "next": "apprentice_3",
+          "do": [
+            "add_item:warm_tooth",
+            "journal:I stole Bram's eyes back. He gave me a small thing \u2014 a tooth on a cord, still warm. He said it was his mother's. He said it knew the way home."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apprentice_3",
+      "chapter": "CHAPTER IV.5 \u00b7 THE WIZARD'S APPRENTICE",
+      "text": "The back stair smells of onions and old smoke. Bram takes it with his hand on your sleeve and a confidence that suggests he has rehearsed this in his head a thousand times.\nAt the bottom, the door. Beyond it, the wood. The night is cool. The sky has stars.\nBram tilts his face up. Whether or not he has his eyes now, the gesture is the same.\n\"Thank you,\" he says. \"I \u2014 I wanted to give you something.\" He fishes in his sleeve, hands you a small, sealed packet of folded parchment. \"His true name. Not what he calls himself. I heard a \u2014 a thing call him by it once. In a circle. I wrote it down. You might need it. The Keeper might. They \u2014 they know each other. I think.\"\nHe smiles, briefly, and is gone into the trees.",
+      "choices": [
+        {
+          "text": "Pocket the packet. Go.",
+          "next": "tower_leave",
+          "do": [
+            "add_item:keeper_lore",
+            "trust:+5",
+            "journal:Bram gave me the wizard's true name. He said the Keeper might recognize it. I do not yet understand what I am supposed to do with it. I will."
+          ]
+        }
+      ]
+    }
+  ]
+}
