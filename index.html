@@ -209,7 +209,7 @@ function showScene(){
     .filter(c => (state.relationships[c] || 0) > 0)
     .map(c => `${COMPANION_NAMES[c]||c} ${state.relationships[c]||0}`)
     .join(", ");
-  const journalTail = (state.journal || []).slice(-2).join(" · ");
+  const journalTail = (state.journal || []).slice(-2).map(j => fillSceneText(j)).join(" · ");
   document.getElementById("hud").innerHTML = `
     <div>HP: <b>${state.hp}/${state.max_hp}</b> &nbsp; Trust: <b>${state.trust}</b> &nbsp; Fear: <b>${state.fear}</b> &nbsp; Gold: <b>${state.gold}</b></div>
     <div>Pack: <b>${packLabel || "—"}</b></div>
@@ -229,7 +229,7 @@ function showScene(){
     const b = document.createElement("button");
     const isPrimary = /^(fight|enter|face|use)/i.test(ch.text || "");
     b.className = isPrimary ? "primary" : "";
-    b.textContent = ch.text;
+    b.textContent = fillSceneText(ch.text);
     b.onclick = () => choose(ch);
     box.appendChild(b);
   }
@@ -505,7 +505,37 @@ async function init() {
     console.error(err);
     return;
   }
+  const preset = new URLSearchParams(location.search).get("screenshot");
+  if(preset){ applyScreenshotPreset(preset); return; }
   showGenderPick();
+}
+
+function applyScreenshotPreset(preset){
+  clearSave();
+  const setupChar = (charKey, extras) => {
+    const ch = CHARACTERS.find(x => x.key === charKey);
+    const r = routes[ch.route];
+    state = Object.assign(newState(), {
+      route: ch.route, charKey: ch.key, charName: ch.name, gender: ch.gender,
+      trust: 70, fear: 20, gold: 25,
+      pack: (r.pack || []).slice().concat(["sword","poultice","seeing_draught","wardstone"]),
+      companions: ["ash","vale"],
+      relationships: {ash: 25, vale: 35},
+      flags: Object.assign({ ["gender_" + ch.gender]: true }, extras && extras.flags || {}),
+      journal: extras && extras.journal || ["Held Ser Vale's hand under a watch fire. He did not let go.", "Sat by the road and watched the wind move wrong."],
+      here: "intro",
+    });
+  };
+  if(preset === "title")            { showGenderPick(); }
+  else if(preset === "character_f") { state.gender = "f"; showCharacterPick(); }
+  else if(preset === "character_m") { state.gender = "m"; showCharacterPick(); }
+  else if(preset === "intro_lyra")  { setupChar("lyra");           state.here = "intro";          showScene(); }
+  else if(preset === "witch_grove") { setupChar("lyra");           state.here = "witch_grove";    showScene(); }
+  else if(preset === "tower_solar") { setupChar("lyra", {flags:{saw_vale_caged:true}}); state.here = "tower_solar"; showScene(); }
+  else if(preset === "camp_dream")  { setupChar("lyra", {flags:{dream_royal_1:true, dream_royal_2:true}}); state.here = "dream_royal_3"; showScene(); }
+  else if(preset === "wraith")      { setupChar("lyra");           state.here = "deep_wraith_road_2"; showScene(); }
+  else if(preset === "epilogue")    { setupChar("lyra", {flags:{rescued_cassian:true}}); state.here = "epilogue_clever"; showScene(); }
+  else { showGenderPick(); }
 }
 init();
 </script>
